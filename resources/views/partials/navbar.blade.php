@@ -1,7 +1,12 @@
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+   
+<div class="container">
+    
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
         <a class="navbar-brand" href="#">
-            <img src="{{ url('/img/FGE-icon.png') }}" width="40" height="40" alt="">
+            <img src="{{ url('/img/FGE-icon3.png') }}" width="auto" height="auto" alt="">
+            <img src="{{ url('/img/FGE-icon2.png') }}" width="auto" height="auto" alt="">
             
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,10 +22,10 @@
                       Busqueda de información
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Persona</a>
-                        <a class="dropdown-item" href="#">Dirección</a>
-                        <a class="dropdown-item" href="#">Vehículo</a>
-                        <a class="dropdown-item" href="#">Número de Carpeta</a>
+                        <a class="dropdown-item" href="{{url('/busqueda/persona')}}">Persona</a>
+                        <a class="dropdown-item" href="{{url('/busqueda/direccion')}}">Dirección</a>
+                        <a class="dropdown-item" href="{{url('/busqueda/vehiculo')}}">Vehículo</a>
+                        <a class="dropdown-item" href="{{url('/busqueda/numcarpeta')}}">Número de Carpeta</a>
                     </div>
                 </li>
 
@@ -35,6 +40,28 @@
                         <a class="dropdown-item" href="#">Especiales</a>
                     </div>
                 </li>
+            
+            </ul>
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item dropdown ">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Usuario
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Salir</a>
+                        <a class="dropdown-item" href="#">Entrar</a>
+                        <a class="dropdown-item" href="#">Registrar</a>
+                    </div>
+                </li>
+
+
+                   
             </ul>
         </div>
     </nav>
+</div>
+
+
+
+

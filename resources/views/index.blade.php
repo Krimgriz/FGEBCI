@@ -9,7 +9,8 @@
     
     <!--<script src="{{ url('/assets/bootstrap/js/bootstrap.min.js') }}"></script>-->
     @include('datatable-cdn')
-
+    <link href="{{ asset('css/estilosnavbar.css') }}" rel="stylesheet">
+        
 </head>
 <body>
     <header>
@@ -18,7 +19,7 @@
 
     <div class="container">
         
-        
+        @yield('content')
     </div>
 </body>
 </html>
