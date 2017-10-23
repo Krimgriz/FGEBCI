@@ -1,6 +1,7 @@
 @extends('index')
 @section('content')
-	<div class="">
+	<br>
+    <div class="fondo">
         <br>
         <table class="table table-striped table-hover table-bordered">
             <thead>

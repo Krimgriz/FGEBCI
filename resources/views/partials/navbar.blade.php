@@ -3,10 +3,9 @@
 <div class="container">
     
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">
-            <img src="{{ url('/img/FGE-icon3.png') }}" width="auto" height="auto" alt="">
-            <img src="{{ url('/img/FGE-icon2.png') }}" width="auto" height="auto" alt="">
+            <img src="{{ url('/img/logoh-FGE.png') }}" width="auto" height="60" alt="">
             
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

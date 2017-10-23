@@ -12,7 +12,8 @@
         <a class="nav-link" id="contact-tab" data-toggle="tab" href="#denunciante" role="tab" aria-controls="denunciante" aria-selected="false">Denunciantes</a>
     </li>
 </ul>
-<div class="tab-content" id="myTabContent">
+
+<div class="tab-content" id="myTabContent" >
     <div class="tab-pane fade show active" id="involucrado" role="tabpanel" aria-labelledby="home-tab">
         <br>
         <table class="table table-striped table-hover table-bordered">
@@ -31,7 +32,7 @@
         </table>
 
     </div>
-    <div class="tab-pane fade" id="denuciado" role="tabpanel" aria-labelledby="profile-tab">
+    <div class="tab-pane fade" id="denuciado"  role="tabpanel" aria-labelledby="profile-tab">
         <br>
         <table class="table table-striped table-hover table-bordered">
             <thead>
