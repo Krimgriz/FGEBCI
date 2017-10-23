@@ -34,7 +34,7 @@
                       Generación de estadisticas
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Lugares</a>
+                        <a class="dropdown-item" href="{{url('/estadistica/municipio')}}">Lugares(municipio)</a>
                         <a class="dropdown-item" href="#">Delitos</a>
                         <a class="dropdown-item" href="#">Internas</a>
                         <a class="dropdown-item" href="#">Especiales</a>

@@ -34,8 +34,8 @@ Route::get('/busqueda/direccion', function () {
     return view('busquedas.direccion');
 });
 
-Route::get('/', function () {
-    return view('index');
+Route::get('/estadistica/municipio', function () {
+    return view('estadisticas/municipio');
 });
 
 Route::get('/', function () {
