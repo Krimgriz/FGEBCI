@@ -38,6 +38,44 @@ Route::get('/estadistica/municipio', function () {
     return view('estadisticas/municipio');
 });
 
+Route::get('/estadistica/iniciadas', function () {
+    return view('estadisticas/iniciadas');
+});
+
+Route::get('/estadistica/delito', function () {
+    return view('estadisticas/delito');
+});
+
+Route::get('/estadistica/edad', function () {
+    return view('estadisticas/edad');
+});
+
+Route::get('/estadistica/etnia', function () {
+    return view('estadisticas/etnia');
+});
+
+Route::get('/estadistica/fiscal', function () {
+    return view('estadisticas/fiscal');
+});
+
+Route::get('/estadistica/region', function () {
+    return view('estadisticas/region');
+});
+
+Route::get('/estadistica/sexo', function () {
+    return view('estadisticas/sexo');
+});
+
+
+Route::get('/estadistica/unidad', function () {
+    return view('estadisticas/unidad');
+});
+
+Route::get('/estadistica/colonia', function () {
+    return view('estadisticas/colonia');
+});
+
+
 Route::get('/', function () {
     return view('index');
 });

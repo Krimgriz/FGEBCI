@@ -1,6 +1,8 @@
 @extends('index')
 
-@section('extras')
+
+
+@section('content')
     <script type="text/javascript">
         google.charts.load('current', {'packages':['line', 'corechart']});
         google.charts.setOnLoadCallback(drawChart);
@@ -12,48 +14,53 @@
 
             var data = new google.visualization.DataTable();
             data.addColumn('date', 'Month');
-            data.addColumn('number', "Average Temperature");
-            data.addColumn('number', "Average Hours of Daylight");
+            data.addColumn('number', "Hombre");
+            data.addColumn('number', "Mujer");
 
             data.addRows([
-                [new Date(2014, 0),  -.5,  5.7],
-                [new Date(2014, 1),   .4,  8.7],
-                [new Date(2014, 2),   .5,   12],
-                [new Date(2014, 3),  2.9, 15.3],
-                [new Date(2014, 4),  6.3, 18.6],
-                [new Date(2014, 5),    9, 20.9],
-                [new Date(2014, 6), 10.6, 19.8],
-                [new Date(2014, 7), 10.3, 16.6],
-                [new Date(2014, 8),  7.4, 13.3],
-                [new Date(2014, 9),  4.4,  9.9],
-                [new Date(2014, 10), 1.1,  6.6],
-                [new Date(2014, 11), -.2,  4.5]
+                [new Date(2014, 0),  5,  9],
+                [new Date(2014, 1),  8,  8],
+                [new Date(2014, 2), 12,  7],
+                [new Date(2014, 3), 15,  6],
+                [new Date(2014, 4),  0,  5],
+                [new Date(2014, 5), 20,  4],
+                [new Date(2014, 6), 13,  8],
+                [new Date(2014, 7), 16,  6],
+                [new Date(2014, 8), 13,  2],
+                [new Date(2014, 9),  9,  4],
+                [new Date(2014, 10), 6,  8],
+                [new Date(2014, 11), 4,  7]
             ]);
 
             var Options = {
-                title: 'Average Temperatures and Daylight in Iceland Throughout the Year',
-                width: 900,
+                title: 'Incidencia delictiva por Sexo del año 20XX',
+                width: 1100,
                 height: 500,
                 // Gives each series an axis that matches the vAxes number below.
                 series: {
-                    0: {targetAxisIndex: 0},
-                    1: {targetAxisIndex: 1}
+                    0: { color: '#222222'},
+                    1: { color: '#999999'}
                 },
                 vAxes: {
                     // Adds titles to each axis.
-                    0: {title: 'Temps (Celsius)'},
-                    1: {title: 'Daylight'}
+                    0: {title: 'Cantidad'},
+                    1: {title: 'Meses'}
                 },
                 hAxis: {
-                    ticks: [new Date(2014, 0), new Date(2014, 1), new Date(2014, 2), new Date(2014, 3),
-                        new Date(2014, 4), new Date(2014, 5), new Date(2014, 6), new Date(2014, 7),
-                        new Date(2014, 8), new Date(2014, 9), new Date(2014, 10), new Date(2014, 11)
+                    ticks: [
+                        new Date(2014, 0), 
+                        new Date(2014, 1), 
+                        new Date(2014, 2), 
+                        new Date(2014, 3),
+                        new Date(2014, 4), 
+                        new Date(2014, 5), 
+                        new Date(2014, 6), 
+                        new Date(2014, 7),
+                        new Date(2014, 8), 
+                        new Date(2014, 9), 
+                        new Date(2014, 10), 
+                        new Date(2014, 11)
                     ]
-                },
-                vAxis: {
-                    viewWindow: {
-                        max: 30
-                    }
                 }
             };
 
@@ -68,16 +75,13 @@
 
         }
     </script>
-@endsection
-
-@section('content')
 <br>
 <div class="fondo ">
     
     {{ Form::open() }}
         <div class="container">
             <div class="row">
-                <div class="col-sm-4">
+                <div class="col-sm-6">
 
                     {{ Form::label('year', 'Año') }}
                     {{ Form::select('year', [
@@ -91,26 +95,18 @@
                         2017 => '2017'], 2017, ['class' => 'form-control']
                         )}}
                 </div>
-                    
-                <div class="col-sm-4">
-                    {{ Form::label('municipio', 'Municipio') }}
-                    {{ Form::select('municipio', [
-                        0 => 'Selecciona Municipio',
-                        'altolucero' => 'Alto Lucero',
-                        'altotonga' => 'Altotonga',
-                        'banderilla' => 'Banderilla',
-                        'naolinco' => 'Naolinco'], 0 ,['class' => 'form-control']
-                    )}}
-                </div>
+                
 
-                <div class="col-sm-4"><br> 
-                    {{ Form::submit('Generar', array('class' => 'form-control')) }}
+                <div class="col-sm-6"><br> 
+                    {{ Form::button('Generar', array('class' => 'form-control')) }}
                 </div>
             </div>
         </div>
     {!! Form::close() !!}
     <br>
-    <div id="chart_div" align="center"></div>
+    <center>
+        <div id="chart_div" style="width: 100%;"></div>
+    </center>
     <br>
 </div>
         

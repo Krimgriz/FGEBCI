@@ -33,10 +33,16 @@
                       Generación de estadisticas
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{url('/estadistica/municipio')}}">Lugares(municipio)</a>
-                        <a class="dropdown-item" href="#">Delitos</a>
-                        <a class="dropdown-item" href="#">Internas</a>
-                        <a class="dropdown-item" href="#">Especiales</a>
+                        <a class="dropdown-item" href="{{url('/estadistica/iniciadas')}}">Carpetas Iniciadas</a>
+                        <a class="dropdown-item" href="{{url('/estadistica/region')}}">Región</a>
+                        <a class="dropdown-item" href="{{url('/estadistica/municipio')}}">Municipio</a>
+                        <a class="dropdown-item" href="{{url('/estadistica/colonia')}}">Colonia</a>
+                        <a class="dropdown-item" href="{{url('/estadistica/delito')}}">Delito</a>
+                        <a class="dropdown-item" href="{{url('/estadistica/etnia')}}">Etnia</a>
+                        <a class="dropdown-item" href="{{url('/estadistica/sexo')}}">Sexo</a>
+                        <a class="dropdown-item" href="{{url('/estadistica/edad')}}">Edad</a>
+                        <a class="dropdown-item" href="{{url('/estadistica/unidad')}}">Unidad</a>
+                        <a class="dropdown-item" href="{{url('/estadistica/fiscal')}}">Fiscal</a>
                     </div>
                 </li>
             

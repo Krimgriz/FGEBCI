@@ -14,7 +14,7 @@
 
             var data = new google.visualization.DataTable();
             data.addColumn('date', 'Month');
-            data.addColumn('number', "Delito");
+            data.addColumn('number', "Carpetas");
 
             data.addRows([
                 [new Date(2014, 0),  5],
@@ -32,7 +32,7 @@
             ]);
 
             var Options = {
-                title: 'Reporte de Desempeño por fiscal del año 20XX',
+                title: 'Carpetas de Investigación iniciadas XXXXX en el año 20XX',
                 width: 1100,
                 height: 500,
                 // Gives each series an axis that matches the vAxes number below.
@@ -95,28 +95,16 @@
                 </div>
                     
                 <div class="col-sm-4">
-                    {{ Form::label('unidad', 'Unidad') }}
-                    {{ Form::select('unidad', [
-                        0 => 'Seleccione Unidad',
-                        'unidad1' => 'Unidad 1',
-                        'unidad2' => 'Unidad 2',
-                        'unidad3' => 'Unidad 3',
-                        'unidad4' => 'Unidad 4'], 0 ,['class' => 'form-control']
-                    )}}
+
+                    {{ Form::label('year', 'Carpetas de Investigación') }}
+                    {{ Form::select('year', [
+                        'iniciadas' => 'Iniciadas', 
+                        'conDetenido' => 'Iniciadas Con Detenido',
+                        'sinDetenido' => 'Iniciadas Sin Detenido'], 'iniciadas', ['class' => 'form-control']
+                        )}}
                 </div>
 
-                <div class="col-sm-4">
-                    {{ Form::label('fiscal', 'Fiscal') }}
-                    {{ Form::select('fiscal', [
-                        0 => 'Seleccione Fiscal',
-                        'fiscal1' => 'Fiscal 1',
-                        'fiscal2' => 'Fiscal 2',
-                        'fiscal3' => 'Fiscal 3',
-                        'fiscal4' => 'Fiscal 4'], 0 ,['class' => 'form-control']
-                    )}}
-                </div>
-
-                <div class="col-sm-12"><br> 
+                <div class="col-sm-4"><br> 
                     {{ Form::button('Generar', array('class' => 'btn btn-outline-secondary form-control')) }}
                 </div>
             </div>
