@@ -4,35 +4,36 @@
 
 @section('content')
     <script type="text/javascript">
-        google.charts.load('current', {'packages':['line', 'corechart']});
+        google.charts.load('current', {'packages':['line']});
         google.charts.setOnLoadCallback(drawChart);
 
         function drawChart() {
 
-            var button = document.getElementById('change-chart');
             var chartDiv = document.getElementById('chart_div');
 
             var data = new google.visualization.DataTable();
-            data.addColumn('date', 'Month');
+            data.addColumn('string', 'Mes');
             data.addColumn('number', "Región");
 
             data.addRows([
-                [new Date(2014, 0),  5],
-                [new Date(2014, 1),  8],
-                [new Date(2014, 2), 12],
-                [new Date(2014, 3), 15],
-                [new Date(2014, 4), 0],
-                [new Date(2014, 5), 20],
-                [new Date(2014, 6), 13],
-                [new Date(2014, 7), 16],
-                [new Date(2014, 8), 13],
-                [new Date(2014, 9),  9],
-                [new Date(2014, 10), 6],
-                [new Date(2014, 11), 4]
+                ['Enero',       5],
+                ['Febrero',     8],
+                ['Marzo',      12],
+                ['Abril',      15],
+                ['Mayo',        0],
+                ['Junio',      20],
+                ['Julio',      13],
+                ['Agosto',     16],
+                ['Septiembre', 13],
+                ['Octubre',     9],
+                ['Noviembre',   6],
+                ['Diciembre',   4]
             ]);
 
             var Options = {
-                title: 'Reporte de desempeño de la región XXXXXXXX del año 20XX',
+                chart:{
+                    title: 'Reporte de desempeño de la región XXXXXXXX del año 20XX'
+                },
                 width: 1100,
                 height: 500,
                 // Gives each series an axis that matches the vAxes number below.
@@ -41,23 +42,22 @@
                 },
                 vAxes: {
                     // Adds titles to each axis.
-                    0: {title: 'Cantidad'},
-                    1: {title: 'Meses'}
+                    0: {title: 'Cantidad'}
                 },
                 hAxis: {
                     ticks: [
-                        new Date(2014, 0), 
-                        new Date(2014, 1), 
-                        new Date(2014, 2), 
-                        new Date(2014, 3),
-                        new Date(2014, 4), 
-                        new Date(2014, 5), 
-                        new Date(2014, 6), 
-                        new Date(2014, 7),
-                        new Date(2014, 8), 
-                        new Date(2014, 9), 
-                        new Date(2014, 10), 
-                        new Date(2014, 11)
+                        'Enero',       
+                        'Febrero',     
+                        'Marzo',      
+                        'Abril',      
+                        'Mayo',        
+                        'Junio',      
+                        'Julio',      
+                        'Agosto',     
+                        'Septiembre', 
+                        'Octubre',    
+                        'Noviembre',  
+                        'Diciembre'
                     ]
                 }
             };
@@ -65,7 +65,7 @@
           
 
             function drawChart() {
-                var classicChart = new google.visualization.LineChart(chartDiv);
+                var classicChart = new google.charts.Line(chartDiv);
                 classicChart.draw(data, Options);
             }
 

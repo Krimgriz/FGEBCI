@@ -5,7 +5,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">
-            <img src="{{ url('/img/logoh-FGE.png') }}" width="auto" height="60" alt="">
+            <img src="{{ url('/img/FGE-icon5.png') }}" width="auto" height="60" alt="">
             
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

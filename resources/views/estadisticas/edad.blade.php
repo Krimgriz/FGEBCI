@@ -4,16 +4,15 @@
 
 @section('content')
     <script type="text/javascript">
-        google.charts.load('current', {'packages':['line', 'corechart']});
+        google.charts.load('current', {'packages':['line']});
         google.charts.setOnLoadCallback(drawChart);
 
         function drawChart() {
 
-            var button = document.getElementById('change-chart');
             var chartDiv = document.getElementById('chart_div');
 
             var data = new google.visualization.DataTable();
-            data.addColumn('date', 'Month');
+            data.addColumn('string', 'Month');
             data.addColumn('number', "Menores de 12");
             data.addColumn('number', "12 - 17");
             data.addColumn('number', "18 - 25");
@@ -27,25 +26,28 @@
             data.addColumn('number', "Mayores de 60"); 
 
             data.addRows([
-                [new Date(2014, 0),   5,   5,  10,   9,   6,   5,  10,   9,   6,  5,  5],
-                [new Date(2014, 1),   8,   5,   9,  15,   6,  10,   9,   6,   5,  8,  5],
-                [new Date(2014, 2),  12,   5,   9,  15,   6,   5,  10,   9,   6,  8,  4],
-                [new Date(2014, 3),  15,   5,  10,   9,  15,  10,   9,   6,   5,  8,  5],
-                [new Date(2014, 4),   0,   5,  10,   9,   6,   5,  10,   9,  15,  9,  5],
-                [new Date(2014, 5),  20,   5,  10,   9,  15,  10,   9,   6,   5,  8,  3],
-                [new Date(2014, 6),   5,  10,   9,  15,   6,   5,  10,   9,   6,  7,  5],
-                [new Date(2014, 7),  16,   5,  10,   9,  15,   5,  10,   9,  15,  2,  1],
-                [new Date(2014, 8),  13,   5,   9,  15,   6,   5,  10,   9,   6,  8,  5],
-                [new Date(2014, 9),   9,   5,  10,   9,   6,   5,  10,   9,  15,  5,  7],
-                [new Date(2014, 10),  6,   5,  10,   9,  15,   5,  10,   9,   6,  8,  5],
-                [new Date(2014, 11),  4,   5,  10,   9,  15,   5,  10,   9,  15,  1,  8]
+                ['Enero',          5,   5,  10,   9,   6,   5,  10,   9,   6,  5,  5],
+                ['Febrero',        8,   5,   9,  15,   6,  10,   9,   6,   5,  8,  5],
+                ['Marzo',        12,   5,   9,  15,   6,   5,  10,   9,   6,  8,  4],
+                ['Abril',        15,   5,  10,   9,  15,  10,   9,   6,   5,  8,  5],
+                ['Mayo',           0,   5,  10,   9,   6,   5,  10,   9,  15,  9,  5],
+                ['Junio',        20,   5,  10,   9,  15,  10,   9,   6,   5,  8,  3],
+                ['Julio',         5,  10,   9,  15,   6,   5,  10,   9,   6,  7,  5],
+                ['Agosto',       16,   5,  10,   9,  15,   5,  10,   9,  15,  2,  1],
+                ['Septiembre',   13,   5,   9,  15,   6,   5,  10,   9,   6,  8,  5],
+                ['Octubre',       9,   5,  10,   9,   6,   5,  10,   9,  15,  5,  7],
+                ['Noviembre',    6,   5,  10,   9,  15,   5,  10,   9,   6,  8,  5],
+                ['Diciembre',    4,   5,  10,   9,  15,   5,  10,   9,  15,  1,  8]
             ]);
 
             var Options = {
-                title: 'Incidencia delictiva por Edad del año 20XX',
+                chart:{
+                    title: 'Incidencia delictiva por Edad del año 20XX'
+                },
                 width: 1100,
                 height: 500,
                 // Gives each series an axis that matches the vAxes number below.
+                //legend: { position: 'none', alignment: 'start' },
                 series: {
                     0: { color: '#6b9527'},
                     1: { color: '#465c1e'},
@@ -66,18 +68,18 @@
                 },
                 hAxis: {
                     ticks: [
-                        new Date(2014, 0), 
-                        new Date(2014, 1), 
-                        new Date(2014, 2), 
-                        new Date(2014, 3),
-                        new Date(2014, 4), 
-                        new Date(2014, 5), 
-                        new Date(2014, 6), 
-                        new Date(2014, 7),
-                        new Date(2014, 8), 
-                        new Date(2014, 9), 
-                        new Date(2014, 10), 
-                        new Date(2014, 11)
+                        'Enero',       
+                        'Febrero',     
+                        'Marzo',      
+                        'Abril',      
+                        'Mayo',        
+                        'Junio',      
+                        'Julio',      
+                        'Agosto',     
+                        'Septiembre', 
+                        'Octubre',    
+                        'Noviembre',  
+                        'Diciembre' 
                     ]
                 }
                 
@@ -86,8 +88,8 @@
           
 
             function drawChart() {
-                var classicChart = new google.visualization.LineChart(chartDiv);
-                classicChart.draw(data, Options);
+                var Chart = new google.charts.Line(chartDiv);
+                Chart.draw(data, Options);
             }
 
             drawChart();

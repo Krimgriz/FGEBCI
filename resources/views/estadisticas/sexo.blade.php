@@ -4,7 +4,7 @@
 
 @section('content')
     <script type="text/javascript">
-        google.charts.load('current', {'packages':['line', 'corechart']});
+        google.charts.load('current', {'packages':['line']});
         google.charts.setOnLoadCallback(drawChart);
 
         function drawChart() {
@@ -13,27 +13,29 @@
             var chartDiv = document.getElementById('chart_div');
 
             var data = new google.visualization.DataTable();
-            data.addColumn('date', 'Month');
+            data.addColumn('string', 'Month');
             data.addColumn('number', "Hombre");
             data.addColumn('number', "Mujer");
 
             data.addRows([
-                [new Date(2014, 0),  5,  9],
-                [new Date(2014, 1),  8,  8],
-                [new Date(2014, 2), 12,  7],
-                [new Date(2014, 3), 15,  6],
-                [new Date(2014, 4),  0,  5],
-                [new Date(2014, 5), 20,  4],
-                [new Date(2014, 6), 13,  8],
-                [new Date(2014, 7), 16,  6],
-                [new Date(2014, 8), 13,  2],
-                [new Date(2014, 9),  9,  4],
-                [new Date(2014, 10), 6,  8],
-                [new Date(2014, 11), 4,  7]
+                ['Enero',       5,  9],
+                ['Febrero',     8,  8],
+                ['Marzo',      12,  7],
+                ['Abril',      15,  6],
+                ['Mayo',        0,  5],
+                ['Junio',      20,  4],
+                ['Julio',      13,  8],
+                ['Agosto',     16,  6],
+                ['Septiembre', 13,  2],
+                ['Octubre',    9,  4],
+                ['Noviembre',  6,  8],
+                ['Diciembre',  4,  7]
             ]);
 
             var Options = {
-                title: 'Incidencia delictiva por Sexo del año 20XX',
+                chart:{
+                    title: 'Incidencia delictiva por Sexo del año 20XX'
+                },
                 width: 1100,
                 height: 500,
                 // Gives each series an axis that matches the vAxes number below.
@@ -48,18 +50,18 @@
                 },
                 hAxis: {
                     ticks: [
-                        new Date(2014, 0), 
-                        new Date(2014, 1), 
-                        new Date(2014, 2), 
-                        new Date(2014, 3),
-                        new Date(2014, 4), 
-                        new Date(2014, 5), 
-                        new Date(2014, 6), 
-                        new Date(2014, 7),
-                        new Date(2014, 8), 
-                        new Date(2014, 9), 
-                        new Date(2014, 10), 
-                        new Date(2014, 11)
+                        'Enero',       
+                        'Febrero',     
+                        'Marzo',      
+                        'Abril',      
+                        'Mayo',        
+                        'Junio',      
+                        'Julio',      
+                        'Agosto',     
+                        'Septiembre', 
+                        'Octubre',    
+                        'Noviembre',  
+                        'Diciembre'  
                     ]
                 }
             };
@@ -67,7 +69,7 @@
           
 
             function drawChart() {
-                var classicChart = new google.visualization.LineChart(chartDiv);
+                var classicChart = new google.charts.Line(chartDiv);
                 classicChart.draw(data, Options);
             }
 

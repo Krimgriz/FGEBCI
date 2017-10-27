@@ -75,6 +75,10 @@ Route::get('/estadistica/colonia', function () {
     return view('estadisticas/colonia');
 });
 
+Route::get('/busqueda/detalle', function () {
+    return view('reporte/detalle');
+});
+
 
 Route::get('/', function () {
     return view('index');
