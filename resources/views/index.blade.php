@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>CompuKami</title>
+    <title>FGE de Veracruz - CI</title>
     
     <!--<script src="{{ url('/assets/bootstrap/js/bootstrap.min.js') }}"></script>-->
     @include('datatable-cdn')
