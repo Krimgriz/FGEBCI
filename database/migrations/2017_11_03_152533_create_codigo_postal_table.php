@@ -16,8 +16,9 @@ class CreateCodigoPostalTable extends Migration
         Schema::create('codigo_postal', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id');            
-            $table->integer('idDomicilio')->unsigned()->index()->nullable();
-            $table->foreign('idDomicilio')->references('id')->on('domicilio');
+            $table->integer('idMunicipio')->unsigned()->index()->nullable();
+            $table->foreign('idMunicipio')->references('id')->on('municipio');
+            $table->integer('codigo');
             $table->timestamps();
         });
     }

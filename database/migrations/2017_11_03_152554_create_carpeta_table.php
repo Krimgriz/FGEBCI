@@ -15,6 +15,12 @@ class CreateCarpetaTable extends Migration
     {
         Schema::create('carpeta', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('idUnidad')->unsigned()->index()->nullable();
+            $table->foreign('idUnidad')->references('id')->on('unidad');
+            $table->integer('idFiscal')->unsigned()->index()->nullable();
+            $table->foreign('idFiscal')->references('id')->on('fiscal');
+            $table->integer('numCarpeta');
+            
             $table->timestamps();
         });
     }
