@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTipifDelitoTable extends Migration
+class CreateCatColoniaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class CreateTipifDelitoTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipif_delito', function (Blueprint $table) {
+        Schema::create('cat_colonia', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('nombre', 30);
+
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -26,6 +29,6 @@ class CreateTipifDelitoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipif_delito');
+        Schema::dropIfExists('cat_colonia');
     }
 }

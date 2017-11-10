@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>FGE de Veracruz - CI</title>
+    <link rel="icon" href="{{ asset('img/FGE-icon3.png') }}">
     
     <!--<script src="{{ url('/assets/bootstrap/js/bootstrap.min.js') }}"></script>-->
     @include('datatable-cdn')

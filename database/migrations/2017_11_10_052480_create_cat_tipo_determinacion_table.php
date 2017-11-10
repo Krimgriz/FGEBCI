@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCatDelitoTable extends Migration
+class CreateCatTipoDeterminacionTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateCatDelitoTable extends Migration
      */
     public function up()
     {
-        Schema::create('cat_delito', function (Blueprint $table) {
+        Schema::create('cat_tipo_determinacion', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreateCatDelitoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cat_delito');
+        Schema::dropIfExists('cat_tipo_determinacion');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAbogadoTable extends Migration
+class CreateExtraAbogadoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,12 @@ class CreateAbogadoTable extends Migration
      */
     public function up()
     {
-        Schema::create('abogado', function (Blueprint $table) {
+        Schema::create('extra_abogado', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre',50);
-            $table->string('primerAp',50);
-            $table->string('segundoAp',50);
+            $table->integer('idVatiablesPersona')->unsigned()->index()->nullable();
+            $table->foreign('idVatiablesPersona')->references('id')->on('variables_persona')->onDelete('cascade');
             $table->string('cedulaProf',50);
             $table->string('sector',50);
-            $table->integer('idDomicilio')->unsigned()->index()->nullable();
-            $table->foreign('idDomicilio')->references('id')->on('domicilio');
-            $table->string('telefono',24);
             $table->string('correo',50);
             $table->timestamps();
         });
@@ -35,6 +31,6 @@ class CreateAbogadoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('abogado');
+        Schema::dropIfExists('extra_abogado');
     }
 }

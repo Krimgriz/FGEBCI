@@ -18,11 +18,11 @@ class CreateAcusacionTable extends Migration
             $table->integer('idCarpeta')->unsigned()->index()->nullable();
             $table->foreign('idCarpeta')->references('id')->on('carpeta');
             $table->integer('idDenunciante')->unsigned()->index()->nullable();
-            $table->foreign('idDenunciante')->references('id')->on('extra_denunciante');
+            $table->foreign('idDenunciante')->references('id')->on('extra_denunciante')->onDelete('cascade');
             $table->integer('idTipifDelito')->unsigned()->index()->nullable();
-            $table->foreign('idTipifDelito')->references('id')->on('tipif_delito');
+            $table->foreign('idTipifDelito')->references('id')->on('tipif_delito')->onDelete('cascade');
             $table->integer('idDenunciado')->unsigned()->index()->nullable();
-            $table->foreign('idDenunciado')->references('id')->on('extra_denunciado');
+            $table->foreign('idDenunciado')->references('id')->on('extra_denunciado')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCatMunicipioTable extends Migration
+class CreateCatClaseVehiculoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateCatMunicipioTable extends Migration
      */
     public function up()
     {
-        Schema::create('cat_municipio', function (Blueprint $table) {
+        Schema::create('cat_clase_vehiculo', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre',50);
-            $table->integer('idEstado')->unsigned()->index()->nullable();
-            $table->foreign('idEstado')->references('id')->on('cat_estado');
+            $table->string('nombre', 50);
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ class CreateCatMunicipioTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cat_municipio');
+        Schema::dropIfExists('cat_clase_vehiculo');
     }
 }

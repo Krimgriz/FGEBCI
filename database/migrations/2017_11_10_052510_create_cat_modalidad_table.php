@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateNarracionTable extends Migration
+class CreateCatModalidadTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateNarracionTable extends Migration
      */
     public function up()
     {
-        Schema::create('narracion', function (Blueprint $table) {
+        Schema::create('cat_modalidad', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('narracion',1000);
-            $table->integer('idVatiablesPersona')->unsigned()->index()->nullable();
-            $table->foreign('idVatiablesPersona')->references('id')->on('variables_persona');
+            $table->string('nombre',50);
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ class CreateNarracionTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('narracion');
+        Schema::dropIfExists('cat_modalidad');
     }
 }

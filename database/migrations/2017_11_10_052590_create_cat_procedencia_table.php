@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUnidadTable extends Migration
+class CreateCatProcedenciaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateUnidadTable extends Migration
      */
     public function up()
     {
-        Schema::create('unidad', function (Blueprint $table) {
+        Schema::create('cat_procedencia', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreateUnidadTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('unidad');
+        Schema::dropIfExists('cat_procedencia');
     }
 }

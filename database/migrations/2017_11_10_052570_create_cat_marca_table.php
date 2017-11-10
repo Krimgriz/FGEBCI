@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCodigoPostalTable extends Migration
+class CreateCatMarcaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateCodigoPostalTable extends Migration
      */
     public function up()
     {
-        Schema::create('codigo_postal', function (Blueprint $table) {
+        Schema::create('cat_marca', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id');            
-            $table->integer('idMunicipio')->unsigned()->index()->nullable();
-            $table->foreign('idMunicipio')->references('id')->on('municipio');
-            $table->integer('codigo');
             $table->timestamps();
         });
     }
@@ -30,6 +26,6 @@ class CreateCodigoPostalTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('codigo_postal');
+        Schema::dropIfExists('cat_marca');
     }
 }

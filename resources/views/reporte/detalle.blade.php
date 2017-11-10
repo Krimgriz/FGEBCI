@@ -17,21 +17,21 @@
 		        {{-- DATOS GENERALES DE LA CARPETA --}}
 		        <div class="col-sm-5 container">
 		        	<div class="container" style="border: 1px solid black;">
-		        		{{ Form::label('titulo', 'Agencia:', array('class' => '')) }}{{ Form::label('titulo', 'XXXXXXXXXXXX', array('class' => '')) }}
+		        		{{ Form::label('titulo', 'Agencia:', array('class' => '')) }}{{ Form::label('agencia', 'XXXXXXXXXXXX', array('class' => '')) }}
 		        		<br>
-		        		{{ Form::label('titulo', 'De:', array('class' => '')) }}{{ Form::label('titulo', 'XXXXXXXXXXXX', array('class' => '')) }}
+		        		{{ Form::label('titulo', 'De:', array('class' => '')) }}{{ Form::label('de', 'XXXXXXXXXXXX', array('class' => '')) }}
 		        		<br>
-		        		{{ Form::label('titulo', 'Distrito:', array('class' => '')) }}{{ Form::label('titulo', 'XXXXXXXXXXXX', array('class' => '')) }}
+		        		{{ Form::label('titulo', 'Distrito:', array('class' => '')) }}{{ Form::label('distrito', 'XXXXXXXXXXXX', array('class' => '')) }}
 		        		<br>
-		        		{{ Form::label('titulo', 'Subprocuraduria:', array('class' => '')) }}{{ Form::label('titulo', 'XXXXXXXXXXXX', array('class' => '')) }}
+		        		{{ Form::label('titulo', 'Subprocuraduria:', array('class' => '')) }}{{ Form::label('subprocuraduria', 'XXXXXXXXXXXX', array('class' => '')) }}
 		        		<br>
-		        		{{ Form::label('titulo', 'Inv. Ministeria:', array('class' => '')) }}{{ Form::label('titulo', 'XXXXXXXXXXXX', array('class' => '')) }}
+		        		{{ Form::label('titulo', 'Inv. Ministeria:', array('class' => '')) }}{{ Form::label('invMinisterial', 'XXXXXXXXXXXX', array('class' => '')) }}
 		        		<br>
-		        		{{ Form::label('titulo', 'Fecha de Inicio:', array('class' => '')) }}{{ Form::label('titulo', 'XXXXXXXXXXXX', array('class' => '')) }}
+		        		{{ Form::label('titulo', 'Fecha de Inicio:', array('class' => '')) }}{{ Form::label('fechaInicio', 'XXXXXXXXXXXX', array('class' => '')) }}
 		        		<br>
-		        		{{ Form::label('titulo', 'Periodo que reporta:', array('class' => '')) }}{{ Form::label('titulo', 'XXXXXXXXXXXX', array('class' => '')) }}
+		        		{{ Form::label('titulo', 'Periodo que reporta:', array('class' => '')) }}{{ Form::label('periodo', 'XXXXXXXXXXXX', array('class' => '')) }}
 		        		<br>
-		        		{{ Form::label('titulo', 'Relevante:', array('class' => '')) }}{{ Form::label('titulo', 'XXXXXXXXXXXX', array('class' => '')) }}
+		        		{{ Form::label('titulo', 'Relevante:', array('class' => '')) }}{{ Form::label('relevante', 'XXXXXXXXXXXX', array('class' => '')) }}
 		        		<br>
 		        	</div>	
 		        </div>	    		
