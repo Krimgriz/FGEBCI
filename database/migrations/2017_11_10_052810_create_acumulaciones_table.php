@@ -15,11 +15,12 @@ class CreateAcumulacionTable extends Migration
     {
         Schema::create('acumulacion', function (Blueprint $table) {
             $table->increments('id');
-            $table->foreign('idCarpetaP')->references('id')->on('carpeta')->onDelete('cascade');
-            $table->foreign('idVariablesPersona')->references('id')->on('variables_persona')->onDelete('cascade');
-            $table->foreign('idCarpetaS')->references('id')->on('carpeta')->onDelete('cascade');
-            $table->foreign('idVariablesPersona')->references('id')->on('variables_persona')->onDelete('cascade');
+            $table->integer('idCarpetaP')->unsigned();
+            $table->integer('idCarpetaS')->unsigned();
             $table->timestamps();
+            
+            $table->foreign('idVariablesPersona')->references('id')->on('variables_persona')->onDelete('cascade');
+            $table->foreign('idVariablesPersona')->references('id')->on('variables_persona')->onDelete('cascade');
         });
     }
 

@@ -15,10 +15,8 @@ class CreateCarpetaTable extends Migration
     {
         Schema::create('carpeta', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('idUnidad')->unsigned()->index()->nullable();
-            $table->foreign('idUnidad')->references('id')->on('unidad')->onDelete('cascade');
-            $table->integer('idFiscal')->unsigned()->index()->nullable();
-            $table->foreign('idFiscal')->references('id')->on('fiscal')->onDelete('cascade');
+            $table->integer('idUnidad')->unsigned();
+            $table->integer('idFiscal')->unsigned();
             $table->integer('numCarpeta');
             $table->date('fechaInicio');
             $table->boolean('conDetenido')->default(false);
@@ -30,11 +28,13 @@ class CreateCarpetaTable extends Migration
             $table->string('numIph',50);
             $table->date('fechaIph');
             $table->string('narracionIph',2000);
-            $table->integer('idTipoDeterminacion')->unsigned()->index()->nullable();
-            $table->foreign('idTipoDeterminacion')->references('id')->on('cat_tipo_determinacion')->onDelete('cascade');
+            $table->integer('idTipoDeterminacion')->unsigned();
             $table->date('fechaDeterminacion');
-            
             $table->timestamps();
+            
+            $table->foreign('idUnidad')->references('id')->on('unidad')->onDelete('cascade');
+            $table->foreign('idFiscal')->references('id')->on('fiscal')->onDelete('cascade');
+            $table->foreign('idTipoDeterminacion')->references('id')->on('cat_tipo_determinacion')->onDelete('cascade');
         });
     }
 

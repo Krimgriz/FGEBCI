@@ -15,29 +15,30 @@ class CreateVariablesPersonaTable extends Migration
     {
         Schema::create('variables_persona', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('idPersona')->unsigned()->index()->nullable();
-            $table->foreign('idPersona')->references('id')->on('persona')->onDelete('cascade');
+            $table->integer('idPersona')->unsigned();
             $table->integer('edad');
             $table->integer('telefono',10);
             $table->string('motivoEstancia',200);
-            $table->integer('idOcupacion')->unsigned()->index()->nullable();
-            $table->foreign('idOcupacion')->references('id')->on('cat_ocupacion')->onDelete('cascade');
-            $table->integer('idEstadoCivil')->unsigned()->index()->nullable();
-            $table->foreign('idEstadoCivil')->references('id')->on('cat_estado_civil')->onDelete('cascade');
-            $table->integer('idEscolaridad')->unsigned()->index()->nullable();
-            $table->foreign('idEscolaridad')->references('id')->on('cat_escolaridad')->onDelete('cascade');
-            $table->integer('idRegion')->unsigned()->index()->nullable();
-            $table->foreign('idRegion')->references('id')->on('cat_region')->onDelete('cascade');
-            $table->integer('idDomicilio')->unsigned()->index()->nullable();
-            $table->foreign('idDomicilio')->references('id')->on('domicilio')->onDelete('cascade');
+            $table->integer('idOcupacion')->unsigned();
+            $table->integer('idEstadoCivil')->unsigned();
+            $table->integer('idEscolaridad')->unsigned();
+            $table->integer('idRegion')->unsigned();
+            $table->integer('idDomicilio')->unsigned();
             $table->string('docIdentificacion',50);
             $table->string('numDocIdentificacion',50);
             $table->string('lugarTrabajo',50);
-            $table->integer('idDomicilioTrabajo')->unsigned()->index()->nullable();
-            $table->foreign('idDomicilioTrabajo')->references('id')->on('domicilio')->onDelete('cascade');
+            $table->integer('idDomicilioTrabajo')->unsigned();
             $table->string('telefonoTrabajo',24);
             $table->string('representanteLegal',24);
             $table->timestamps();
+            
+            $table->foreign('idPersona')->references('id')->on('persona')->onDelete('cascade');
+            $table->foreign('idOcupacion')->references('id')->on('cat_ocupacion')->onDelete('cascade');
+            $table->foreign('idEstadoCivil')->references('id')->on('cat_estado_civil')->onDelete('cascade');
+            $table->foreign('idEscolaridad')->references('id')->on('cat_escolaridad')->onDelete('cascade');
+            $table->foreign('idRegion')->references('id')->on('cat_region')->onDelete('cascade');
+            $table->foreign('idDomicilio')->references('id')->on('domicilio')->onDelete('cascade');
+            $table->foreign('idDomicilioTrabajo')->references('id')->on('domicilio')->onDelete('cascade');
         });
     }
 

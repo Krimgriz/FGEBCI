@@ -15,15 +15,16 @@ class CreateAcusacionTable extends Migration
     {
         Schema::create('acusacion', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('idCarpeta')->unsigned()->index()->nullable();
-            $table->foreign('idCarpeta')->references('id')->on('carpeta');
-            $table->integer('idDenunciante')->unsigned()->index()->nullable();
-            $table->foreign('idDenunciante')->references('id')->on('extra_denunciante')->onDelete('cascade');
-            $table->integer('idTipifDelito')->unsigned()->index()->nullable();
-            $table->foreign('idTipifDelito')->references('id')->on('tipif_delito')->onDelete('cascade');
-            $table->integer('idDenunciado')->unsigned()->index()->nullable();
-            $table->foreign('idDenunciado')->references('id')->on('extra_denunciado')->onDelete('cascade');
+            $table->integer('idCarpeta')->unsigned();
+            $table->integer('idDenunciante')->unsigned();
+            $table->integer('idTipifDelito')->unsigned();
+            $table->integer('idDenunciado')->unsigned();
             $table->timestamps();
+            
+            $table->foreign('idCarpeta')->references('id')->on('carpeta')->onDelete('cascade');
+            $table->foreign('idDenunciante')->references('id')->on('extra_denunciante')->onDelete('cascade');
+            $table->foreign('idTipifDelito')->references('id')->on('tipif_delito')->onDelete('cascade');
+            $table->foreign('idDenunciado')->references('id')->on('extra_denunciado')->onDelete('cascade');
         });
     }
 
