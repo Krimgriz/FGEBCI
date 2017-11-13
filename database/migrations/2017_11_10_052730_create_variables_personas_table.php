@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateVariablesPersonaTable extends Migration
+class CreateVariablesPersonasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -22,7 +22,7 @@ class CreateVariablesPersonaTable extends Migration
             $table->integer('idOcupacion')->unsigned();
             $table->integer('idEstadoCivil')->unsigned();
             $table->integer('idEscolaridad')->unsigned();
-            $table->integer('idRegion')->unsigned();
+            $table->integer('idReligion')->unsigned();
             $table->integer('idDomicilio')->unsigned();
             $table->string('docIdentificacion',50);
             $table->string('numDocIdentificacion',50);
@@ -36,7 +36,7 @@ class CreateVariablesPersonaTable extends Migration
             $table->foreign('idOcupacion')->references('id')->on('cat_ocupacion')->onDelete('cascade');
             $table->foreign('idEstadoCivil')->references('id')->on('cat_estado_civil')->onDelete('cascade');
             $table->foreign('idEscolaridad')->references('id')->on('cat_escolaridad')->onDelete('cascade');
-            $table->foreign('idRegion')->references('id')->on('cat_region')->onDelete('cascade');
+            $table->foreign('idReligion')->references('id')->on('cat_religion')->onDelete('cascade');
             $table->foreign('idDomicilio')->references('id')->on('domicilio')->onDelete('cascade');
             $table->foreign('idDomicilioTrabajo')->references('id')->on('domicilio')->onDelete('cascade');
         });
