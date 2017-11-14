@@ -19,8 +19,8 @@ class CreateAcumulacionesTable extends Migration
             $table->integer('idCarpetaS')->unsigned();
             $table->timestamps();
             
-            $table->foreign('idVariablesPersona')->references('id')->on('variables_persona')->onDelete('cascade');
-            $table->foreign('idVariablesPersona')->references('id')->on('variables_persona')->onDelete('cascade');
+            $table->foreign('idCarpetaP')->references('id')->on('carpeta')->onDelete('cascade');
+            $table->foreign('idCarpetaS')->references('id')->on('carpeta')->onDelete('cascade');
         });
     }
 

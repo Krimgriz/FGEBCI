@@ -17,7 +17,7 @@ class CreateVariablesPersonasTable extends Migration
             $table->increments('id');
             $table->integer('idPersona')->unsigned();
             $table->integer('edad');
-            $table->integer('telefono',10);
+            $table->integer('telefono');
             $table->string('motivoEstancia',200);
             $table->integer('idOcupacion')->unsigned();
             $table->integer('idEstadoCivil')->unsigned();
