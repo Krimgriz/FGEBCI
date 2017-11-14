@@ -13,7 +13,6 @@
                 <td>Delito</td>
                 <td>UIPJ</td>
                 <td>Acción</td>
-                <td>Virus</td>
             </thead>
             <tbody>
                 <tr>
