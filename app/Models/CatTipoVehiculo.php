@@ -19,4 +19,13 @@ class CatTipoVehiculo extends Model
         'nombre',
         'idClaseVehiculo'
     ];
+
+    public function vehiculos(){
+        return $this->hasMany('App\Models\Vehiculo'):
+    }
+
+    public function claseVehiculo(){
+        return $this->belongsTo('App\Models\CatClaseVehiculo'):
+    }
+
 }

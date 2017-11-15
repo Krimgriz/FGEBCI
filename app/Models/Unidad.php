@@ -24,4 +24,12 @@ class Unidad extends Model
         'distrito',
         'region'
     ];
+
+    public function carpetas(){
+        return $this->hasMany('App\Models\Carpeta'):
+    }
+
+    public function users(){
+        return $this->hasMany('App\Models\User'):
+    }
 }

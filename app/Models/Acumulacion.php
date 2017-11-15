@@ -19,4 +19,9 @@ class Acumulacion extends Model
         'idCarpetaP',
         'idCarpetaP'
     ];
+
+    public function carpeta(){
+        return $this->belongsTo('App\Models\Carpeta'):
+    }
+
 }

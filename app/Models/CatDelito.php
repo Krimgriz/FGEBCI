@@ -19,4 +19,8 @@ class CatDelito extends Model
         'nombre',
         'snVeh'
     ];
+
+    public function tipifDelitos(){
+        return $this->hasMany('App\Models\TipifDelito'):
+    }
 }
