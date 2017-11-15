@@ -19,4 +19,9 @@ class Narracion extends Model
         'idVariablesPersona',
         'narracion'
     ];
+
+    public function variablesPersona()
+    {
+       return $this->belongsTo('app/Models/VariablesPersona');
+    }
 }

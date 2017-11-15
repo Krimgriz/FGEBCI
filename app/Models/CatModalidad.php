@@ -18,4 +18,9 @@ class CatModalidad extends Model
         'id',
         'nombre'
     ];
+
+    public function carpetas()
+    {
+       return $this->hasMany('app/Models/Carpeta');
+    }
 }

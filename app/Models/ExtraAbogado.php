@@ -21,4 +21,19 @@ class ExtraAbogado extends Model
         'sector',
         'correo'
     ];
+
+    public function variablesPersona()
+    {
+       return $this->belongsTo('app/Models/VariablesPersona');
+    }
+
+    public function extraDenunciante()
+    {
+       return $this->belongsTo('app/Models/ExtraDenunciante');
+    }
+
+    public function extraDenunciado()
+    {
+       return $this->belongsTo('app/Models/ExtraDenunciado');
+    }
 }

@@ -18,4 +18,9 @@ class CatLengua extends Model
         'id',
         'nombre'
     ];
+
+    public function variablesPersonas()
+    {
+       return $this->hasMany('app/Models/VariablesPersona');
+    }
 }

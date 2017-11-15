@@ -21,4 +21,13 @@ class ExtraDenunciante extends Model
         'idAbogado',
         'conoceAlDenunciado'
     ];
+    public function variablesPersona()
+    {
+       return $this->belongsTo('app/Models/VariablesPersona');
+    }
+
+    public function extraAbogado()
+    {
+       return $this->hasOne('app/Models/ExtraAbogado');
+    }
 }

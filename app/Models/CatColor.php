@@ -18,4 +18,9 @@ class CatColor extends Model
         'id',
         'nombre'
     ];
+
+    public function vehiculos()
+    {
+       return $this->hasMany('app/Models/Vehiculo');
+    }
 }

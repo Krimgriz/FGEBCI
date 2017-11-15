@@ -19,4 +19,19 @@ class CatCodigoPostal extends Model
         'idMunicipio',
         'codigo'
     ];
+
+    public function domicilios()
+    {
+       return $this->hasMany('app/Models/Domicilio');
+    }
+
+    public function catColonia()
+    {
+        return $this->belongsTo('app/Models/CatColonia');
+    }
+
+    public function municipio()
+    {
+        return $this->belongsTo('app/Models/CatMunicipio');
+    }
 }

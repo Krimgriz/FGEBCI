@@ -21,7 +21,7 @@ class TipifDelito extends Model
         'conViolencia',
         'idTipoArma',
         'idArma',
-        'modalidad',
+        'idModalidad',
         'formaComision',
         'fecha',
         'hora',
@@ -33,4 +33,44 @@ class TipifDelito extends Model
         'calleTrasera',
         'puntoReferencia'
     ];
+
+    public function carpeta()
+    {
+        return $this->belongsTo('app/Models/Carpeta');
+    }
+
+    public function vehiculos()
+    {
+       return $this->hasMany('app/Models/Vehiculo');
+    }
+
+    public function delito()
+    {
+        return $this->belongsTo('app/Models/CatDelito');
+    }
+
+    public function tipoArma()
+    {
+        return $this->belongsTo('app/Models/CatTipoArma');
+    }
+
+    public function arma()
+    {
+        return $this->belongsTo('app/Models/CatArma');
+    }
+
+    public function modalidad()
+    {
+        return $this->belongsTo('app/Models/CatModalidad');
+    }
+
+    public function lugar()
+    {
+        return $this->belongsTo('app/Models/CatLugar');
+    }
+
+    public function domicilio()
+    {
+        return $this->belongsTo('app/Models/Domicilio');
+    }
 }
