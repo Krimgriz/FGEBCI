@@ -32,4 +32,51 @@ class VariablesPersona extends Model
         'telefonoTrabajo',
         'representanteLegal',
     ];
+
+    public function persona()
+    {
+        return $this->belongsTo('app/Models/Persona');
+    }
+
+    public function extraDenunciado()
+    {
+        return $this->hasOne('app/Models/ExtraDenunciado');
+    }
+
+    public function extraDenuncianate()
+    {
+        return $this->hasOne('app/Models/ExtraDenunciante');
+    }
+
+    public function extraAutoridad()
+    {
+        return $this->hasOne('app/Models/ExtraAutoridad');
+    }
+
+    public function extraAbogado()
+    {
+        return $this->hasOne('app/Models/ExtraAbogado');
+    }
+
+    public function narracion()
+    {
+        return $this->hasOne('app/Models/Narracion');
+    }
+
+    public function ocupacion()
+    {
+        return $this->belongsTo('app/Models/CatOcupacion');
+    }
+
+    public function escolaridad()
+    {
+        return $this->belongsTo('app/Models/CatOcupacion');
+    }
+
+    public function domicilio()
+    {
+        return $this->belongsTo('app/Models/Domicilio');
+    }
+
+    
 }

@@ -64,6 +64,11 @@ class TipifDelito extends Model
         return $this->belongsTo('app/Models/CatModalidad');
     }
 
+    public function zona()
+    {
+        return $this->belongsTo('app/Models/Domicilio');
+    }
+
     public function lugar()
     {
         return $this->belongsTo('app/Models/CatLugar');
