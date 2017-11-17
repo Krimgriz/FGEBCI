@@ -31,6 +31,7 @@ class CreateCarpetasTable extends Migration
             $table->integer('idTipoDeterminacion')->unsigned();
             $table->date('fechaDeterminacion');
             $table->timestamps();
+            $table->softDeletes();
             
             $table->foreign('idUnidad')->references('id')->on('unidad')->onDelete('cascade');
             $table->foreign('idFiscal')->references('id')->on('users')->onDelete('cascade');

@@ -22,8 +22,8 @@ class NacionalidadSeeder extends Seeder
     public function run()
     {
     	DB::table('cat_nacionalidad')->insert([
-            'nombre' => '3513514354'
-        ]);
+            'nombre' => '3513514354'],[
+            'nombre' => 'asfhasf']);
 			/*
         foreach( $this->arrayNacionalidades as $nacionalidad ) {
 			
