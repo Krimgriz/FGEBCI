@@ -10,26 +10,21 @@ class NacionalidadSeeder extends Seeder
      *
      * @return void
      */
-    private $arrayPeliculas = array(
+    private $arrayNacionalidades = array(
 		array(
 			'nombre' => ''
 		),
 		array(
-			'nombre' => 'El club de la lucha'
+			'nombre' => ''
 			)
 	);
 
     public function run()
     {
-        foreach( $this->arrayPeliculas as $pelicula ) {
-			$p = new Movie;
-			$p->title = $pelicula['title'];
-			$p->year = $pelicula['year'];
-			$p->director = $pelicula['director'];
-			$p->poster = $pelicula['poster'];
-			$p->rented = $pelicula['rented'];
-			$p->synopsis = $pelicula['synopsis'];
-			$p->save();
+        foreach( $this->arrayNacionalidades as $nacionalidad ) {
+			$n = new Nacionalidad;
+			$n->nombre = $acionalidad['nombre'];
+			$n->save();
 		}
     }
 }
