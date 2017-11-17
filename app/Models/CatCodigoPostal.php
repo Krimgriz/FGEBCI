@@ -25,9 +25,9 @@ class CatCodigoPostal extends Model
        return $this->hasMany('app/Models/Domicilio');
     }
 
-    public function catColonia()
+    public function colonias()
     {
-        return $this->belongsTo('app/Models/CatColonia');
+        return $this->hasMany('app/Models/CatColonia');
     }
 
     public function municipio()

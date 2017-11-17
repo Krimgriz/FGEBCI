@@ -73,6 +73,16 @@ class VariablesPersona extends Model
         return $this->belongsTo('app/Models/CatOcupacion');
     }
 
+    public function estadoCivil()
+    {
+        return $this->belongsTo('app/Models/CatEstadoCivil');
+    }
+
+    public function religion()
+    {
+        return $this->belongsTo('app/Models/CatReligion');
+    }
+
     public function domicilio()
     {
         return $this->belongsTo('app/Models/Domicilio');

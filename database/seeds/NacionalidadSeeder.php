@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Models\Nacionalidad;
+use App\Models\CatNacionalidad;
 
 class NacionalidadSeeder extends Seeder
 {
@@ -12,19 +12,31 @@ class NacionalidadSeeder extends Seeder
      */
     private $arrayNacionalidades = array(
 		array(
-			'nombre' => ''
+			'nombre' => 'Mexicana'
 		),
 		array(
-			'nombre' => ''
+			'nombre' => 'Española'
 			)
 	);
 
     public function run()
     {
+    	DB::table('cat_nacionalidad')->insert([
+            'nombre' => '3513514354'
+        ]);
+			/*
         foreach( $this->arrayNacionalidades as $nacionalidad ) {
+			
 			$n = new Nacionalidad;
-			$n->nombre = $acionalidad['nombre'];
+			$n->nombre = $nacionalidad['nombre'];
 			$n->save();
+
+			DB::create(array(
+            	'nombre'  =>  $nacionalidad['nombre']
+            ));
+			*/
 		}
     }
 }
+
+

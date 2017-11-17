@@ -17,7 +17,7 @@ class Acumulacion extends Model
     public $fillable = [
         'id',
         'idCarpetaP',
-        'idCarpetaP'
+        'idCarpetaS'
     ];
 
     public function carpeta(){

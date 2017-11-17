@@ -30,4 +30,14 @@ class ExtraDenunciante extends Model
     {
        return $this->hasOne('app/Models/ExtraAbogado');
     }
+
+    public function notificacion()
+    {
+       return $this->hasOne('app/Models/Notificacion');
+    }
+
+    public function acusacion()
+    {
+       return $this->belongsTo('app/Models/Acusacion');
+    }
 }
