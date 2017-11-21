@@ -29,11 +29,22 @@ Route::get('/busqueda/vehiculo', function () {
 Route::get('/busqueda/numcarpeta', function () {
     return view('busquedas.numcarpeta');
 });
-
+/*
+--------------------Ptuebas de datatables------------
+-----------------------direcciones-------------------
 Route::get('/busqueda/direccion', function () {
     return view('busquedas.direccion');
 });
+*/
 
+Route::get('/busqueda/direccion', function () {
+    $direcciones = App\Models\Domicilio::all();
+    return view('busquedas.direccion', compact('direcciones'));
+    //return datatables()->eloquent(App\Models\Domicilio::query())->make(true);
+});
+/*
+ *---------------fin pruebas datatables--------------
+ */
 Route::get('/estadistica/municipio', function () {
     return view('estadisticas/municipio');
 });
