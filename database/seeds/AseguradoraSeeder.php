@@ -36,7 +36,7 @@ class AseguradoraSeeder extends Seeder
             ['id'=> 22,'nombre' => 'GERLING DE MEX. SEG. S.A.'],
             ['id'=> 23,'nombre' => 'GRUPO NACIONAL PROVINCIAL S.A.'],
             ['id'=> 24,'nombre' => 'ING SEG. S.A. DE C.V.'],
-            ['id'=>  99999,'nombre' => 'SIN INFORMACION']
+            ['id'=> 25,'nombre' => 'SIN INFORMACION']
             
         ]);
     }

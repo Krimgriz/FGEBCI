@@ -36,7 +36,7 @@ class ColorSeeder extends Seeder
             ['id'=> 22,'nombre' => 'AMARILLO MEDIO METALICO'],
             ['id'=> 23,'nombre' => 'AMARILLO OBSCURO'],
             ['id'=> 24,'nombre' => 'AMARILLO OBSCURO METALICO'],
-            ['id'=>  99999,'nombre' => 'SIN INFORMACION']
+            ['id'=> 25,'nombre' => 'SIN INFORMACION']
             
 
 

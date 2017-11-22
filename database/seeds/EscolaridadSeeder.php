@@ -26,7 +26,7 @@ class EscolaridadSeeder extends Seeder
             ['id'=> 11,'nombre' => 'ESTUDIOS TECNICOS INCOMPLETOS'],
             ['id'=> 12,'nombre' => 'POSGRADO COMPLETO'],
             ['id'=> 13,'nombre' => 'POSGRADO INCOMPLETO'],
-            ['id'=>  99999,'nombre' => 'SIN INFORMACION']
+            ['id'=> 14,'nombre' => 'SIN INFORMACION']
             
         ]);
     }

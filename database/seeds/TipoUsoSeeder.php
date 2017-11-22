@@ -33,7 +33,7 @@ class TipoUsoSeeder extends Seeder
             ['id'=> 19,'nombre' => 'TRANSPORTE ESPECIALIZADO FEDER'],
             ['id'=> 20,'nombre' => 'TRANSPORTE ESPECIALIZADO LOCAL'],
             ['id'=> 21,'nombre' => 'SERVICIO LOCAL DE CARGA'],
-            ['id'=>  99999,'nombre' => 'SIN INFORMACION']
+            ['id'=> 22,'nombre' => 'SIN INFORMACION']
 
 
 

@@ -80,7 +80,7 @@ class LenguaSeeder extends Seeder
 			['id'=>   66,'nombre' => 'YAQUI'],
 			['id'=>   67,'nombre' => 'ZAPOTECO'],
 			['id'=>   68,'nombre' => 'ZOQUE'],
-            ['id'=>   99999,'nombre' => 'SIN INFORMACION']
+            ['id'=>   69,'nombre' => 'SIN INFORMACION']
 
 
         ]);     

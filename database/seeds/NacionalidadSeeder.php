@@ -144,7 +144,7 @@ class NacionalidadSeeder extends Seeder
             ['id'=>129,'nombre' => 'PERUANA'],
             ['id'=>130,'nombre' => 'POLACA'],
             ['id'=>131,'nombre' => 'PORTORRIQUEÑA'],
-            ['id'=>  99999,'nombre' => 'SIN INFORMACION']
+            ['id'=>132,'nombre' => 'SIN INFORMACION']
             /*
             */
         ]);

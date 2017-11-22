@@ -37,11 +37,7 @@ Route::get('/busqueda/direccion', function () {
 });
 */
 
-Route::get('/busqueda/direccion', function () {
-    $direcciones = App\Models\Domicilio::all();
-    return view('busquedas.direccion', compact('direcciones'));
-    //return datatables()->eloquent(App\Models\Domicilio::query())->make(true);
-});
+Route::get('/busqueda/direccion', 'DTDomicilioController@index');
 /*
  *---------------fin pruebas datatables--------------
  */
