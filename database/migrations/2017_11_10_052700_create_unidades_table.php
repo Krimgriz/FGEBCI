@@ -15,11 +15,11 @@ class CreateUnidadesTable extends Migration
     {
         Schema::create('unidad', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre',50)->unique();
+            $table->string('nombre',100)->unique();
             $table->string('direccion',100);
-            $table->string('latitud', 5, 5);
-            $table->float('longitud', 5, 5);
-            $table->integer('telefono');
+            $table->string('latitud', 15);
+            $table->string('longitud', 15);
+            $table->string('telefono',15);
             $table->string('distrito',50);
             $table->string('region',50);
             $table->string('nomCompleto',100);
