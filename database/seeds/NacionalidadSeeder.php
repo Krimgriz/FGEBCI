@@ -13,7 +13,6 @@ class NacionalidadSeeder extends Seeder
     public function run()
     {
     	DB::table('cat_nacionalidad')->insert([
-            ['id'=>  0,'nombre' => 'SIN INFORMACION'],
             ['id'=>  1,'nombre' => 'MEXICANA'],
             ['id'=>  2,'nombre' => 'FRANCESA'],
             ['id'=>  3,'nombre' => 'ARMENIANA'],
@@ -144,22 +143,23 @@ class NacionalidadSeeder extends Seeder
             ['id'=>128,'nombre' => 'PARAGUAYA'],
             ['id'=>129,'nombre' => 'PERUANA'],
             ['id'=>130,'nombre' => 'POLACA'],
-            ['id'=>131,'nombre' => 'PORTORRIQUEÑA']
+            ['id'=>131,'nombre' => 'PORTORRIQUEÑA'],
+            ['id'=>  99999,'nombre' => 'SIN INFORMACION']
             /*
             */
         ]);
-			/*
+                  /*
         foreach( $this->arrayNacionalidades as $nacionalidad ) {
-			
-			$n = new Nacionalidad;
-			$n->nombre = $nacionalidad['nombre'];
-			$n->save();
+                  
+                  $n = new Nacionalidad;
+                  $n->nombre = $nacionalidad['nombre'];
+                  $n->save();
 
-			DB::create(array(
-            	'nombre'  =>  $nacionalidad['nombre']
+                  DB::create(array(
+                  'nombre'  =>  $nacionalidad['nombre']
             ));
-		}
-			*/
+            }
+                  */
     }
 }
 

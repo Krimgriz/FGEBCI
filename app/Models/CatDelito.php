@@ -21,6 +21,6 @@ class CatDelito extends Model
     ];
 
     public function tipifDelitos(){
-        return $this->hasMany('App\Models\TipifDelito'):
+        return $this->hasMany('App\Models\TipifDelito');
     }
 }

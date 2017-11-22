@@ -13,18 +13,18 @@ class CatEstado extends Model
     ];
 
     public function personas(){
-    	return $this->hasMany('App\Models\Persona'):
+    	return $this->hasMany('App\Models\Persona');
     }
 
     public function domicilios(){
-    	return $this->hasMany('App\Models\Domicilio'):
+    	return $this->hasMany('App\Models\Domicilio');
     }
 
     public function municipios(){
-    	return $this->hasMany('App\Models\CatMunicipio'):
+    	return $this->hasMany('App\Models\CatMunicipio');
     }
 
     public function vehiculos(){
-    	return $this->hasMany('App\Models\Vehiculo'):
+    	return $this->hasMany('App\Models\Vehiculo');
     }
 }

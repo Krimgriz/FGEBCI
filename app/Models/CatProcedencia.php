@@ -13,6 +13,6 @@ class CatProcedencia extends Model
     ];
 
     public function vehiculos(){
-        return $this->hasMany('App\Models\Vehiculo'):
+        return $this->hasMany('App\Models\Vehiculo');
     }
 }

@@ -13,7 +13,6 @@ class EscolaridadSeeder extends Seeder
     public function run()
     {
         DB::table('cat_escolaridad')->insert([
-            ['id'=>  0,'nombre' => 'SIN INFORMACION'],
             ['id'=>  1,'nombre' => 'NINGUNA'],
             ['id'=>  2,'nombre' => 'PRIMARIA COMPLETA'],
             ['id'=>  3,'nombre' => 'PRIMARIA INCOMPLETA'],
@@ -25,8 +24,9 @@ class EscolaridadSeeder extends Seeder
             ['id'=>  9,'nombre' => 'LICENCIATURA INCOMPLETA'],
             ['id'=> 10,'nombre' => 'ESTUDIOS TECNICOS COMPLETOS'],
             ['id'=> 11,'nombre' => 'ESTUDIOS TECNICOS INCOMPLETOS'],
-            ['id'=> 12,'nombre' => 'POSGRADO INCOMPLETO'],
-            ['id'=> 13,'nombre' => 'POSGRADO INCOMPLETO']
+            ['id'=> 12,'nombre' => 'POSGRADO COMPLETO'],
+            ['id'=> 13,'nombre' => 'POSGRADO INCOMPLETO'],
+            ['id'=>  99999,'nombre' => 'SIN INFORMACION']
             
         ]);
     }

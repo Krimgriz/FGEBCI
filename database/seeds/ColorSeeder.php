@@ -12,7 +12,6 @@ class ColorSeeder extends Seeder
     public function run()
     {
         DB::table('cat_color')->insert([
-            ['id'=>  0,'nombre' => 'SIN INFORMACION'],
             ['id'=>  1,'nombre' => 'ROJO CLARO'],
             ['id'=>  2,'nombre' => 'ROJO CLARO METALICO'],
             ['id'=>  3,'nombre' => 'ROJO MEDIO'],
@@ -36,7 +35,8 @@ class ColorSeeder extends Seeder
             ['id'=> 21,'nombre' => 'AMARILLO MEDIO'],
             ['id'=> 22,'nombre' => 'AMARILLO MEDIO METALICO'],
             ['id'=> 23,'nombre' => 'AMARILLO OBSCURO'],
-            ['id'=> 24,'nombre' => 'AMARILLO OBSCURO METALICO']
+            ['id'=> 24,'nombre' => 'AMARILLO OBSCURO METALICO'],
+            ['id'=>  99999,'nombre' => 'SIN INFORMACION']
             
 
 

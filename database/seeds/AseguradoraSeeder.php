@@ -12,7 +12,6 @@ class AseguradoraSeeder extends Seeder
     public function run()
     {
         DB::table('cat_aseguradora')->insert([
-            ['id'=>  0,'nombre' => 'SIN INFORMACION'],
             ['id'=>  1,'nombre' => 'ABA SEGUROS, S.A.'],
             ['id'=>  2,'nombre' => 'AGROASEMEX, S.A.'],
             ['id'=>  3,'nombre' => 'AIG MEXICO SEG. INTER. S.A.'],
@@ -36,7 +35,8 @@ class AseguradoraSeeder extends Seeder
             ['id'=> 21,'nombre' => 'GEO NEW YORK LIFE S.A.'],
             ['id'=> 22,'nombre' => 'GERLING DE MEX. SEG. S.A.'],
             ['id'=> 23,'nombre' => 'GRUPO NACIONAL PROVINCIAL S.A.'],
-            ['id'=> 24,'nombre' => 'ING SEG. S.A. DE C.V.']
+            ['id'=> 24,'nombre' => 'ING SEG. S.A. DE C.V.'],
+            ['id'=>  99999,'nombre' => 'SIN INFORMACION']
             
         ]);
     }

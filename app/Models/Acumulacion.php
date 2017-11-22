@@ -21,7 +21,7 @@ class Acumulacion extends Model
     ];
 
     public function carpeta(){
-        return $this->belongsTo('App\Models\Carpeta'):
+        return $this->belongsTo('App\Models\Carpeta');
     }
 
 }

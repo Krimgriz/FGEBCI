@@ -13,6 +13,6 @@ class CatPuesto extends Model
     ];
 
     public function extraDenunciados(){
-        return $this->hasMany('App\Models\ExtraDenunciado'):
+        return $this->hasMany('App\Models\ExtraDenunciado');
     }
 }

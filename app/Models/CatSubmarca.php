@@ -13,10 +13,10 @@ class CatSubmarca extends Model
     ];
 
     public function vehiculos(){
-        return $this->hasMany('App\Models\Vehiculo'):
+        return $this->hasMany('App\Models\Vehiculo');
     }
 
     public function marca(){
-        return $this->belongsTo('App\Models\CatMarca'):
+        return $this->belongsTo('App\Models\CatMarca');
     }
 }

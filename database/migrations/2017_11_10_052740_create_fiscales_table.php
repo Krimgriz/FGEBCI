@@ -10,7 +10,6 @@ class CreateFiscalesTable extends Migration
      * Run the migrations.
      *
      * @return void
-     */
     public function up()
     {
         Schema::create('fiscal', function (Blueprint $table) {
@@ -31,14 +30,15 @@ class CreateFiscalesTable extends Migration
             $table->softDeletes();
         });
     }
+     */
 
     /**
      * Reverse the migrations.
      *
      * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('fiscal');
     }
+     */
 }
