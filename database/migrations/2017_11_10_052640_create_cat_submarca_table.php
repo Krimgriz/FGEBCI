@@ -15,6 +15,7 @@ class CreateCatSubmarcaTable extends Migration
     {
         Schema::create('cat_submarca', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('idSubMarca');
             $table->integer('idMarca')->unsigned();
             $table->string('nombre', 50)->unique();
 
