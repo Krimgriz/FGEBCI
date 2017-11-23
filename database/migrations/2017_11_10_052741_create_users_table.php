@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('nombres', 50);
             $table->string('primerAp', 50);
             $table->string('segundoAp', 50);
-            $table->string('correo', 100)->unique();
+            $table->string('email', 100)->unique();
             $table->string('password', 50);
             $table->integer('numFiscal');
             $table->enum('nivel', ['1', '2', '3', '4', '5'])->default('1');
