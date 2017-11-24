@@ -2,7 +2,7 @@
 {{--https://codepen.io/ajaypatelaj/pen/prHjD?editors=1100     <- para la navbar multilevel   --}}
 {{-- opciones a escojer para implementar el buscador en datatables --}}
 {{-- https://datatables.net/examples/api/regex.html <- en tiempo real --}}
-{{-- https://datatables.net/examples/api/regex.html <- con boton de buscar--}}
+{{-- https://datatables.yajrabox.com/eloquent/custom-filter <- con boton de buscar--}}
    
 <div class="container">
     
