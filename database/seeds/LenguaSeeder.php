@@ -12,6 +12,7 @@ class LenguaSeeder extends Seeder
     public function run()
     {
         DB::table('cat_lengua')->insert([
+            ['id'=>   69,'nombre' => 'SIN INFORMACION'],
             ['id'=>   1,'nombre' => 'AKATEKO'],
 			['id'=>   2,'nombre' => 'AMUZGO'],
 			['id'=>   3,'nombre' => 'AWAKATEKO'],
@@ -79,8 +80,7 @@ class LenguaSeeder extends Seeder
 			['id'=>   65,'nombre' => 'TSOTSIL'],
 			['id'=>   66,'nombre' => 'YAQUI'],
 			['id'=>   67,'nombre' => 'ZAPOTECO'],
-			['id'=>   68,'nombre' => 'ZOQUE'],
-            ['id'=>   69,'nombre' => 'SIN INFORMACION']
+			['id'=>   68,'nombre' => 'ZOQUE']
 
 
         ]);     

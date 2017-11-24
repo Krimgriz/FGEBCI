@@ -1,4 +1,8 @@
-
+{{--checa esto para hacer la navbar multilevel para el manu y aparte checa lo de los datatables y el buscador--}}
+{{--https://codepen.io/ajaypatelaj/pen/prHjD?editors=1100     <- para la navbar multilevel   --}}
+{{-- opciones a escojer para implementar el buscador en datatables --}}
+{{-- https://datatables.net/examples/api/regex.html <- en tiempo real --}}
+{{-- https://datatables.net/examples/api/regex.html <- con boton de buscar--}}
    
 <div class="container">
     
