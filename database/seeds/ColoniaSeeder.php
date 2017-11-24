@@ -12,7 +12,7 @@ class ColoniaSeeder extends Seeder
     public function run()
     {
         DB::table('cat_colonia')->insert([
-            ['id' => 8982, 'idMunicipio' => 0, 'nombre' => 'SIN INFORMACION', 'codigoPostal' => 00000],
+            ['id' => 8982, 'idMunicipio' => 2497, 'nombre' => 'SIN INFORMACION', 'codigoPostal' => 00000],
             ['id' => 1, 'idMunicipio' => 1, 'nombre' => 'ACAJETE', 'codigoPostal' => 91320],
             ['id' => 2, 'idMunicipio' => 1, 'nombre' => 'MAZATEPEC', 'codigoPostal' => 91320],
             ['id' => 3, 'idMunicipio' => 1, 'nombre' => 'PUENTECILLAS', 'codigoPostal' => 91322],

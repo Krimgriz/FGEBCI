@@ -22,7 +22,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{url('/busqueda/persona')}}">Persona</a>
-                        <a class="dropdown-item" href="{{url('/busqueda/direccion')}}">Dirección</a>
+                        <a class="dropdown-item" href="{{url('/busqueda_direccion')}}">Dirección</a>
                         <a class="dropdown-item" href="{{url('/busqueda/vehiculo')}}">Vehículo</a>
                         <a class="dropdown-item" href="{{url('/busqueda/numcarpeta')}}">Número de Carpeta</a>
                     </div>

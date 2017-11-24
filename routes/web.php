@@ -36,10 +36,8 @@ Route::get('/busqueda/direccion', function () {
     return view('busquedas.direccion');
 });
 */
-Route::resource('busqueda/direccion', 'DomicilioController', [
-    'anyData'  => 'direccion.data',
-    'index' => 'direccion',
-]);
+Route::get('busqueda_direccion', 'DomicilioController@index');
+Route::get('busqueda_direcciondata', 'DomicilioController@anyData');
 /*
  *---------------fin pruebas datatables--------------
  */
@@ -85,7 +83,7 @@ Route::get('/estadistica/colonia', function () {
 });
 
 Route::get('/busqueda/detalle', function () {
-    return view('reporte/detalle');
+    return view('reporte.detalle');
 });
 
 

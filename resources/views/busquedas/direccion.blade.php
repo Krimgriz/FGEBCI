@@ -1,7 +1,7 @@
 @extends('index')
 @section('content')
 	<br>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+    
 	<div class="fondo">
         <br>
         <table class="table table-striped table-hover table-bordered" id="tabladirecciones">
@@ -15,6 +15,7 @@
                     <th>Calle</th>
                     <th>Número de Carpeta</th>
                     <th>Delito</th>
+                    <th>UIPJ</th>
                     <th>Acción</th>
                 </tr>
             </thead>
@@ -22,9 +23,7 @@
         </table>
     </div>
 
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
-    <script src="http://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    
     <script>
         $(document).ready(function(){
             $('#tabladirecciones').DataTable({
@@ -34,17 +33,17 @@
                 "language": {
                          "url": '{!! asset('/datatables/latino.json') !!}'
                           } ,
-                "ajax": "/busqueda/direccion",
+                "ajax": "busqueda_direcciondata",
                 "columns": [
-                    { data: 'id' },
-                    { data: 'municipio' },
-                    { data: 'localidad' },
-                    { data: 'colonia' },
-                    { data: 'codigoPostal' },
-                    { data: 'calle' },
-                    { data: 'numCarpeta' },
-                    { data: 'delito' },
-                    { data: 'unidad' },
+                    { data: 'id' , name: 'id'},
+                    { data: 'municipio' , name: 'municipio'},
+                    { data: 'localidad' , name: 'localidad'},
+                    { data: 'colonia' , name: 'colonia'},
+                    { data: 'codigoPostal' , name: 'codigoPostal'},
+                    { data: 'calle' , name: 'calle'},
+                    { data: 'numCarpeta' , name: 'numCarpeta'},
+                    { data: 'delito' , name: 'delito'},
+                    { data: 'unidad' , name: 'unidad'},
                     { data: null,  render: function ( data, type, row ) {
                         return "<a href='{{ url('detalle') }}/"+ data.id +"' class='btn btn-xs btn-primary' >Ver</button>"  }  
                     }

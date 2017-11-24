@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Yajra\DataTables\Datatables;
-
 use App\Models\Domicilio;
+use DB;
 
 class DomicilioController extends Controller
 {

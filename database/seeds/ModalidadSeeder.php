@@ -12,9 +12,8 @@ class ModalidadSeeder extends Seeder
     public function run()
     {
         DB::table('cat_modalidad')->insert([
-        	[ 'id' => 1, 'nombre' => 'Autoria'],
-        	[ 'id' => 2, 'nombre' => 'Participe']
-            
+        	['id' => 1,'nombre' => 'AUTORIA'],
+            ['id' => 2,'nombre' => 'PARTICIPE']
         ]);
     }
 }
