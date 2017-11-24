@@ -36,8 +36,10 @@ Route::get('/busqueda/direccion', function () {
     return view('busquedas.direccion');
 });
 */
-Route::resource('direccion', 'DomicilioController');
-Route::get('busquedas.direccion', 'DomicilioController@apiDomicilio')->('busquedas.direccion');
+Route::resource('busqueda/direccion', 'DomicilioController', [
+    'anyData'  => 'direccion.data',
+    'index' => 'direccion',
+]);
 /*
  *---------------fin pruebas datatables--------------
  */

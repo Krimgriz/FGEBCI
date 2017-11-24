@@ -17,7 +17,39 @@ class DomicilioController extends Controller
     public function index()
     {
         return view('busquedas.direccion');
+        /*
+        
+        
+        $direcciones = Domicilio::all();
+        return view('busquedas.direccion', compact('direcciones'));
+        */
     }
+
+   public function anyData()
+    {
+
+        /*pruebas de consultas
+        compleja
+        
+        $data = DB::table('domicilio')
+            ->join('cat_estado', 'domicilio.idEstado', '=', 'cat_estado.id')
+            ->join('cat_municipio', 'domicilio.idMunicipio', '=', 'cat_municipio.id')
+            ->join('cat_localidad', 'domicilio.idLocalidad', '=', 'cat_localidad.id')
+            ->join('cat_colonia', 'domicilio.idColonia', '=', 'cat_colonia.id')
+            ->join('tipif_delito', 'domicilio.id', '=', 'tipif_delito.idDomicilio')
+            ->join('cat_delito', 'tipif_delito.idDelito', '=', 'cat_delito.id')
+            ->join('carpeta', 'tipif_delito.idCarpeta', '=', 'carpeta.id')
+            ->join('unidad', 'unidad.id', '=', 'carpeta.idUnidad')
+            ->select('carpeta.id', 'cat_municipio.nombre as municipio', 'cat_localidad.nombre as localidad', 'cat_colonia.nombre as colonia', 'cat_colonia.codigoPostal', 'domicilio.calle', 'carpeta.numCarpeta', 'cat_delito.nombre as delito', 'unidad.nombre as unidad')
+            ->get();
+        
+        simple
+        */
+
+        $data = DB::table('domicilio') ->join('cat_estado', 'domicilio.idEstado', '=', 'cat_estado.id') ->join('cat_municipio', 'domicilio.idMunicipio', '=', 'cat_municipio.id') ->join('cat_localidad', 'domicilio.idLocalidad', '=', 'cat_localidad.id') ->join('cat_colonia', 'domicilio.idColonia', '=', 'cat_colonia.id') ->join('tipif_delito', 'domicilio.id', '=', 'tipif_delito.idDomicilio') ->join('cat_delito', 'tipif_delito.idDelito', '=', 'cat_delito.id') ->join('carpeta', 'tipif_delito.idCarpeta', '=', 'carpeta.id') ->join('unidad', 'unidad.id', '=', 'carpeta.idUnidad') ->select('carpeta.id', 'cat_municipio.nombre as municipio', 'cat_localidad.nombre as localidad', 'cat_colonia.nombre as colonia', 'cat_colonia.codigoPostal', 'domicilio.calle', 'carpeta.numCarpeta', 'cat_delito.nombre as delito', 'unidad.nombre as unidad') ->get(); 
+        return Datatables::of($data)->make(true);
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -85,7 +117,9 @@ class DomicilioController extends Controller
         //
     }
 
-    public function apiDirecciones(){
-        $direccion = Domicilio::all;
-    }
+    public function data_domicilio(){
+           return Datatables::of( Domicilio::where()->get()   )->make(true);
+     }
+
+    
 }

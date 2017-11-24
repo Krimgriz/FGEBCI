@@ -20,7 +20,7 @@ class CreateUnidadesTable extends Migration
             $table->string('latitud', 15);
             $table->string('longitud', 15);
             $table->string('telefono',15);
-            $table->string('distrito',50);
+            $table->string('distrito',10);
             $table->string('region',50);
             $table->string('nomCompleto',100);
 
