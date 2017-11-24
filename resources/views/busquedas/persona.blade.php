@@ -21,7 +21,6 @@
                 <td>Nombre</td>
                 <td>Primer Apellido</td>
                 <td>Segundo Apellido</td>
-                <td>Calidad Jurídica</td>
                 <td>Número de Carpeta</td>
                 <td>Delito</td>
                 <td>Regional</td>
@@ -112,7 +111,6 @@
                 <td>Nombre</td>
                 <td>Primer Apellido</td>
                 <td>Segundo Apellido</td>
-                <td>Calidad Jurídica</td>
                 <td>Alias</td>
                 <td>Número de Carpeta</td>
                 <td>Delito</td>
@@ -203,7 +201,6 @@
                 <td>Nombre</td>
                 <td>Primer Apellido</td>
                 <td>Segundo Apellido</td>
-                <td>Calidad Jurídica</td>
                 <td>Número de Carpeta</td>
                 <td>Delito</td>
                 <td>Regional</td>
