@@ -25,10 +25,10 @@
                       Busqueda de información
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{url('/busqueda/persona')}}">Persona</a>
-                        <a class="dropdown-item" href="{{url('/busqueda_direccion')}}">Dirección</a>
-                        <a class="dropdown-item" href="{{url('/busqueda/vehiculo')}}">Vehículo</a>
-                        <a class="dropdown-item" href="{{url('/busqueda/numcarpeta')}}">Número de Carpeta</a>
+                        <a class="dropdown-item" href="{{url('busqueda_personaInvolucrada')}}">Persona</a>
+                        <a class="dropdown-item" href="{{url('busqueda_direccion')}}">Dirección</a>
+                        <a class="dropdown-item" href="{{url('busqueda_vehiculos')}}">Vehículo</a>
+                        <a class="dropdown-item" href="{{url('busqueda_numeroCarpeta')}}">Número de Carpeta</a>
                     </div>
                 </li>
 

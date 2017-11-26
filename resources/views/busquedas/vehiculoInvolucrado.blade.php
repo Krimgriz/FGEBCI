@@ -7,13 +7,13 @@
         <table class="table table-striped table-hover table-bordered" id="tabladirecciones">
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <td>ID</td>
                     <td>Número de Carpeta</td>
                     <td>UIPJ</td>
-                    <td>Regino</td>
-                    <td>Nombre</td>
-                    <td>Primer Apellido</td>
-                    <td>Segundo Apellido</td>
+                    <td>Placas</td>
+                    <td>Modelo</td>
+                    <td>Marca</td>
+                    <td>Número de Serie</td>
                     <td>Acción</td>
                 </tr>
             </thead>
@@ -31,15 +31,15 @@
                 "language": {
                          "url": '{!! asset('/datatables/latino.json') !!}'
                           } ,
-                "ajax": "busquedaNCData",
+                "ajax": "busquedaVIData",
                 "columns": [
                     { data: 'id' , name: 'id'},
                     { data: 'numCarpeta' , name: 'numCarpeta'},
                     { data: 'unidad' , name: 'unidad'},
-                    { data: 'region' , name: 'region'},
-                    { data: 'nombres' , name: 'nombres'},
-                    { data: 'primerAp' , name: 'primerAp'},
-                    { data: 'segundoAp' , name: 'segundoAp'},
+                    { data: 'placas' , name: 'placas'},
+                    { data: 'modelo' , name: 'modelo'},
+                    { data: 'marca' , name: 'marca'},
+                    { data: 'numSerie' , name: 'numSerie'},
                     { data: null,  render: function ( data, type, row ) {
                         return "<a href='{{ url('detalle') }}/"+ data.id +"' class='btn btn-xs btn-primary' >Ver</button>"  }  
                     }

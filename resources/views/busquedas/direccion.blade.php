@@ -33,7 +33,7 @@
                 "language": {
                          "url": '{!! asset('/datatables/latino.json') !!}'
                           } ,
-                "ajax": "busqueda_direcciondata",
+                "ajax": "busquedaDData",
                 "columns": [
                     { data: 'id' , name: 'id'},
                     { data: 'municipio' , name: 'municipio'},

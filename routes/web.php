@@ -18,17 +18,29 @@ Route::get('/', function () {
 /*Rutas provisionales*/
 /*   |     |     |   */
 /*   v     v     v   */
-Route::get('/busqueda/persona', function () {
-    return view('busquedas.persona');
-});
 
-Route::get('/busqueda/vehiculo', function () {
-    return view('busquedas.vehiculo');
-});
+Route::get('busqueda_personaInvolucrada', 'PersonasInvolucradasController@index');
+Route::get('busquedaPData', 'PersonasInvolucradasController@anyData');
 
-Route::get('/busqueda/numcarpeta', function () {
-    return view('busquedas.numcarpeta');
-});
+Route::get('busqueda_personaDenunciada', 'PersonaDenunciadaController@index');
+Route::get('busquedaPIData', 'PersonaDenunciadaController@anyData');
+
+Route::get('busqueda_personaDenunciante', 'PersonaDenuncianteController@index');
+Route::get('busquedaPAData', 'PersonaDenuncianteController@anyData');
+
+Route::get('busqueda_vehiculos', 'VehiculosController@index');
+Route::get('busquedaVData', 'VehiculosController@anyData');
+
+Route::get('busqueda_vehiculoInvolucrado', 'VehiculosInvolucradosController@index');
+Route::get('busquedaVIData', 'VehiculosInvolucradosController@anyData');
+
+Route::get('busqueda_vehiculoRobado', 'VehiculosRobadosController@index');
+Route::get('busquedaVRData', 'VehiculosRobadosController@anyData');
+
+Route::get('busqueda_numeroCarpeta', 'NumeroCarpetaController@index');
+Route::get('busquedaNCData', 'NumeroCarpetaController@anyData');
+
+
 /*
 --------------------Ptuebas de datatables------------
 -----------------------direcciones-------------------
@@ -37,7 +49,7 @@ Route::get('/busqueda/direccion', function () {
 });
 */
 Route::get('busqueda_direccion', 'DomicilioController@index');
-Route::get('busqueda_direcciondata', 'DomicilioController@anyData');
+Route::get('busquedaDData', 'DomicilioController@anyData');
 /*
  *---------------fin pruebas datatables--------------
  */
