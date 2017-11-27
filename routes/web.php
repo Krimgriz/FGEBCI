@@ -9,12 +9,12 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
 
 Route::get('/', function () {
     return view('index');
 });
 
+*/
 /*Rutas provisionales*/
 /*   |     |     |   */
 /*   v     v     v   */
@@ -99,9 +99,16 @@ Route::get('/busqueda/detalle', function () {
 });
 
 
+/**/
 Route::get('/', function () {
-    return view('index');
-});
+    return view('auth.login');
+})->middleware('guest');
+
 Auth::routes();
+
+Route::get('logout', function(){
+    Auth::logout();
+    return view('auth.login');
+});
 
 Route::get('/home', 'HomeController@index')->name('home');
