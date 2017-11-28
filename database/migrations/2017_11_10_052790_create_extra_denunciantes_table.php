@@ -18,7 +18,7 @@ class CreateExtraDenunciantesTable extends Migration
             $table->integer('idVariablesPersona')->unsigned();
             $table->integer('idNotificacion')->unsigned()->index()->nullable();
             $table->integer('idAbogado')->unsigned()->index()->nullable();
-            $table->boolean('conoceAlDenuncuado')->default(false);
+            $table->boolean('conoceAlDenunciado')->default(false);
             $table->timestamps();
             $table->softDeletes();
             

@@ -1,6 +1,5 @@
 @extends('index')
 @section('content')
-	<br>
     
 	<div class="fondo">
         <br>
@@ -39,7 +38,7 @@
                         <td align="center"><input class="column_filter form-control" id="col5_filter" type="text"></td>
                         
                     </tr>
-                    <tr id="filter_col6" data-column="7">
+                    <tr id="filter_col7" data-column="7">
                         <td style="width: 15%; text-align: right;">Delito</td>
                         <td align="center"><input class="column_filter form-control" id="col7_filter" type="text"></td>
                         

@@ -24,7 +24,7 @@ class VehiculosInvolucradosController extends Controller
             ->join('cat_delito', 'tipif_delito.idDelito', '=', 'cat_delito.id')
             ->join('carpeta', 'carpeta.id', '=', 'tipif_delito.idCarpeta')
             ->join('unidad', 'unidad.id', '=', 'carpeta.idUnidad')
-            ->select('carpeta.id', 'carpeta.numCarpeta', 'unidad.nombre as unidad', 'vehiculo.placas', 'vehiculo.modelo', 'cat_marca.nombre as marca', 'vehiculo.numSerie', 'tipif_delito.fecha')
+            ->select('carpeta.id', 'carpeta.numCarpeta', 'unidad.nombre as unidad', 'vehiculo.placas', 'vehiculo.modelo', 'cat_marca.nombre as marca', 'vehiculo.numSerie','vehiculo.numMotor', 'tipif_delito.fecha')
             ->get();
     	return Datatables::of($data)->make(true);
     }

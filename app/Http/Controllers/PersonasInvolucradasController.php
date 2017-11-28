@@ -16,12 +16,14 @@ class PersonasInvolucradasController extends Controller
     public function anyData()
     {
         $data = DB::table('variables_persona')
+            ->join('domicilio', 'domicilio.id', '=', 'variables_persona.idDomicilio')
+            ->join('cat_municipio', 'domicilio.idMunicipio', '=', 'cat_municipio.id')
             ->join('persona', 'variables_persona.idPersona', '=', 'persona.id')
-            ->join('extra_denunciado', 'extra_denunciado.idVariablesPersona', '=', 'variables_persona.id')
+            /*->join('extra_denunciado', 'extra_denunciado.idVariablesPersona', '=', 'variables_persona.id')
             ->join('acusacion', 'extra_denunciado.id', '=', 'acusacion.idDenunciado')
             ->join('carpeta', 'acusacion.idCarpeta', '=', 'carpeta.id')
-            ->join('unidad', 'unidad.id', '=', 'carpeta.idUnidad')
-            ->select('carpeta.id', 'persona.nombres', 'persona.primerAp', 'persona.segundoAp', 'carpeta.numCarpeta', 'unidad.region', 'unidad.nombre as unidad')
+            ->join('unidad', 'unidad.id', '=', 'carpeta.idUnidad')*/
+            ->select('variables_persona.id', 'persona.nombres', 'persona.primerAp', 'persona.segundoAp', 'persona.sexo', 'cat_municipio.nombre as municipio', 'variables_persona.lugarTrabajo as unidad')
             ->get();
         /*
 
