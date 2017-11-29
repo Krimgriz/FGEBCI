@@ -18,47 +18,45 @@
         
         <br>
         <div class="container">
-            
-            <table style="width: 80%; margin: 0 auto 0 auto;"  border="0">
+
+            <div class="row">
+                <div class="col-12" id="filter_global">
+                    <label for="">Busqueda Global</label>
+                    <input class="global_filter form-control form-control-sm" id="global_filter" type="text">
+                </div>
+
                 
-                <tbody>
-                    <tr id="filter_global">
-                        <td style="width: 15%; text-align: right;">Busqueda Global</td>
-                        <td align="center"><input class="global_filter form-control" id="global_filter" type="text"></td>
-                        
-                    </tr>
-                    <tr id="filter_col2" data-column="2">
-                        <td style="width: 15%; text-align: right;">UIPJ</td>
-                        <td align="center"><input class="column_filter form-control" id="col2_filter" type="text"></td>
-                        
-                    </tr>
-                    <tr id="filter_col3" data-column="3">
-                        <td style="width: 15%; text-align: right;">Placas</td>
-                        <td align="center"><input class="column_filter form-control" id="col3_filter" type="text"></td>
-                        
-                    </tr>
-                    <tr id="filter_col4" data-column="4">
-                        <td style="width: 15%; text-align: right;">Modelo</td>
-                        <td align="center"><input class="column_filter form-control" id="col4_filter" type="text"></td>
-                        
-                    </tr>
-                    <tr id="filter_col5" data-column="5">
-                        <td style="width: 15%; text-align: right;">Marca</td>
-                        <td align="center"><input class="column_filter form-control" id="col5_filter" type="text"></td>
-                        
-                    </tr>
-                    <tr id="filter_col6" data-column="6">
-                        <td style="width: 15%; text-align: right;">Número de Serie</td>
-                        <td align="center"><input class="column_filter form-control" id="col6_filter" type="text"></td>
-                        
-                    </tr>
-                    <tr id="filter_col8" data-column="8">
-                        <td style="width: 15%; text-align: right;">Estado</td>
-                        <td align="center"><input class="column_filter form-control" id="col8_filter" type="text"></td>
-                        
-                    </tr>
-                </tbody>
-            </table>
+                <div id="filter_unidad" class="col-4">
+                    <label for="">UIPJ: </label>
+                    <input class="colUnidad_filter form-control form-control-sm" id="colUnidad_filter" type="text">
+                </div>
+
+                <div id="filter_Placas" class="col-4">
+                    <label for="">Placas: </label>
+                    <input class="colPlacas_filter form-control form-control-sm" id="colPlacas_filter" type="text">
+                </div>
+                
+                <div id="filter_Modelo" class="col-4">
+                    <label for="">Modelo: </label>
+                    <input class="colModelo_filter form-control form-control-sm" id="colModelo_filter" type="text">
+                </div>
+
+                <div id="filter_Marca" class="col-4">
+                    <label for="">Marca: </label>
+                    <input class="colMarca_filter form-control form-control-sm" id="colMarca_filter" type="text">
+                </div>
+                
+                <div id="filter_NumSerie" class="col-4">
+                    <label for="">Número de Serie: </label>
+                    <input class="colNumSerie_filter form-control form-control-sm" id="colNumSerie_filter" type="text">
+                </div>
+
+                <div id="filter_Estado" class="col-4">
+                    <label for="">Estado: </label>
+                    <input class="colEstado_filter form-control form-control-sm" id="colEstado_filter" type="text">
+                </div>    
+            </div>
+            
         </div>
         <br>
         <table class="table table-striped table-hover table-bordered" id="tabladirecciones">
@@ -88,9 +86,39 @@
             ).draw();
         }
          
-        function filterColumn ( i ) {
-            $('#tabladirecciones').DataTable().column( i ).search(
-                $('#col'+i+'_filter').val()
+        function filterColumnEstado () {
+            $('#tabladirecciones').DataTable().column(8).search(
+                $('#colEstado_filter').val()
+            ).draw();
+        }
+
+        function filterColumnMarca () {
+            $('#tabladirecciones').DataTable().column(5).search(
+                $('#colMarca_filter').val()
+            ).draw();
+        }
+
+        function filterColumnNumSerie () {
+            $('#tabladirecciones').DataTable().column(6).search(
+                $('#colNumSerie_filter').val()
+            ).draw();
+        }
+
+        function filterColumnModelo () {
+            $('#tabladirecciones').DataTable().column(4).search(
+                $('#colModelo_filter').val()
+            ).draw();
+        }
+        
+        function filterColumnPlacas () {
+            $('#tabladirecciones').DataTable().column(3).search(
+                $('#colPlacas_filter').val()
+            ).draw();
+        }
+
+        function filterColumnUnidad () {
+            $('#tabladirecciones').DataTable().column(2).search(
+                $('#colUnidad_filter').val()
             ).draw();
         }
 
@@ -123,8 +151,28 @@
                 filterGlobal();
             } );
          
-            $('input.column_filter').on( 'keyup click', function () {
-                filterColumn( $(this).parents('tr').attr('data-column') );
+            $('input.colEstado_filter').on( 'keyup click', function () {
+                filterColumnEstado();
+            } );
+
+            $('input.colModelo_filter').on( 'keyup click', function () {
+                filterColumnModelo();
+            } );
+
+            $('input.colNumSerie_filter').on( 'keyup click', function () {
+                filterColumnNumSerie();
+            } );
+
+            $('input.colMarca_filter').on( 'keyup click', function () {
+                filterColumnMarca();
+            } );
+
+            $('input.colPlacas_filter').on( 'keyup click', function () {
+                filterColumnPlacas();
+            } );
+
+            $('input.colUnidad_filter').on( 'keyup click', function () {
+                filterColumnUnidad();
             } );
         });
     </script>

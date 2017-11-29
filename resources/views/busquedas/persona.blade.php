@@ -16,63 +16,50 @@
         <br>
         <div class="container">
             <div class="row">
-                <div class="col-12">
-                    <table style=" margin: 0 auto 0 auto;"  border="0">
-                        
-                        <tbody>
-                            <tr id="filter_global">
-                                <td style="width: 20%; text-align: right;">Busqueda Global: </td>
-                                <td align="center"><input class="global_filter form-control form-control-sm" id="global_filter" type="text"></td>
-                                
-                            </tr>
-                        </tbody>
-                    </table>
-                    
+                <div class="col-12" id="filter_global">
+                    <label for="">Busqueda Global</label>
+                    <input class="global_filter form-control form-control-sm" id="global_filter" type="text">
                 </div>
-                <div class="col-6">
-                    <table   border="0">
-                        <tbody>
-                            <tr id="filter_col1" data-column="1">
-                                <td style="width: 20%; text-align: right;">Nombre: </td>
-                                <td align="center"><input class="column_filter form-control form-control-sm" id="col1_filter" type="text"></td>
-                                
-                            </tr>
-                            <tr id="filter_col2" data-column="2">
-                                <td style="width: 20%; text-align: right;">Primer Apellido: </td>
-                                <td align="center"><input class="column_filter form-control form-control-sm" id="col2_filter" type="text"></td>
-                                
-                            </tr>
-                            <tr id="filter_col3" data-column="3">
-                                <td style="width: 15%; text-align: right;">Segundo Apellido: </td>
-                                <td align="center"><input class="column_filter form-control form-control-sm" id="col3_filter" type="text"></td>
-                                
-                            </tr>
-                        </tbody>
-                    </table>
-                    
+
+                <div class="col-4">
+                    <div id="filter_nombre">
+                        <label for="">Nombre: </label>
+                        <input class="columnNombre_filter form-control form-control-sm" id="colNombre_filter" type="text">
+                    </div>
+
+                    <div id="filter_municipio">
+                        <label for="">Municipio: </label>
+                        <input class="columnMunicipio_filter form-control form-control-sm" id="colMunicipio_filter" type="text">
+                    </div>
+
+
+
                 </div>
-                <div class="col-6">
-                    <table   border="0">
-                        <tbody>
-                            <tr id="filter_col4" data-column="4">
-                                <td style="width: 15%; text-align: right;">Sexo: </td>
-                                <td align="center"><input class="column_filter form-control form-control-sm" id="col4_filter" type="text"></td>
-                                
-                            </tr>
-                            <tr id="filter_col5" data-column="5">
-                                <td style="width: 15%; text-align: right;">Municipio: </td>
-                                <td align="center"><input class="column_filter form-control form-control-sm" id="col5_filter" type="text"></td>
-                                
-                            </tr>
-                            <tr id="filter_col6" data-column="6">
-                                <td style="width: 15%; text-align: right;">Calidad Juridica: </td>
-                                <td align="center"><input class="column_filter form-control form-control-sm" id="col6_filter" type="text"></td>
-                                
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="col-4">
+                    <div id="filter_primerAp">
+                        <label for="">Primer Apellido: </label>
+                        <input class="columnPrimerAp_filter form-control form-control-sm" id="colPrimerAp_filter" type="text">
+                    </div>
                     
+                    <div id="filter_sexo">
+                        <label for="">Sexo: </label>
+                        <input class="columnSexo_filter form-control form-control-sm" id="colSexo_filter" type="text">
+                    </div>
                 </div>
+
+                <div class="col-4">
+                    <div id="filter_segundoAp">
+                        <label for="">Segundo Apellido: </label>
+                        <input class="columnSegundoAp_filter form-control form-control-sm" id="colSegundoAp_filter" type="text">
+                    </div>
+
+                    <div id="filter_calidadJuridica">
+                        <label for="">Calidad Juridica: </label>
+                        <input class="columnCalidadJuridica_filter form-control form-control-sm" id="colCalidadJuridica_filter" type="text">
+                    </div>
+                </div>
+
+                
             </div>
             
 
@@ -104,9 +91,39 @@
             ).draw();
         }
          
-        function filterColumn ( i ) {
-            $('#tablapersonas').DataTable().column( i ).search(
-                $('#col'+i+'_filter').val()
+        function filterColumnNombre () {
+            $('#tablapersonas').DataTable().column(1).search(
+                $('#colNombre_filter').val()
+            ).draw();
+        }
+
+        function filterColumnPrimerAp () {
+            $('#tablapersonas').DataTable().column(2).search(
+                $('#colPrimerAp_filter').val()
+            ).draw();
+        }
+
+        function filterColumnSegundoAp () {
+            $('#tablapersonas').DataTable().column(3).search(
+                $('#colSegundoAp_filter').val()
+            ).draw();
+        }
+
+        function filterColumnSexo () {
+            $('#tablapersonas').DataTable().column(4).search(
+                $('#colSexo_filter').val()
+            ).draw();
+        }
+
+        function filterColumnMunicipio () {
+            $('#tablapersonas').DataTable().column(5).search(
+                $('#colMunicipio_filter').val()
+            ).draw();
+        }
+
+        function filterColumnCalidadJuridica () {
+            $('#tablapersonas').DataTable().column(6).search(
+                $('#colCalidadJuridica_filter').val()
             ).draw();
         }
 
@@ -126,7 +143,7 @@
                     { data: 'segundoAp' , name: 'segundoAp'},
                     { data: 'sexo' , name: 'sexo'},
                     { data: 'municipio' , name: 'municipio'},
-                    { data: 'unidad' , name: 'unidad'},
+                    { data: 'calidadJuridica' , name: 'calidadJuridica'},
                     { data: null,  render: function ( data, type, row ) {
                         return "<a href='{{ url('detalle') }}/"+ data.id +"' class='btn btn-xs btn-primary' >Ver</button>"  }  
                     }
@@ -136,10 +153,31 @@
             $('input.global_filter').on( 'keyup click', function () {
                 filterGlobal();
             } );
-         
-            $('input.column_filter').on( 'keyup click', function () {
-                filterColumn( $(this).parents('tr').attr('data-column') );
+
+            $('input.columnNombre_filter').on( 'keyup click', function () {
+                filterColumnNombre();
             } );
+
+            $('input.columnPrimerAp_filter').on( 'keyup click', function () {
+                filterColumnPrimerAp();
+            } );
+
+            $('input.columnSegundoAp_filter').on( 'keyup click', function () {
+                filterColumnSegundoAp();
+            } );
+
+            $('input.columnSexo_filter').on( 'keyup click', function () {
+                filterColumnSexo();
+            } );
+
+            $('input.columnMunicipio_filter').on( 'keyup click', function () {
+                filterColumnMunicipio();
+            } );
+
+            $('input.columnCalidadJuridica_filter').on( 'keyup click', function () {
+                filterColumnCalidadJuridica();
+            } );
+
         });
     </script>
 

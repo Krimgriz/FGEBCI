@@ -23,7 +23,7 @@ class PersonaDenuncianteController extends Controller
             ->join('unidad', 'unidad.id', '=', 'carpeta.idUnidad')
             ->join('tipif_delito', 'tipif_delito.id', '=', 'acusacion.idTipifDelito')
             ->join('cat_delito', 'tipif_delito.idDelito', '=', 'cat_delito.id')
-            ->select('carpeta.id', 'persona.nombres', 'persona.primerAp', 'persona.segundoAp', 'carpeta.numCarpeta', 'unidad.region', 'unidad.nombre as unidad')
+            ->select('carpeta.id', 'persona.nombres', 'persona.primerAp', 'persona.segundoAp', 'persona.sexo', 'carpeta.numCarpeta', 'unidad.region', 'unidad.nombre as unidad')
             ->get();
     	return Datatables::of($data)->make(true);
     }

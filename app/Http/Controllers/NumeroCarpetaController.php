@@ -20,7 +20,7 @@ class NumeroCarpetaController extends Controller
             ->join('users', 'users.id', '=', 'carpeta.idFiscal')
             ->join('tipif_delito', 'tipif_delito.idCarpeta', '=', 'carpeta.id')
             ->join('cat_delito', 'cat_delito.id', '=', 'tipif_delito.idDelito')
-            ->select('carpeta.id', 'carpeta.numCarpeta', 'unidad.nombre as unidad', 'unidad.region', 'users.numFiscal', 'cat_delito.nombre as delito')
+            ->select('carpeta.id', 'carpeta.numCarpeta', 'carpeta.fechaInicio', 'unidad.nombre as unidad', 'unidad.region', 'users.numFiscal', 'cat_delito.nombre as delito')
             ->get();
     	return Datatables::of($data)->make(true);
     }
