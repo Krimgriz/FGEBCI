@@ -15,7 +15,7 @@ class CreateExtraAbogadosTable extends Migration
     {
         Schema::create('extra_abogado', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('idVatiablesPersona')->unsigned();
+            $table->integer('idVariablesPersona')->unsigned();
             $table->string('cedulaProf',50);
             $table->string('sector',50);
             $table->string('correo',50);

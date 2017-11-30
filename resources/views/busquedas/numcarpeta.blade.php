@@ -50,7 +50,6 @@
         <table class="table table-striped table-hover table-bordered" id="tabladirecciones">
             <thead>
                 <tr>
-                    <th>ID</th>
                     <td>Número de Carpeta</td>
                     <td>Fecha De Inicio</td>
                     <td>UIPJ</td>
@@ -73,37 +72,37 @@
         }
          
         function filterColumnDelito () {
-            $('#tabladirecciones').DataTable().column(6).search(
+            $('#tabladirecciones').DataTable().column(5).search(
                 $('#colDelito_filter').val()
             ).draw();
         }
 
         function filterColumnNumCarpeta () {
-            $('#tabladirecciones').DataTable().column(1).search(
+            $('#tabladirecciones').DataTable().column(0).search(
                 $('#colNumCarpeta_filter').val()
             ).draw();
         }
 
         function filterColumnNumFiscal () {
-            $('#tabladirecciones').DataTable().column(5).search(
+            $('#tabladirecciones').DataTable().column(4).search(
                 $('#colNumFiscal_filter').val()
             ).draw();
         }
 
         function filterColumnfecha () {
-            $('#tabladirecciones').DataTable().column(2).search(
+            $('#tabladirecciones').DataTable().column(1).search(
                 $('#colfecha_filter').val()
             ).draw();
         }
         
         function filterColumnRegion () {
-            $('#tabladirecciones').DataTable().column(4).search(
+            $('#tabladirecciones').DataTable().column(3).search(
                 $('#colRegion_filter').val()
             ).draw();
         }
 
         function filterColumnUnidad () {
-            $('#tabladirecciones').DataTable().column(3).search(
+            $('#tabladirecciones').DataTable().column(2).search(
                 $('#colUnidad_filter').val()
             ).draw();
         }
@@ -118,7 +117,6 @@
                           } ,
                 "ajax": "busquedaNCData",
                 "columns": [
-                    { data: 'id' , name: 'id'},
                     { data: 'numCarpeta' , name: 'numCarpeta'},
                     { data: 'fechaInicio' , name: 'fechaInicio'},
                     { data: 'unidad' , name: 'unidad'},

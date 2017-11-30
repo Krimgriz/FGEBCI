@@ -2,36 +2,43 @@
 @section('content')
 	<br>
 
+{{--dd($DatosUnidad[0]->nombre)--}}
+
 	<div class="fondo">
 	    <div class="container" style="border:1px solid black;" >
 	    	<br>
 	    	<div class="row">    
 		        <div class="col-sm-2"><img src="{{ url('/img/FGE-icon.png') }}" class="img-fluid" alt=""></div>
 		        <div class="col-sm-5" align="center">
-		        	{{ Form::label('titulo', 'FORMATO DE INVESTIGACIONES MINISTERIALES', array('class' => '')) }}
+		        	{{ Form::label('etiqueta', 'FORMATO DE CARPETAS DE INVESTIGACIÓN', array('class' => '')) }}
 		        	<br>
-		        	{{ Form::label('titulo', 'Información Básica', array('class' => '')) }}
+		        	{{ Form::label('etiqueta', 'Información Básica', array('class' => '')) }}
 		        	<br>
-		        	{{ Form::label('titulo', 'CENTRO DE INFORMACIÓN', array('class' => '')) }}
+		        	{{ Form::label('etiqueta', 'CENTRO DE INFORMACIÓN', array('class' => '')) }}
 		        </div>
 		        {{-- DATOS GENERALES DE LA CARPETA --}}
 		        <div class="col-sm-5 container">
 		        	<div class="container" style="border: 1px solid black;">
-		        		{{ Form::label('titulo', 'Agencia:', array('class' => '')) }}{{ Form::label('agencia', 'XXXXXXXXXXXX', array('class' => '')) }}
+		        		{{ Form::label('etiqueta', 'Unidad:', array('class' => '')) }}
+						<label for="">{{$DatosUnidad[0]->nombre}}</label>		        		
+						<br>
+		        		{{ Form::label('etiqueta', 'De:', array('class' => '')) }}
+		        		<label for="">{{$DatosUnidad[0]->region}}</label>
 		        		<br>
-		        		{{ Form::label('titulo', 'De:', array('class' => '')) }}{{ Form::label('de', 'XXXXXXXXXXXX', array('class' => '')) }}
+		        		{{ Form::label('etiqueta', 'Distrito:', array('class' => '')) }}
+		        		<label for="">{{$DatosUnidad[0]->distrito}}</label>
 		        		<br>
-		        		{{ Form::label('titulo', 'Distrito:', array('class' => '')) }}{{ Form::label('distrito', 'XXXXXXXXXXXX', array('class' => '')) }}
+		        		{{ Form::label('etiqueta', 'Subprocuraduria:', array('class' => '')) }}
+		        		<label for=""></label>
 		        		<br>
-		        		{{ Form::label('titulo', 'Subprocuraduria:', array('class' => '')) }}{{ Form::label('subprocuraduria', 'XXXXXXXXXXXX', array('class' => '')) }}
+		        		{{ Form::label('etiqueta', 'Inv. Ministeria:', array('class' => '')) }}
+		        		<label for="">UIPJ/D{{$DatosUnidad[0]->distrito}}/{{$DatosUnidad[0]->numFiscal}}/{{$DatosUnidad[0]->numCarpeta}}/{{$DatosUnidad[0]->yearInicio}}</label>
 		        		<br>
-		        		{{ Form::label('titulo', 'Inv. Ministeria:', array('class' => '')) }}{{ Form::label('invMinisterial', 'XXXXXXXXXXXX', array('class' => '')) }}
+		        		{{ Form::label('etiqueta', 'Fecha de Inicio:', array('class' => '')) }}
+		        		<label for="">{{$DatosUnidad[0]->fechaInicio}}</label>
 		        		<br>
-		        		{{ Form::label('titulo', 'Fecha de Inicio:', array('class' => '')) }}{{ Form::label('fechaInicio', 'XXXXXXXXXXXX', array('class' => '')) }}
-		        		<br>
-		        		{{ Form::label('titulo', 'Periodo que reporta:', array('class' => '')) }}{{ Form::label('periodo', 'XXXXXXXXXXXX', array('class' => '')) }}
-		        		<br>
-		        		{{ Form::label('titulo', 'Relevante:', array('class' => '')) }}{{ Form::label('relevante', 'XXXXXXXXXXXX', array('class' => '')) }}
+		        		{{ Form::label('etiqueta', 'Relevante:', array('class' => '')) }}
+		        		<label for="">{{$DatosUnidad[0]->esRelevante}}</label>
 		        		<br>
 		        	</div>	
 		        </div>	    		
@@ -41,132 +48,160 @@
 				{{-- DATOS DEL FISCAL --}}
 				<div class="row">
 					<div class="container col-sm-6">
-						{{ Form::label('titulo', 'FISCAL: ', array('class' => '')) }}{{ Form::label('nombrefiscal', 'XXXXXXXXXXXX', array('class' => '')) }}
+						{{ Form::label('etiqueta', 'FISCAL: ', array('class' => '')) }}
+		        		<label for=""> {{$DatosUnidad[0]->nombrefiscal}}</label>
+		        		<label for=""> {{$DatosUnidad[0]->primerApfiscal}}</label>
+		        		<label for=""> {{$DatosUnidad[0]->segundoApfiscal}}</label>
 						
 					</div>
 					<div class="col-sm-6 container">
-			        	{{ Form::label('titulo', 'NUMERO DE FISCAL: ', array('class' => '')) }}{{ Form::label('nombrefiscal', 'XXXXXXXXXXXX', array('class' => '')) }}
+			        	{{ Form::label('etiqueta', 'NUMERO DE FISCAL: ', array('class' => '')) }}
+		        		<label for="">{{$DatosUnidad[0]->numFiscal}}</label>
 						
 					</div>
 				</div>
 
 				<div class=" container">
-					{{ Form::label('titulo', 'CON DETENIDO: ', array('class' => '')) }}{{ Form::label('nombrefiscal', 'XXXXXXXXXXXX', array('class' => '')) }}						
+					{{ Form::label('etiqueta', 'CON DETENIDO: ', array('class' => '')) }}
+		        		<label for="">{{$DatosUnidad[0]->conDetenido}}</label>
 				</div>
 					
 		        {{-- DATOS DEL DELITO Y LA TIPIFICAION DEL DELITO --}}
 		        <div >
 			        <div class="container" style="background: #767676; color: #ffffff;">
-			        	{{ Form::label('titulo', 'DELITOS ', array('class' => '')) }}
+			        	{{ Form::label('etiqueta', 'DELITOS ', array('class' => '')) }}
 					</div>
 					<!--aqui inicia un foreach para replicar esta parte para los delitos-->
-			        <div class="container" style="background: #a5a5a5;">
-			        	{{ Form::label('titulo', 'DELITO ', array('class' => '')) }}
-					</div>
-					<div class="row">
-						<div class="col-sm-6">
-							{{ Form::label('titulo', 'Tipo de Delito: ', array('class' => '')) }}{{ Form::label('nombrefiscal', 'XXXXXXXXXXXX', array('class' => '')) }}
+					{{--
+						--}}
+					@for($i=0; $i<count($DatosDelitos); $i++)
+				        <div class="container" style="background: #a5a5a5;">
+				        	<label for=""></label>
 						</div>
-						<div class="col-sm-6">
-							{{ Form::label('titulo', 'Forma de Comisión: ', array('class' => '')) }}{{ Form::label('nombrefiscal', 'XXXXXXXXXXXX', array('class' => '')) }}
-						</div>
-						<div class="col-sm-6">
-							{{ Form::label('titulo', 'Modalidad: ', array('class' => '')) }}{{ Form::label('nombrefiscal', 'XXXXXXXXXXXX', array('class' => '')) }}
-						</div>
-						<div class="col-sm-6">
-							{{ Form::label('titulo', 'Consumación: ', array('class' => '')) }}{{ Form::label('nombrefiscal', 'XXXXXXXXXXXX', array('class' => '')) }}
-						</div>
-						<div class="col-sm-6">
-							{{ Form::label('titulo', 'Con Violencia: ', array('class' => '')) }}{{ Form::label('nombrefiscal', 'XXXXXXXXXXXX', array('class' => '')) }}
-						</div>
-						<div class="col-sm-6">
-							{{ Form::label('titulo', 'Tipo de Violencia: ', array('class' => '')) }}{{ Form::label('nombrefiscal', 'XXXXXXXXXXXX', array('class' => '')) }}
-						</div>
-						<div class="col-sm-12">
-							{{ Form::label('titulo', 'Medio Utilizado para Cometer el Delito: ', array('class' => '')) }}{{ Form::label('nombrefiscal', 'XXXXXXXXXXXX', array('class' => '')) }}
-						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								{{ Form::label('etiqueta', 'Tipo de Delito: ', array('class' => '')) }}
+			        		<label for=""></label>
+							</div>
+							<div class="col-sm-6">
+								{{ Form::label('etiqueta', 'Forma de Comisión: ', array('class' => '')) }}
+			        		<label for=""></label>
+							</div>
+							<div class="col-sm-6">
+								{{ Form::label('etiqueta', 'Modalidad: ', array('class' => '')) }}
+			        		<label for=""></label>
+							</div>
+							<div class="col-sm-6">
+								{{ Form::label('etiqueta', 'Consumación: ', array('class' => '')) }}
+			        		<label for=""></label>
+							</div>
+							<div class="col-sm-12">
+								{{ Form::label('etiqueta', 'Medio Utilizado para Cometer el Delito: ', array('class' => '')) }}
+			        		<label for=""></label>
+							</div>
 
-						<!--direccion donde ocurrieron los hechos-->
-						<div class="col-sm-12" align="center">
-							{{ Form::label('titulo', 'COMISION DEL ILICITO ', array('class' => '')) }}
-						</div>
+							<!--direccion donde ocurrieron los hechos-->
+							<div class="col-sm-12" align="center">
+								{{ Form::label('etiqueta', 'COMISION DEL ILICITO ', array('class' => '')) }}
+							</div>
 
-						<div class="col-sm-6">
-							{{ Form::label('titulo', 'Fecha en que Ocurrieron los hechos: ', array('class' => '')) }}{{ Form::label('nombrefiscal', 'XXXXXXXXXXXX', array('class' => '')) }}
+							<div class="col-sm-6">
+								{{ Form::label('etiqueta', 'Fecha en que Ocurrieron los hechos: ', array('class' => '')) }}
+			        		<label for=""></label>
+							</div>
+							<div class="col-sm-6">
+								{{ Form::label('etiqueta', 'Hora: ', array('class' => '')) }}
+			        		<label for=""></label>
+							</div>
+							<div class="col-sm-6">
+								{{ Form::label('etiqueta', 'Zona de ubicación: ', array('class' => '')) }}
+			        		<label for=""></label>
+							</div>
+							<div class="col-sm-6">
+								{{ Form::label('etiqueta', 'Lugar donde ocurrieron los hechos: ', array('class' => '')) }}
+			        		<label for=""></label>
+							</div>
+							<div class="col-sm-6">
+								{{ Form::label('etiqueta', 'Municipio: ', array('class' => '')) }}
+			        		<label for=""></label>
+							</div>
+							<div class="col-sm-6">
+								{{ Form::label('etiqueta', 'Localidad: ', array('class' => '')) }}
+			        		<label for=""></label>
+							</div>
+							<div class="col-sm-6">
+								{{ Form::label('etiqueta', 'Colonia: ', array('class' => '')) }}
+			        		<label for=""></label>
+							</div>
+							<div class="col-sm-6">
+								{{ Form::label('etiqueta', 'Numero Externo: ', array('class' => '')) }}
+			        		<label for=""></label>
+							</div>
+							<div class="col-sm-12">
+								{{ Form::label('etiqueta', 'Calle: ', array('class' => '')) }}
+			        		<label for=""></label>
+							</div>
 						</div>
-						<div class="col-sm-6">
-							{{ Form::label('titulo', 'Hora: ', array('class' => '')) }}{{ Form::label('nombrefiscal', 'XXXXXXXXXXXX', array('class' => '')) }}
-						</div>
-						<div class="col-sm-6">
-							{{ Form::label('titulo', 'Zona de ubicación: ', array('class' => '')) }}{{ Form::label('nombrefiscal', 'XXXXXXXXXXXX', array('class' => '')) }}
-						</div>
-						<div class="col-sm-6">
-							{{ Form::label('titulo', 'Lugar donde ocurrieron los hechos: ', array('class' => '')) }}{{ Form::label('nombrefiscal', 'XXXXXXXXXXXX', array('class' => '')) }}
-						</div>
-						<div class="col-sm-6">
-							{{ Form::label('titulo', 'Municipio: ', array('class' => '')) }}{{ Form::label('nombrefiscal', 'XXXXXXXXXXXX', array('class' => '')) }}
-						</div>
-						<div class="col-sm-6">
-							{{ Form::label('titulo', 'Localidad: ', array('class' => '')) }}{{ Form::label('nombrefiscal', 'XXXXXXXXXXXX', array('class' => '')) }}
-						</div>
-						<div class="col-sm-6">
-							{{ Form::label('titulo', 'Colonia: ', array('class' => '')) }}{{ Form::label('nombrefiscal', 'XXXXXXXXXXXX', array('class' => '')) }}
-						</div>
-						<div class="col-sm-6">
-							{{ Form::label('titulo', 'Numero Externo: ', array('class' => '')) }}{{ Form::label('nombrefiscal', 'XXXXXXXXXXXX', array('class' => '')) }}
-						</div>
-						<div class="col-sm-12">
-							{{ Form::label('titulo', 'Calle: ', array('class' => '')) }}{{ Form::label('nombrefiscal', 'XXXXXXXXXXXX', array('class' => '')) }}
-						</div>
-					</div>
+					@endfor
+					{{--
+						--}}
 		        </div>
 
 		        {{-- DATOS DE PERSONAS INVOLUCRADAS  --}}
 		        <div>
 			        <div style="background: #767676; color: #ffffff;">
-			        	{{ Form::label('titulo', 'PERSONAS INVOLUCRADAS: ', array('class' => '')) }}
+			        	{{ Form::label('etiqueta', 'PERSONAS INVOLUCRADAS: ', array('class' => '')) }}
 					</div>
 					
 
 					<div>
 						<div style="background: #a5a5a5;">
-				        	{{ Form::label('titulo', 'AGRABIADOS: ', array('class' => '')) }}
+				        	{{ Form::label('etiqueta', 'AGRABIADOS: ', array('class' => '')) }}
 						</div>
 						<div class="row">
 							<div class="col-sm-12">
-								{{ Form::label('titulo', 'Nombre: ', array('class' => '')) }}
-								{{ Form::label('nombre', 'XXXXXXXXXXXX', array('class' => '')) }}
-								{{ Form::label('primeAp', 'XXXXXXXXXXXX ', array('class' => '')) }}
-								{{ Form::label('segundoAp', 'XXXXXXXXXXXX', array('class' => '')) }}
+								{{ Form::label('etiqueta', 'Nombre: ', array('class' => '')) }}
+				        		<label for=""></label>
+				        		<label for=""></label>
+				        		<label for=""></label>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-sm-4">
-								{{ Form::label('titulo', 'Edad: ', array('class' => '')) }}{{ Form::label('nombrefiscal', 'XXXXXXXXXXXX', array('class' => '')) }}
+								{{ Form::label('etiqueta', 'Edad: ', array('class' => '')) }}
+				        		<label for=""></label>
 							</div>
 							<div class="col-sm-4">
-								{{ Form::label('titulo', 'Sexo: ', array('class' => '')) }}{{ Form::label('nombrefiscal', 'XXXXXXXXXXXX', array('class' => '')) }}
+								{{ Form::label('etiqueta', 'Sexo: ', array('class' => '')) }}
+				        		<label for=""></label>
 							</div>
 							<div class="col-sm-4">
-								{{ Form::label('titulo', 'Nacionalidad: ', array('class' => '')) }}{{ Form::label('nombrefiscal', 'XXXXXXXXXXXX', array('class' => '')) }}
+								{{ Form::label('etiqueta', 'Nacionalidad: ', array('class' => '')) }}
+				        		<label for=""></label>
 							</div>
 							<div class="col-sm-6">
-								{{ Form::label('titulo', 'Entidad Federativa de Origen: ', array('class' => '')) }}{{ Form::label('nombrefiscal', 'XXXXXXXXXXXX', array('class' => '')) }}
+								{{ Form::label('etiqueta', 'Entidad Federativa de Origen: ', array('class' => '')) }}
+				        		<label for=""></label>
 							</div>
 							<div class="col-sm-6">
-								{{ Form::label('titulo', 'Ocupación: ', array('class' => '')) }}{{ Form::label('nombrefiscal', 'XXXXXXXXXXXX', array('class' => '')) }}
+								{{ Form::label('etiqueta', 'Ocupación: ', array('class' => '')) }}
+				        		<label for=""></label>
 							</div>
 							<div class="col-sm-6">
-								{{ Form::label('titulo', 'Lugar de trabajo: ', array('class' => '')) }}{{ Form::label('nombrefiscal', 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', array('class' => '')) }}
+								{{ Form::label('etiqueta', 'Lugar de trabajo: ', array('class' => '')) }}
+				        		<label for=""></label>
 							</div>
 							<div class="col-sm-6">
-								{{ Form::label('titulo', 'Grado de Estudio: ', array('class' => '')) }}{{ Form::label('nombrefiscal', 'XXXXXXXXXXXX', array('class' => '')) }}
+								{{ Form::label('etiqueta', 'Grado de Estudio: ', array('class' => '')) }}
+				        		<label for=""></label>
 							</div>
 							<div class="col-sm-6">
-								{{ Form::label('titulo', 'Estado civil: ', array('class' => '')) }}{{ Form::label('nombrefiscal', 'XXXXXXXXXXXX', array('class' => '')) }}
+								{{ Form::label('etiqueta', 'Estado civil: ', array('class' => '')) }}
+				        		<label for=""></label>
 							</div>
 							<div class="col-sm-6">
-								{{ Form::label('titulo', 'Religión que profesa: ', array('class' => '')) }}{{ Form::label('nombrefiscal', 'XXXXXXXXXXXX', array('class' => '')) }}
+								{{ Form::label('etiqueta', 'Religión que profesa: ', array('class' => '')) }}
+				        		<label for=""></label>
 							</div>	
 						</div>
 						
@@ -174,35 +209,44 @@
 
 					<div>
 						<div style="background: #a5a5a5;">
-				        	{{ Form::label('titulo', 'IMPUTADOS: ', array('class' => '')) }}
+				        	{{ Form::label('etiqueta', 'IMPUTADOS: ', array('class' => '')) }}
 						</div>
 						<div class="row">
 							<div class="col-sm-4">
-								{{ Form::label('titulo', 'Edad: ', array('class' => '')) }}{{ Form::label('nombrefiscal', 'XXXXXXXXXXXX', array('class' => '')) }}
+								{{ Form::label('etiqueta', 'Edad: ', array('class' => '')) }}
+				        		<label for=""></label>
 							</div>
 							<div class="col-sm-4">
-								{{ Form::label('titulo', 'Sexo: ', array('class' => '')) }}{{ Form::label('nombrefiscal', 'XXXXXXXXXXXX', array('class' => '')) }}
+								{{ Form::label('etiqueta', 'Sexo: ', array('class' => '')) }}
+				        		<label for=""></label>
 							</div>
 							<div class="col-sm-4">
-								{{ Form::label('titulo', 'Nacionalidad: ', array('class' => '')) }}{{ Form::label('nombrefiscal', 'XXXXXXXXXXXX', array('class' => '')) }}
+								{{ Form::label('etiqueta', 'Nacionalidad: ', array('class' => '')) }}
+				        		<label for=""></label>
 							</div>
 							<div class="col-sm-6">
-								{{ Form::label('titulo', 'Entidad Federativa de Origen: ', array('class' => '')) }}{{ Form::label('nombrefiscal', 'XXXXXXXXXXXX', array('class' => '')) }}
+								{{ Form::label('etiqueta', 'Entidad Federativa de Origen: ', array('class' => '')) }}
+				        		<label for=""></label>
 							</div>
 							<div class="col-sm-6">
-								{{ Form::label('titulo', 'Ocupación: ', array('class' => '')) }}{{ Form::label('nombrefiscal', 'XXXXXXXXXXXX', array('class' => '')) }}
+								{{ Form::label('etiqueta', 'Ocupación: ', array('class' => '')) }}
+				        		<label for=""></label>
 							</div>
 							<div class="col-sm-6">
-								{{ Form::label('titulo', 'Lugar de trabajo: ', array('class' => '')) }}{{ Form::label('nombrefiscal', 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', array('class' => '')) }}
+								{{ Form::label('etiqueta', 'Lugar de trabajo: ', array('class' => '')) }}
+				        		<label for=""></label>
 							</div>
 							<div class="col-sm-6">
-								{{ Form::label('titulo', 'Grado de Estudio: ', array('class' => '')) }}{{ Form::label('nombrefiscal', 'XXXXXXXXXXXX', array('class' => '')) }}
+								{{ Form::label('etiqueta', 'Grado de Estudio: ', array('class' => '')) }}
+				        		<label for=""></label>
 							</div>
 							<div class="col-sm-6">
-								{{ Form::label('titulo', 'Estado civil: ', array('class' => '')) }}{{ Form::label('nombrefiscal', 'XXXXXXXXXXXX', array('class' => '')) }}
+								{{ Form::label('etiqueta', 'Estado civil: ', array('class' => '')) }}
+				        		<label for=""></label>
 							</div>
 							<div class="col-sm-6">
-								{{ Form::label('titulo', 'Religión que profesa: ', array('class' => '')) }}{{ Form::label('nombrefiscal', 'XXXXXXXXXXXX', array('class' => '')) }}
+								{{ Form::label('etiqueta', 'Religión que profesa: ', array('class' => '')) }}
+				        		<label for=""></label>
 							</div>	
 						</div>
 						
@@ -211,83 +255,83 @@
 				
 				<div>
 			        <div style="background: #767676; color: #ffffff;">
-			        	{{ Form::label('titulo', 'ACUSACIÓN: ', array('class' => '')) }}
+			        	{{ Form::label('etiqueta', 'ACUSACIÓN: ', array('class' => '')) }}
 					</div>
 					<div class="row" align="center">
 						<div class="col-sm-4" >
-							{{ Form::label('titulo', 'Agraviado ', array('class' => '')) }}
+							{{ Form::label('etiqueta', 'Agraviado ', array('class' => '')) }}
 						</div>
 						<div class="col-sm-4" >
-							{{ Form::label('titulo', 'Delito ', array('class' => '')) }}
+							{{ Form::label('etiqueta', 'Delito ', array('class' => '')) }}
 						</div>
 						<div class="col-sm-4" >
-							{{ Form::label('titulo', 'Imputado ', array('class' => '')) }}
+							{{ Form::label('etiqueta', 'Imputado ', array('class' => '')) }}
 						</div>
 
 						<div class="col-sm-4">
-							{{ Form::label('nombre', 'XXXXXXXXXXXX', array('class' => '')) }}
-							{{ Form::label('primeAp', 'XXXXXXXXXXXX ', array('class' => '')) }}
-							{{ Form::label('segundoAp', 'XXXXXXXXXXXX', array('class' => '')) }}
+			        		<label for=""></label>
+			        		<label for=""></label>
+			        		<label for=""></label>
 						</div>
 						
 						<div class="col-sm-4">
-							{{ Form::label('titulo', 'Delito', array('class' => '')) }}
+							{{ Form::label('etiqueta', 'Delito', array('class' => '')) }}
 						</div>
 
 						<div class="col-sm-4">
-							{{ Form::label('nombre', 'XXXXXXXXXXXX', array('class' => '')) }}
-							{{ Form::label('primeAp', 'XXXXXXXXXXXX ', array('class' => '')) }}
-							{{ Form::label('segundoAp', 'XXXXXXXXXXXX', array('class' => '')) }}
+			        		<label for=""></label>
+			        		<label for=""></label>
+			        		<label for=""></label>
 						</div>
 					</div>
 				</div>
 				
 				<div>
 					<div style="background: #767676; color: #ffffff;">
-			        	{{ Form::label('titulo', 'ESTADO DE LA CARPETA: ', array('class' => '')) }}
+			        	{{ Form::label('etiqueta', 'ESTADO DE LA CARPETA: ', array('class' => '')) }}
 					</div>
 					<div class="row">
 						<div class="col-sm-4">
-							{{ Form::label('titulo', 'Estado de la Carpeta: ', array('class' => '')) }}
-							{{ Form::label('nombrefiscal', 'XXXXXXXXXXXX', array('class' => '')) }}
+							{{ Form::label('etiqueta', 'Estado de la Carpeta: ', array('class' => '')) }}
+			        		<label for=""></label>
 						</div>
 
 						<div class="col-sm-4">
-							{{ Form::label('titulo', 'Fecha de Determinación: ', array('class' => '')) }}
-							{{ Form::label('nombrefiscal', 'XXXXXXXXXXXX', array('class' => '')) }}
+							{{ Form::label('etiqueta', 'Fecha de Determinación: ', array('class' => '')) }}
+			        		<label for=""></label>
 						</div>
 
 						<div class="col-sm-4">
-							{{ Form::label('titulo', 'Tipo de Determinación: ', array('class' => '')) }}
-							{{ Form::label('nombrefiscal', 'XXXXXXXXXXXX', array('class' => '')) }}
+							{{ Form::label('etiqueta', 'Tipo de Determinación: ', array('class' => '')) }}
+			        		<label for=""></label>
 						</div>
 					</div>
 				</div>
 
 				<div>
 					<div style="background: #767676; color: #ffffff;">
-			        	{{ Form::label('titulo', 'DESCRIPCIÓN DE LA RELEVANCIA: ', array('class' => '')) }}
+			        	{{ Form::label('etiqueta', 'DESCRIPCIÓN DE LA RELEVANCIA: ', array('class' => '')) }}
 					</div>
 					<div>
-						{{ Form::label('titulo', 'XXXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXX XXXXXXXXXXXXXX XXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXX XXXXXXXXXXXXX X XXXXXXXXXXXX X XXXXXXXXXXXXXX XXXX ', array('class' => '')) }}
+		        		<label for=""></label>
 					</div>
 				</div>
 				
 				<div>
 					<div style="background: #767676; color: #ffffff;">
-			        	{{ Form::label('titulo', 'DESCRIPCIÓN DE LOS HECHOS: ', array('class' => '')) }}
+			        	{{ Form::label('etiqueta', 'DESCRIPCIÓN DE LOS HECHOS: ', array('class' => '')) }}
 					</div>
 					<div>
-						{{ Form::label('titulo', 'XXXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXX XXXXXXXXXXXXXX XXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXX XXXXXXXXXXXXX X XXXXXXXXXXXX X XXXXXXXXXXXXXX XXXX ', array('class' => '')) }}
+		        		<label for=""></label>
 					</div>
 				</div>
 
 				<div>
 					<div style="background: #767676; color: #ffffff;">
-			        	{{ Form::label('titulo', 'OBSERVACIONES: ', array('class' => '')) }}
+			        	{{ Form::label('etiqueta', 'OBSERVACIONES: ', array('class' => '')) }}
 					</div>
 					<div>
-						{{ Form::label('titulo', 'XXXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXX XXXXXXXXXXXXXX XXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXX XXXXXXXXXXXXX X XXXXXXXXXXXX X XXXXXXXXXXXXXX XXXX ', array('class' => '')) }}
+		        		<label for=""></label>
 					</div>
 				</div>
 			</div>

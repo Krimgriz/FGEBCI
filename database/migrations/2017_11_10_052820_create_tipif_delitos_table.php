@@ -31,7 +31,7 @@ class CreateTipifDelitosTable extends Migration
             $table->string('entreCalle',100);
             $table->string('yCalle',100);
             $table->string('calleTrasera',100);
-            $table->string('puntaReferencia',100);
+            $table->string('puntoReferencia',100);
             $table->timestamps();
             $table->softDeletes();
 

@@ -60,7 +60,6 @@
         <table class="table table-striped table-hover table-bordered" id="tablaagrabiado">
             <thead>
                 <tr>
-                    <th>ID</th>
                     <td>Nombre</td>
                     <td>Primer Apellido</td>
                     <td>Segundo Apellido</td>
@@ -85,37 +84,37 @@
         }
          
         function filterColumnNombre () {
-            $('#tablaagrabiado').DataTable().column(1).search(
+            $('#tablaagrabiado').DataTable().column(0).search(
                 $('#colNombre_filter').val()
             ).draw();
         }
 
         function filterColumnPrimerAp () {
-            $('#tablaagrabiado').DataTable().column(2).search(
+            $('#tablaagrabiado').DataTable().column(1).search(
                 $('#colPrimerAp_filter').val()
             ).draw();
         }
 
         function filterColumnSegundoAp () {
-            $('#tablaagrabiado').DataTable().column(3).search(
+            $('#tablaagrabiado').DataTable().column(2).search(
                 $('#colSegundoAp_filter').val()
             ).draw();
         }
 
         function filterColumnSexo () {
-            $('#tablaagrabiado').DataTable().column(4).search(
+            $('#tablaagrabiado').DataTable().column(3).search(
                 $('#colSexo_filter').val()
             ).draw();
         }
         
         function filterColumnRegion () {
-            $('#tablaagrabiado').DataTable().column(6).search(
+            $('#tablaagrabiado').DataTable().column(5).search(
                 $('#colRegion_filter').val()
             ).draw();
         }
 
         function filterColumnUnidad () {
-            $('#tablaagrabiado').DataTable().column(7).search(
+            $('#tablaagrabiado').DataTable().column(6).search(
                 $('#colUnidad_filter').val()
             ).draw();
         }
@@ -130,7 +129,6 @@
                           } ,
                 "ajax": "busquedaPAData",
                 "columns": [
-                    { data: 'id' , name: 'id'},
                     { data: 'nombres' , name: 'nombres'},
                     { data: 'primerAp' , name: 'primerAp'},
                     { data: 'segundoAp' , name: 'segundoAp'},

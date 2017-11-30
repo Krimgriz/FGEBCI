@@ -15,7 +15,7 @@ Route::get('/', function () {
 });
 
 */
-/*Rutas provisionales*/
+/*Rutas para las busquedas en los datatables*/
 /*   |     |     |   */
 /*   v     v     v   */
 
@@ -40,16 +40,14 @@ Route::get('busquedaVRData', 'VehiculosRobadosController@anyData');
 Route::get('busqueda_numeroCarpeta', 'NumeroCarpetaController@index');
 Route::get('busquedaNCData', 'NumeroCarpetaController@anyData');
 
-
-/*
---------------------Ptuebas de datatables------------
------------------------direcciones-------------------
-Route::get('/busqueda/direccion', function () {
-    return view('busquedas.direccion');
-});
-*/
 Route::get('busqueda_direccion', 'DomicilioController@index');
 Route::get('busquedaDData', 'DomicilioController@anyData');
+
+/*pruebas de detalle para mostrar el reporte*/
+/**/
+
+
+Route::get('detalle/{id}', 'ReporteController@showCarpeta');
 /*
  *---------------fin pruebas datatables--------------
  */
@@ -94,12 +92,9 @@ Route::get('/estadistica/colonia', function () {
     return view('estadisticas/colonia');
 });
 
-Route::get('/busqueda/detalle', function () {
-    return view('reporte.detalle');
-});
 
 
-/**/
+/*---------------------------------------------------------*/
 Route::get('/', function () {
     return view('auth.login');
 })->middleware('guest');

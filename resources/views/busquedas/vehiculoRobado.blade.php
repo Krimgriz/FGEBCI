@@ -56,7 +56,6 @@
             <table class="table table-striped table-hover table-bordered" id="tabladirecciones">
                 <thead>
                     <tr>
-                        <td>ID</td>
                         <td>Número de Carpeta</td>
                         <td>UIPJ</td>
                         <td>Placas</td>
@@ -83,43 +82,43 @@
         }
          
         function filterColumnNumMotor () {
-            $('#tabladirecciones').DataTable().column(7).search(
+            $('#tabladirecciones').DataTable().column(6).search(
                 $('#colNumMotor_filter').val()
             ).draw();
         }
 
         function filterColumnMarca () {
-            $('#tabladirecciones').DataTable().column(5).search(
+            $('#tabladirecciones').DataTable().column(4).search(
                 $('#colMarca_filter').val()
             ).draw();
         }
 
         function filterColumnNumSerie () {
-            $('#tabladirecciones').DataTable().column(6).search(
+            $('#tabladirecciones').DataTable().column(5).search(
                 $('#colNumSerie_filter').val()
             ).draw();
         }
 
         function filterColumnModelo () {
-            $('#tabladirecciones').DataTable().column(4).search(
+            $('#tabladirecciones').DataTable().column(3).search(
                 $('#colModelo_filter').val()
             ).draw();
         }
         
         function filterColumnPlacas () {
-            $('#tabladirecciones').DataTable().column(3).search(
+            $('#tabladirecciones').DataTable().column(2).search(
                 $('#colPlacas_filter').val()
             ).draw();
         }
 
         function filterColumnUnidad () {
-            $('#tabladirecciones').DataTable().column(2).search(
+            $('#tabladirecciones').DataTable().column(1).search(
                 $('#colUnidad_filter').val()
             ).draw();
         }
 
         function filterColumnFecha () {
-            $('#tabladirecciones').DataTable().column(8).search(
+            $('#tabladirecciones').DataTable().column(7).search(
                 $('#colfecha_filter').val()
             ).draw();
         }
@@ -134,7 +133,6 @@
                           } ,
                 "ajax": "busquedaVRData",
                 "columns": [
-                    { data: 'id' , name: 'id'},
                     { data: 'numCarpeta' , name: 'numCarpeta'},
                     { data: 'unidad' , name: 'unidad'},
                     { data: 'placas' , name: 'placas'},

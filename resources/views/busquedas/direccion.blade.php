@@ -56,7 +56,6 @@
         <table class="table table-striped table-hover table-bordered" id="tabladirecciones">
             <thead>
                 <tr>
-                    <th>ID</th>
                     <th>Municipio</th>
                     <th>Localidad</th>
                     <th>Colonia</th>
@@ -83,35 +82,35 @@
         }
 
         function filterMunicipio () {
-            $('#tabladirecciones').DataTable().column(1).search(
+            $('#tabladirecciones').DataTable().column(0).search(
                 $('#colMunicipio_filter').val()
             ).draw();
         }
 
         function filterLocalidad () {
-            $('#tabladirecciones').DataTable().column(2).search(
+            $('#tabladirecciones').DataTable().column(1).search(
                 $('#colLocalidad_filter').val()
             ).draw();
         }
         function filterColonia () {
-            $('#tabladirecciones').DataTable().column(3).search(
+            $('#tabladirecciones').DataTable().column(2).search(
                 $('#colColonia_filter').val()
             ).draw();
         }
         function filterCodigo () {
-            $('#tabladirecciones').DataTable().column(4).search(
+            $('#tabladirecciones').DataTable().column(3).search(
                 $('#colCodigo_filter').val()
             ).draw();
         }
 
         function filterCalle () {
-            $('#tabladirecciones').DataTable().column(5).search(
+            $('#tabladirecciones').DataTable().column(4).search(
                 $('#colCalle_filter').val()
             ).draw();
         }
 
         function filterDelito () {
-            $('#tabladirecciones').DataTable().column(7).search(
+            $('#tabladirecciones').DataTable().column(6).search(
                 $('#colDelito_filter').val()
             ).draw();
         }
@@ -127,7 +126,6 @@
                           } ,
                 "ajax": "busquedaDData",
                 "columns": [
-                    { data: 'id' , name: 'id'},
                     { data: 'municipio' , name: 'municipio'},
                     { data: 'localidad' , name: 'localidad'},
                     { data: 'colonia' , name: 'colonia'},
