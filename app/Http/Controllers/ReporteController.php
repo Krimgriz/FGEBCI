@@ -33,8 +33,7 @@ class ReporteController extends Controller
             ->where('carpeta.id', '=', $id)
             ->get();
 
-            $contadorDelitos=count($DatosDelitos);
-            $contadorDelitos=$contadorDelitos-1;
+            
             //dd($DatosDelitos);
 		return view('reporte.detalle')->with('DatosUnidad',$DatosUnidad)->with('DatosDelitos',$DatosDelitos);
 	}}
