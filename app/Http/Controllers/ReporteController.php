@@ -12,9 +12,11 @@ class ReporteController extends Controller
 		$DatosUnidad = DB::table('carpeta')
             ->join('users', 'users.id', '=', 'carpeta.idFiscal')
             ->join('unidad', 'unidad.id', '=', 'carpeta.idUnidad')
-            ->select('carpeta.id', 'unidad.nombre', 'unidad.region', 'unidad.distrito', 'users.numFiscal', 'carpeta.numCarpeta', 'carpeta.fechaInicio', 'users.nombres as nombrefiscal', 'users.primerAp as primerApfiscal', 'users.segundoAp as segundoApfiscal', DB::raw(date('Y'). ' as yearInicio'), DB::raw('(CASE WHEN carpeta.esRelevante = 1 THEN "SI" ELSE "NO" END) AS esRelevante'), DB::raw('(CASE WHEN carpeta.conDetenido = 1 THEN "SI" ELSE "NO" END) AS conDetenido')  )
+            ->join('cat_tipo_determinacion', 'cat_tipo_determinacion.id', '=', 'carpeta.idTipoDeterminacion')
+            ->select('carpeta.id', 'unidad.nombre', 'unidad.region', 'unidad.distrito', 'users.numFiscal', 'carpeta.numCarpeta', 'carpeta.fechaInicio', 'users.nombres as nombrefiscal', 'users.primerAp as primerApfiscal', 'users.segundoAp as segundoApfiscal', DB::raw(date('Y'). ' as yearInicio'), DB::raw('(CASE WHEN carpeta.esRelevante = 1 THEN "SI" ELSE "NO" END) AS esRelevante'), DB::raw('(CASE WHEN carpeta.conDetenido = 1 THEN "SI" ELSE "NO" END) AS conDetenido'), 'cat_tipo_determinacion.nombre as tipoDeterminacion', 'carpeta.estadoCarpeta', 'carpeta.fechaDeterminacion', 'carpeta.descripcionHechos')
             ->where('carpeta.id', '=', $id)
             ->get();
+
 
         $DatosDelitos = DB::table('carpeta')
         	->join('acusacion', 'carpeta.id', '=', 'acusacion.idCarpeta')
@@ -52,6 +54,8 @@ class ReporteController extends Controller
 
         $DatosImputado = DB::table('carpeta')
             ->join('acusacion', 'carpeta.id', '=', 'acusacion.idCarpeta')
+            ->join('tipif_delito', 'tipif_delito.id', '=', 'acusacion.idTipifDelito')
+            ->join('cat_delito', 'cat_delito.id', '=', 'tipif_delito.idDelito')
             ->join('extra_denunciado', 'extra_denunciado.id', '=', 'acusacion.idDenunciado')
             ->join('variables_persona', 'variables_persona.id', '=', 'extra_denunciado.idVariablesPersona')
             ->join('persona', 'variables_persona.idPersona', '=', 'persona.id')
@@ -62,12 +66,53 @@ class ReporteController extends Controller
             ->join('cat_escolaridad', 'variables_persona.idEscolaridad', '=', 'cat_escolaridad.id')
             ->join('cat_estado_civil', 'variables_persona.idEstadoCivil', '=', 'cat_estado_civil.id')
             ->join('cat_religion', 'variables_persona.idReligion', '=', 'cat_religion.id')
-            ->select('carpeta.id', 'persona.nombres', 'persona.primerAp', 'persona.segundoAp', 'variables_persona.edad', 'persona.sexo', 'cat_nacionalidad.nombre as nacionalidad', 'cat_estado.nombre as estadoOrigen', 'cat_ocupacion.nombre as ocupacion', 'variables_persona.lugarTrabajo', 'cat_escolaridad.nombre as escolaridad', 'cat_estado_civil.nombre as estadoCivil', 'cat_religion.nombre as religion'   )
+            ->select('carpeta.id', 'persona.nombres', 'persona.primerAp', 'persona.segundoAp', 'variables_persona.edad', 'persona.sexo', 'cat_nacionalidad.nombre as nacionalidad', 'cat_estado.nombre as estadoOrigen', 'cat_ocupacion.nombre as ocupacion', 'variables_persona.lugarTrabajo', 'cat_escolaridad.nombre as escolaridad', 'cat_estado_civil.nombre as estadoCivil', 'cat_religion.nombre as religion', 'cat_delito.nombre as delito'   )
             ->where('carpeta.id', '=', $id)
             ->get();
-            
+
+        $DatosEmpresaAgrabiado = DB::table('carpeta')
+            ->join('acusacion', 'carpeta.id', '=', 'acusacion.idCarpeta')
+            ->join('extra_denunciante', 'extra_denunciante.id', '=', 'acusacion.idDenunciante')
+            ->join('variables_persona', 'variables_persona.id', '=', 'extra_denunciante.idVariablesPersona')
+            ->join('persona', 'variables_persona.idPersona', '=', 'persona.id')
+            ->join('domicilio', 'variables_persona.idDomicilio', '=', 'domicilio.id')
+            ->join('cat_municipio', 'domicilio.idMunicipio', '=', 'cat_municipio.id')
+            ->join('cat_estado', 'cat_municipio.idEstado', '=', 'cat_estado.id')
+            ->join('cat_localidad', 'domicilio.idLocalidad', '=', 'cat_localidad.id')
+            ->join('cat_colonia', 'domicilio.idColonia', '=', 'cat_colonia.id')
+            ->select('carpeta.id', 'persona.nombres', 'persona.primerAp', 'persona.segundoAp', 'persona.rfc', 'persona.esEmpresa', 'variables_persona.telefono', 'variables_persona.representanteLegal', 'cat_estado.nombre as estado', 'cat_municipio.nombre as municipio', 'cat_localidad.nombre as localiadad', 'cat_colonia.nombre as colonia', 'domicilio.calle', 'domicilio.numExterno')
+            ->where('carpeta.id', '=', $id)
+            ->get();
+
+        $DatosEmpresaImputado = DB::table('carpeta')
+            ->join('acusacion', 'carpeta.id', '=', 'acusacion.idCarpeta')
+            ->join('tipif_delito', 'tipif_delito.id', '=', 'acusacion.idTipifDelito')
+            ->join('cat_delito', 'cat_delito.id', '=', 'tipif_delito.idDelito')
+            ->join('extra_denunciado', 'extra_denunciado.id', '=', 'acusacion.idDenunciado')
+            ->join('variables_persona', 'variables_persona.id', '=', 'extra_denunciado.idVariablesPersona')
+            ->join('persona', 'variables_persona.idPersona', '=', 'persona.id')
+            ->join('domicilio', 'variables_persona.idDomicilio', '=', 'domicilio.id')
+            ->join('cat_municipio', 'domicilio.idMunicipio', '=', 'cat_municipio.id')
+            ->join('cat_estado', 'cat_municipio.idEstado', '=', 'cat_estado.id')
+            ->join('cat_localidad', 'domicilio.idLocalidad', '=', 'cat_localidad.id')
+            ->join('cat_colonia', 'domicilio.idColonia', '=', 'cat_colonia.id')
+            ->select('carpeta.id', 'persona.nombres', 'persona.primerAp', 'persona.segundoAp', 'persona.rfc', 'persona.esEmpresa', 'variables_persona.telefono', 'variables_persona.representanteLegal', 'cat_estado.nombre as estado', 'cat_municipio.nombre as municipio', 'cat_localidad.nombre as localiadad', 'cat_colonia.nombre as colonia', 'domicilio.calle', 'domicilio.numExterno', 'cat_delito.nombre as delito'   )
+            ->where('carpeta.id', '=', $id)
+            ->get();
+
+        $DatosVehiculos = DB::table('carpeta')
+            ->join('acusacion', 'carpeta.id', '=', 'acusacion.idCarpeta')
+            ->join('tipif_delito', 'tipif_delito.id', '=', 'acusacion.idTipifDelito')
+            ->join('cat_delito', 'cat_delito.id', '=', 'tipif_delito.idDelito')
+            ->join('vehiculo', 'vehiculo.idTipifDelito', '=', 'tipif_delito.id')
+            ->join('cat_estado', 'vehiculo.idEstado', '=', 'cat_estado.id')
+            ->select('carpeta.id','vehiculo.status', 'vehiculo.placas', 'cat_estado.nombre as estado' )
+            ->where('carpeta.id', '=', $id)
+            ->get();
         
-        //dd($DatosDelitos);
+        dd($DatosVehiculos);
+            /*
+            */
 		
 		return view('reporte.detalle')->with('DatosUnidad',$DatosUnidad)->with('DatosDelitos',$DatosDelitos)->with('DatosAgrabiado',$DatosAgrabiado)->with('DatosImputado',$DatosImputado);
 	}}
