@@ -16,12 +16,13 @@ class VehiculosController extends Controller
     public function anyData()
     {
     	$data = DB::table('vehiculo')
-            ->join('cat_marca', 'cat_marca.id', '=', 'vehiculo.idMarca')
             ->join('cat_submarca', 'cat_submarca.id', '=', 'vehiculo.idSubmarca')
+            ->join('cat_marca', 'cat_marca.id', '=', 'cat_submarca.idMarca')
             ->join('cat_estado', 'cat_estado.id', '=', 'vehiculo.idEstado')
             ->join('tipif_delito', 'tipif_delito.id', '=', 'vehiculo.idTipifDelito')
             ->join('cat_delito', 'tipif_delito.idDelito', '=', 'cat_delito.id')
-            ->join('carpeta', 'carpeta.id', '=', 'tipif_delito.idCarpeta')
+            ->join('acusacion', 'tipif_delito.id', '=', 'acusacion.idTipifDelito')
+            ->join('carpeta', 'carpeta.id', '=', 'acusacion.idCarpeta')
             ->join('unidad', 'unidad.id', '=', 'carpeta.idUnidad')
             ->select('carpeta.id', 'carpeta.numCarpeta', 'unidad.nombre as unidad', 'vehiculo.placas', 'vehiculo.modelo', 'cat_marca.nombre as marca', 'vehiculo.numSerie', 'vehiculo.status', 'cat_estado.nombre as estado')
             ->get();
