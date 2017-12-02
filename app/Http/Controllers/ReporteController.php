@@ -48,7 +48,7 @@ class ReporteController extends Controller
             ->join('cat_escolaridad', 'variables_persona.idEscolaridad', '=', 'cat_escolaridad.id')
             ->join('cat_estado_civil', 'variables_persona.idEstadoCivil', '=', 'cat_estado_civil.id')
             ->join('cat_religion', 'variables_persona.idReligion', '=', 'cat_religion.id')
-            ->select('carpeta.id', 'persona.nombres', 'persona.primerAp', 'persona.segundoAp', 'variables_persona.edad', 'persona.sexo', 'cat_nacionalidad.nombre as nacionalidad', 'cat_estado.nombre as estadoOrigen', 'cat_ocupacion.nombre as ocupacion', 'variables_persona.lugarTrabajo', 'cat_escolaridad.nombre as escolaridad', 'cat_estado_civil.nombre as estadoCivil', 'cat_religion.nombre as religion'   )
+            ->select('carpeta.id', 'persona.nombres', 'persona.primerAp', 'persona.segundoAp', 'variables_persona.edad', 'persona.sexo', 'cat_nacionalidad.nombre as nacionalidad', 'cat_estado.nombre as estadoOrigen', 'cat_ocupacion.nombre as ocupacion', 'variables_persona.lugarTrabajo', 'cat_escolaridad.nombre as escolaridad', 'cat_estado_civil.nombre as estadoCivil', 'cat_religion.nombre as religion', 'persona.esEmpresa')
             ->where('carpeta.id', '=', $id)
             ->get();
 
@@ -66,7 +66,7 @@ class ReporteController extends Controller
             ->join('cat_escolaridad', 'variables_persona.idEscolaridad', '=', 'cat_escolaridad.id')
             ->join('cat_estado_civil', 'variables_persona.idEstadoCivil', '=', 'cat_estado_civil.id')
             ->join('cat_religion', 'variables_persona.idReligion', '=', 'cat_religion.id')
-            ->select('carpeta.id', 'persona.nombres', 'persona.primerAp', 'persona.segundoAp', 'variables_persona.edad', 'persona.sexo', 'cat_nacionalidad.nombre as nacionalidad', 'cat_estado.nombre as estadoOrigen', 'cat_ocupacion.nombre as ocupacion', 'variables_persona.lugarTrabajo', 'cat_escolaridad.nombre as escolaridad', 'cat_estado_civil.nombre as estadoCivil', 'cat_religion.nombre as religion', 'cat_delito.nombre as delito'   )
+            ->select('carpeta.id', 'persona.nombres', 'persona.primerAp', 'persona.segundoAp', 'variables_persona.edad', 'persona.sexo', 'cat_nacionalidad.nombre as nacionalidad', 'cat_estado.nombre as estadoOrigen', 'cat_ocupacion.nombre as ocupacion', 'variables_persona.lugarTrabajo', 'cat_escolaridad.nombre as escolaridad', 'cat_estado_civil.nombre as estadoCivil', 'cat_religion.nombre as religion', 'cat_delito.nombre as delito', 'persona.esEmpresa'   )
             ->where('carpeta.id', '=', $id)
             ->get();
 
@@ -80,7 +80,7 @@ class ReporteController extends Controller
             ->join('cat_estado', 'cat_municipio.idEstado', '=', 'cat_estado.id')
             ->join('cat_localidad', 'domicilio.idLocalidad', '=', 'cat_localidad.id')
             ->join('cat_colonia', 'domicilio.idColonia', '=', 'cat_colonia.id')
-            ->select('carpeta.id', 'persona.nombres', 'persona.primerAp', 'persona.segundoAp', 'persona.rfc', 'persona.esEmpresa', 'variables_persona.telefono', 'variables_persona.representanteLegal', 'cat_estado.nombre as estado', 'cat_municipio.nombre as municipio', 'cat_localidad.nombre as localiadad', 'cat_colonia.nombre as colonia', 'domicilio.calle', 'domicilio.numExterno')
+            ->select('carpeta.id', 'persona.nombres', 'persona.primerAp', 'persona.segundoAp', 'persona.rfc', 'persona.esEmpresa', 'variables_persona.telefono', 'variables_persona.representanteLegal', 'cat_estado.nombre as estado', 'cat_municipio.nombre as municipio', 'cat_localidad.nombre as localidad', 'cat_colonia.nombre as colonia', 'domicilio.calle', 'domicilio.numExterno')
             ->where('carpeta.id', '=', $id)
             ->get();
 
@@ -96,7 +96,7 @@ class ReporteController extends Controller
             ->join('cat_estado', 'cat_municipio.idEstado', '=', 'cat_estado.id')
             ->join('cat_localidad', 'domicilio.idLocalidad', '=', 'cat_localidad.id')
             ->join('cat_colonia', 'domicilio.idColonia', '=', 'cat_colonia.id')
-            ->select('carpeta.id', 'persona.nombres', 'persona.primerAp', 'persona.segundoAp', 'persona.rfc', 'persona.esEmpresa', 'variables_persona.telefono', 'variables_persona.representanteLegal', 'cat_estado.nombre as estado', 'cat_municipio.nombre as municipio', 'cat_localidad.nombre as localiadad', 'cat_colonia.nombre as colonia', 'domicilio.calle', 'domicilio.numExterno', 'cat_delito.nombre as delito'   )
+            ->select('carpeta.id', 'persona.nombres', 'persona.primerAp', 'persona.segundoAp', 'persona.rfc', 'persona.esEmpresa', 'variables_persona.telefono', 'variables_persona.representanteLegal', 'cat_estado.nombre as estado', 'cat_municipio.nombre as municipio', 'cat_localidad.nombre as localidad', 'cat_colonia.nombre as colonia', 'domicilio.calle', 'domicilio.numExterno', 'cat_delito.nombre as delito'   )
             ->where('carpeta.id', '=', $id)
             ->get();
 
@@ -106,13 +106,21 @@ class ReporteController extends Controller
             ->join('cat_delito', 'cat_delito.id', '=', 'tipif_delito.idDelito')
             ->join('vehiculo', 'vehiculo.idTipifDelito', '=', 'tipif_delito.id')
             ->join('cat_estado', 'vehiculo.idEstado', '=', 'cat_estado.id')
-            ->select('carpeta.id','vehiculo.status', 'vehiculo.placas', 'cat_estado.nombre as estado' )
+            ->join('cat_submarca', 'vehiculo.idSubmarca', '=', 'cat_submarca.id')
+            ->join('cat_marca', 'cat_submarca.idMarca', '=', 'cat_marca.id')
+            ->join('cat_color', 'vehiculo.idColor', '=', 'cat_color.id')
+            ->join('cat_tipo_uso', 'vehiculo.idTipoUso', '=', 'cat_tipo_uso.id')
+            ->join('cat_procedencia', 'vehiculo.idProcedencia', '=', 'cat_procedencia.id')
+            ->join('cat_aseguradora', 'vehiculo.idAseguradora', '=', 'cat_aseguradora.id')
+            ->join('cat_tipo_vehiculo', 'vehiculo.idTipoVehiculo', '=', 'cat_tipo_vehiculo.id')
+            ->join('cat_clase_vehiculo', 'cat_tipo_vehiculo.idClaseVehiculo', '=', 'cat_clase_vehiculo.id')
+            ->select('carpeta.id','vehiculo.status', 'vehiculo.placas', 'cat_estado.nombre as estado', 'cat_marca.nombre as marca', 'cat_submarca.nombre as submarca', 'vehiculo.modelo', 'vehiculo.nrpv', 'cat_color.nombre as color', 'vehiculo.numSerie', 'vehiculo.numMotor', 'cat_tipo_vehiculo.nombre as tipoVehiculo', 'cat_clase_vehiculo.nombre as claseVehiculo', 'cat_tipo_uso.nombre as tipoUso', 'vehiculo.senasPartic', 'cat_aseguradora.nombre as aseguradora', 'cat_procedencia.nombre as procedencia')
             ->where('carpeta.id', '=', $id)
             ->get();
         
-        dd($DatosVehiculos);
+        //dd($DatosVehiculos);
             /*
             */
 		
-		return view('reporte.detalle')->with('DatosUnidad',$DatosUnidad)->with('DatosDelitos',$DatosDelitos)->with('DatosAgrabiado',$DatosAgrabiado)->with('DatosImputado',$DatosImputado);
+		return view('reporte.detalle')->with('DatosUnidad',$DatosUnidad)->with('DatosDelitos',$DatosDelitos)->with('DatosAgrabiado',$DatosAgrabiado)->with('DatosImputado',$DatosImputado)->with('DatosVehiculos',$DatosVehiculos)->with('DatosEmpresaAgrabiado',$DatosEmpresaAgrabiado)->with('DatosEmpresaImputado',$DatosEmpresaImputado);
 	}}

@@ -43,7 +43,8 @@
 		</div>
 
 		@include('reporte.datosAcusaciones')
-
+		{{--
+			--}}
 		@include('reporte.datosVehiculos')
 
 		@include('reporte.datosCarpeta')
