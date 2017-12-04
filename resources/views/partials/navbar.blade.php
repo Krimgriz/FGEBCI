@@ -8,7 +8,7 @@
     
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="{{url('/')}}">
             <img src="{{ url('/img/FGE-icon5.png') }}" width="auto" height="60" alt="">
             
         </a>

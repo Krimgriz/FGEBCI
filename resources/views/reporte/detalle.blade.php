@@ -4,6 +4,10 @@
 
 {{--dd($DatosUnidad[0]->nombre)--}}
 
+<div class="container">
+	<a class="btn btn-secondary form-control" href="{{url('detalle/pdf/'.$DatosUnidad[0]->id)}}"> Generar Archivo</a>
+</div>
+<br>
 <div class="fondo">
 	<div class="container" style="border:1px solid black;" >
 		<br>

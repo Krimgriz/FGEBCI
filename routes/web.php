@@ -48,6 +48,8 @@ Route::get('busquedaDData', 'DomicilioController@anyData');
 
 
 Route::get('detalle/{id}', 'ReporteController@showCarpeta');
+
+Route::get('detalle/pdf/{id}', 'ReporteController@reportePDF');
 /*
  *---------------fin pruebas datatables--------------
  */
