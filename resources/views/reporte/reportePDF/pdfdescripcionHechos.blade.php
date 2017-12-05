@@ -1,5 +1,5 @@
 <div>
-	<div class="container" style="background: #767676; color: #ffffff;">
+	<div  style="background: #767676; color: #ffffff;">
 		{{ Form::label('etiqueta', ' DESCRIPCIÓN DE LOS HECHOS: ', array('class' => '')) }}
 	</div>
 	<div>

@@ -1,19 +1,14 @@
 <div class="row">
-	<div class="container col-sm-6">
-		{{ Form::label('etiqueta', 'FISCAL: ', array('class' => '')) }}
-		<label for=""> {{$DatosUnidad[0]->nombrefiscal}}</label>
-		<label for=""> {{$DatosUnidad[0]->primerApfiscal}}</label>
-		<label for=""> {{$DatosUnidad[0]->segundoApfiscal}}</label>
+	<div class="container col-sm-5">
+		<label for="">FISCAL:  {{$DatosUnidad[0]->nombrefiscal}} {{$DatosUnidad[0]->primerApfiscal}} {{$DatosUnidad[0]->segundoApfiscal}}</label>
 
 	</div>
-	<div class="col-sm-6 container">
-		{{ Form::label('etiqueta', 'NUMERO DE FISCAL: ', array('class' => '')) }}
-		<label for="">{{$DatosUnidad[0]->numFiscal}}</label>
+	<div class=" container col-sm-4">
+		{{ Form::label('etiqueta', 'CON DETENIDO: ', array('class' => '')) }}
+		<label for="">{{$DatosUnidad[0]->conDetenido}}</label>
+	</div>
+	<div class="col-sm-3 container">
+		<label for="">RELEVANTE: {{$DatosUnidad[0]->esRelevante}}</label>
 
 	</div>
-</div>
-
-<div class=" container">
-	{{ Form::label('etiqueta', 'CON DETENIDO: ', array('class' => '')) }}
-	<label for="">{{$DatosUnidad[0]->conDetenido}}</label>
 </div>

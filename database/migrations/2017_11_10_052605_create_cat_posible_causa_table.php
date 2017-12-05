@@ -15,7 +15,7 @@ class CreateCatPosibleCausaTable extends Migration
     {
         Schema::create('cat_posible_causa', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre',100)->unique();
+            $table->string('nombre',100);
             $table->timestamps();
             $table->softDeletes();
         });

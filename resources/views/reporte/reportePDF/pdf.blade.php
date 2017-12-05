@@ -22,29 +22,31 @@
 {{--dd($DatosUnidad[0]->nombre)--}}
 
 <div>
-	<div class="fondo" style="border:1px solid black;" >
-		<br>
+	<div  >
+		
 		<div class="row">    
-			<div class="col-2"><img src="{{ url('/img/FGE-icon.png') }}" class="img-fluid" alt=""></div>
+			<div class="col-2">
+				
+				<img src="{{ url('/img/FGE-icon.png') }}" class="img-fluid" alt="">
+			</div>
+			
 			<div class="col-5" align="center" style="margin-left: 120px;">
-				<center>
 					
 				<label for="" style="text-align: center;">FORMATO DE CARPETAS DE INVESTIGACIÓN</label>
 				<br>
 				<label for="" style="margin-left: 75px;">Información Básica</label>
 				<br>
-				
 				<label for="" style="margin-left: 50px;">CENTRO DE INFORMACIÓN</label>
-				</center>
+				
 			</div>
 			{{-- DATOS GENERALES DE LA CARPETA --}}
 			@include('reporte.reportePDF.pdfUnidad')	    		
 		</div>
-		<br>
 		
 		{{-- DATOS DEL FISCAL --}}
 		@include('reporte.reportePDF.pdfFiscal')
 
+		@include('reporte.reportePDF.pdfCarpeta')
 		{{-- DATOS DEL DELITO Y LA TIPIFICAION DEL DELITO --}}
 
 		@include('reporte.reportePDF.pdfDelitos')	
@@ -52,7 +54,7 @@
 		{{-- DATOS DE PERSONAS INVOLUCRADAS  --}}
 		<div>
 			<div  style="background: #767676; color: #ffffff;">
-				{{ Form::label('etiqueta', 'PERSONAS INVOLUCRADAS: ', array('class' => '')) }}
+				<label for="">PERSONAS INVOLUCRADAS:</label>
 			</div>
 
 			@include('reporte.reportePDF.pdfDenunciantes')
@@ -65,7 +67,6 @@
 		
 		@include('reporte.reportePDF.pdfVehiculos')
 
-		@include('reporte.reportePDF.pdfCarpeta')
 
 		@include('reporte.reportePDF.pdfdescripcionHechos')
 

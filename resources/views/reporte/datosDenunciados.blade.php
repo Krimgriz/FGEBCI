@@ -48,21 +48,17 @@
 							<label for="">{{$DatosImputado[$i]->ocupacion}}</label>
 						</div>
 						<div class="col-sm-6">
-							{{ Form::label('etiqueta', 'Lugar de trabajo: ', array('class' => '')) }}
-							<label for="">{{$DatosImputado[$i]->lugarTrabajo}}</label>
+							{{ Form::label('etiqueta', 'RFC: ', array('class' => '')) }}
+							<label for="">{{$DatosImputado[$i]->rfc}}</label>
 						</div>
-						<div class="col-sm-4">
+						<div class="col-sm-6">
 							{{ Form::label('etiqueta', 'Grado de Estudio: ', array('class' => '')) }}
 							<label for="">{{$DatosImputado[$i]->escolaridad}}</label>
 						</div>
-						<div class="col-sm-4">
+						<div class="col-sm-6">
 							{{ Form::label('etiqueta', 'Estado civil: ', array('class' => '')) }}
 							<label for="">{{$DatosImputado[$i]->estadoCivil}}</label>
 						</div>
-						<div class="col-sm-4">
-							{{ Form::label('etiqueta', 'Religión que profesa: ', array('class' => '')) }}
-							<label for="">{{$DatosImputado[$i]->religion}}</label>
-						</div>	
 					</div>
 					<hr style="margin: 0;background: #000000; height: 1px;">
 
@@ -103,21 +99,17 @@
 						<label for="">{{$DatosImputado[$i]->ocupacion}}</label>
 					</div>
 					<div class="col-sm-6">
-						{{ Form::label('etiqueta', 'Lugar de trabajo: ', array('class' => '')) }}
-						<label for="">{{$DatosImputado[$i]->lugarTrabajo}}</label>
+						{{ Form::label('etiqueta', 'RFC: ', array('class' => '')) }}
+						<label for="">{{$DatosImputado[$i]->rfc}}</label>
 					</div>
-					<div class="col-sm-4">
+					<div class="col-sm-6">
 						{{ Form::label('etiqueta', 'Grado de Estudio: ', array('class' => '')) }}
 						<label for="">{{$DatosImputado[$i]->escolaridad}}</label>
 					</div>
-					<div class="col-sm-4">
+					<div class="col-sm-6">
 						{{ Form::label('etiqueta', 'Estado civil: ', array('class' => '')) }}
 						<label for="">{{$DatosImputado[$i]->estadoCivil}}</label>
 					</div>
-					<div class="col-sm-4">
-						{{ Form::label('etiqueta', 'Religión que profesa: ', array('class' => '')) }}
-						<label for="">{{$DatosImputado[$i]->religion}}</label>
-					</div>	
 				</div>
 				<hr style="margin: 0;background: #000000; height: 1px;">
 

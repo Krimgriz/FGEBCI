@@ -49,7 +49,7 @@ class ReporteController extends Controller
             ->join('cat_escolaridad', 'variables_persona.idEscolaridad', '=', 'cat_escolaridad.id')
             ->join('cat_estado_civil', 'variables_persona.idEstadoCivil', '=', 'cat_estado_civil.id')
             ->join('cat_religion', 'variables_persona.idReligion', '=', 'cat_religion.id')
-            ->select('carpeta.id', 'persona.nombres', 'persona.primerAp', 'persona.segundoAp', 'variables_persona.edad', 'persona.sexo', 'cat_nacionalidad.nombre as nacionalidad', 'cat_estado.nombre as estadoOrigen', 'cat_ocupacion.nombre as ocupacion', 'variables_persona.lugarTrabajo', 'cat_escolaridad.nombre as escolaridad', 'cat_estado_civil.nombre as estadoCivil', 'cat_religion.nombre as religion', 'persona.esEmpresa')
+            ->select('carpeta.id', 'persona.nombres', 'persona.primerAp', 'persona.segundoAp', 'variables_persona.edad', 'persona.sexo', 'cat_nacionalidad.nombre as nacionalidad', 'cat_estado.nombre as estadoOrigen', 'cat_ocupacion.nombre as ocupacion', 'variables_persona.lugarTrabajo', 'cat_escolaridad.nombre as escolaridad', 'cat_estado_civil.nombre as estadoCivil', 'persona.rfc', 'persona.esEmpresa')
             ->where('carpeta.id', '=', $id)
             ->get();
 
@@ -67,7 +67,7 @@ class ReporteController extends Controller
             ->join('cat_escolaridad', 'variables_persona.idEscolaridad', '=', 'cat_escolaridad.id')
             ->join('cat_estado_civil', 'variables_persona.idEstadoCivil', '=', 'cat_estado_civil.id')
             ->join('cat_religion', 'variables_persona.idReligion', '=', 'cat_religion.id')
-            ->select('carpeta.id', 'persona.nombres', 'persona.primerAp', 'persona.segundoAp', 'variables_persona.edad', 'persona.sexo', 'cat_nacionalidad.nombre as nacionalidad', 'cat_estado.nombre as estadoOrigen', 'cat_ocupacion.nombre as ocupacion', 'variables_persona.lugarTrabajo', 'cat_escolaridad.nombre as escolaridad', 'cat_estado_civil.nombre as estadoCivil', 'cat_religion.nombre as religion', 'cat_delito.nombre as delito', 'persona.esEmpresa'   )
+            ->select('carpeta.id', 'persona.nombres', 'persona.primerAp', 'persona.segundoAp', 'variables_persona.edad', 'persona.sexo', 'cat_nacionalidad.nombre as nacionalidad', 'cat_estado.nombre as estadoOrigen', 'cat_ocupacion.nombre as ocupacion', 'variables_persona.lugarTrabajo', 'cat_escolaridad.nombre as escolaridad', 'cat_estado_civil.nombre as estadoCivil', 'persona.rfc', 'cat_delito.nombre as delito', 'persona.esEmpresa'   )
             ->where('carpeta.id', '=', $id)
             ->get();
 
@@ -165,7 +165,7 @@ class ReporteController extends Controller
             ->join('cat_escolaridad', 'variables_persona.idEscolaridad', '=', 'cat_escolaridad.id')
             ->join('cat_estado_civil', 'variables_persona.idEstadoCivil', '=', 'cat_estado_civil.id')
             ->join('cat_religion', 'variables_persona.idReligion', '=', 'cat_religion.id')
-            ->select('carpeta.id', 'persona.nombres', 'persona.primerAp', 'persona.segundoAp', 'variables_persona.edad', 'persona.sexo', 'cat_nacionalidad.nombre as nacionalidad', 'cat_estado.nombre as estadoOrigen', 'cat_ocupacion.nombre as ocupacion', 'variables_persona.lugarTrabajo', 'cat_escolaridad.nombre as escolaridad', 'cat_estado_civil.nombre as estadoCivil', 'cat_religion.nombre as religion', 'persona.esEmpresa')
+            ->select('carpeta.id', 'persona.nombres', 'persona.primerAp', 'persona.segundoAp', 'variables_persona.edad', 'persona.sexo', 'cat_nacionalidad.nombre as nacionalidad', 'cat_estado.nombre as estadoOrigen', 'cat_ocupacion.nombre as ocupacion', 'persona.rfc', 'cat_escolaridad.nombre as escolaridad', 'cat_estado_civil.nombre as estadoCivil', 'cat_religion.nombre as religion', 'persona.esEmpresa')
             ->where('carpeta.id', '=', $id)
             ->get();
 
@@ -183,7 +183,7 @@ class ReporteController extends Controller
             ->join('cat_escolaridad', 'variables_persona.idEscolaridad', '=', 'cat_escolaridad.id')
             ->join('cat_estado_civil', 'variables_persona.idEstadoCivil', '=', 'cat_estado_civil.id')
             ->join('cat_religion', 'variables_persona.idReligion', '=', 'cat_religion.id')
-            ->select('carpeta.id', 'persona.nombres', 'persona.primerAp', 'persona.segundoAp', 'variables_persona.edad', 'persona.sexo', 'cat_nacionalidad.nombre as nacionalidad', 'cat_estado.nombre as estadoOrigen', 'cat_ocupacion.nombre as ocupacion', 'variables_persona.lugarTrabajo', 'cat_escolaridad.nombre as escolaridad', 'cat_estado_civil.nombre as estadoCivil', 'cat_religion.nombre as religion', 'cat_delito.nombre as delito', 'persona.esEmpresa'   )
+            ->select('carpeta.id', 'persona.nombres', 'persona.primerAp', 'persona.segundoAp', 'variables_persona.edad', 'persona.sexo', 'cat_nacionalidad.nombre as nacionalidad', 'cat_estado.nombre as estadoOrigen', 'cat_ocupacion.nombre as ocupacion', 'persona.rfc', 'cat_escolaridad.nombre as escolaridad', 'cat_estado_civil.nombre as estadoCivil', 'cat_religion.nombre as religion', 'cat_delito.nombre as delito', 'persona.esEmpresa'   )
             ->where('carpeta.id', '=', $id)
             ->get();
 
@@ -244,7 +244,7 @@ class ReporteController extends Controller
         $data = ['DatosUnidad' => $DatosUnidad, 'DatosDelitos' => $DatosDelitos, 'DatosAgrabiado' => $DatosAgrabiado, 'DatosImputado' => $DatosImputado, 'DatosVehiculos' => $DatosVehiculos, 'DatosEmpresaAgrabiado' => $DatosEmpresaAgrabiado, 'DatosEmpresaImputado' => $DatosEmpresaImputado];
 
         $pdf = PDF::loadView('reporte.reportePDF.pdf', $data);
-        return $pdf->stream('Carpeta.pdf');
+        return $pdf->stream($DatosUnidad[0]->numCarpeta.'.pdf');
         //return $pdf->download('invoice.pdf');
     }
 }

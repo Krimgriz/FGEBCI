@@ -28,6 +28,7 @@
 		{{-- DATOS DEL FISCAL --}}
 		@include('reporte.datosFiscal')
 
+		@include('reporte.datosCarpeta')
 		{{-- DATOS DEL DELITO Y LA TIPIFICAION DEL DELITO --}}
 
 		@include('reporte.datosDelitos')	
@@ -51,7 +52,6 @@
 			--}}
 		@include('reporte.datosVehiculos')
 
-		@include('reporte.datosCarpeta')
 
 
 		@include('reporte.descripcionHechos')

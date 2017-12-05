@@ -42,9 +42,6 @@ $i=0;
 				</div>
 
 				<!--direccion donde ocurrieron los hechos-->
-				<div class="col-sm-12" align="center">
-					{{ Form::label('etiqueta', 'COMISION DEL ILICITO ', array('class' => '')) }}
-				</div>
 
 				<div class="col-sm-6">
 					{{ Form::label('etiqueta', 'Fecha en que Ocurrieron los hechos: ', array('class' => '')) }}
@@ -59,38 +56,38 @@ $i=0;
 					<label for="">{{$DatosDelitos[$i]->zona}}</label>
 				</div>
 				<div class="col-sm-6">
+					{{ Form::label('etiqueta', 'Calle: ', array('class' => '')) }}
+					<label for="">{{$DatosDelitos[$i]->calle}}</label>
+				</div>
+				<div class="col-sm-6">
 					{{ Form::label('etiqueta', 'Lugar donde ocurrieron los hechos: ', array('class' => '')) }}
 					<label for="">{{$DatosDelitos[$i]->lugar}}</label>
+				</div>
+				<div class="col-sm-6">
+					{{ Form::label('etiqueta', 'Numero Externo: ', array('class' => '')) }}
+					<label for="">{{$DatosDelitos[$i]->numExterno}}</label>
 				</div>
 				<div class="col-sm-6">
 					{{ Form::label('etiqueta', 'Municipio: ', array('class' => '')) }}
 					<label for="">{{$DatosDelitos[$i]->municipio}}</label>
 				</div>
 				<div class="col-sm-6">
+					{{ Form::label('etiqueta', 'Entre Calle: ', array('class' => '')) }}
+					<label for="">{{$DatosDelitos[$i]->entreCalle}}</label>
+				</div>
+				<div class="col-sm-6">
 					{{ Form::label('etiqueta', 'Localidad: ', array('class' => '')) }}
 					<label for="">{{$DatosDelitos[$i]->localidad}}</label>
+				</div>
+				<div class="col-sm-6">
+					{{ Form::label('etiqueta', 'Y Calle: ', array('class' => '')) }}
+					<label for="">{{$DatosDelitos[$i]->yCalle}}</label>
 				</div>
 				<div class="col-sm-6">
 					{{ Form::label('etiqueta', 'Colonia: ', array('class' => '')) }}
 					<label for="">{{$DatosDelitos[$i]->colonia}}</label>
 				</div>
 				<div class="col-sm-6">
-					{{ Form::label('etiqueta', 'Numero Externo: ', array('class' => '')) }}
-					<label for="">{{$DatosDelitos[$i]->numExterno}}</label>
-				</div>
-				<div class="col-sm-12">
-					{{ Form::label('etiqueta', 'Calle: ', array('class' => '')) }}
-					<label for="">{{$DatosDelitos[$i]->calle}}</label>
-				</div>
-				<div class="col-sm-12">
-					{{ Form::label('etiqueta', 'Entre Calle: ', array('class' => '')) }}
-					<label for="">{{$DatosDelitos[$i]->entreCalle}}</label>
-				</div>
-				<div class="col-sm-12">
-					{{ Form::label('etiqueta', 'Y Calle: ', array('class' => '')) }}
-					<label for="">{{$DatosDelitos[$i]->yCalle}}</label>
-				</div>
-				<div class="col-sm-12">
 					{{ Form::label('etiqueta', 'Calle Trasera: ', array('class' => '')) }}
 					<label for="">{{$DatosDelitos[$i]->calleTrasera}}</label>
 				</div>
@@ -130,9 +127,6 @@ $i=0;
 				</div>
 
 				<!--direccion donde ocurrieron los hechos-->
-				<div class="col-sm-12" align="center">
-					{{ Form::label('etiqueta', 'COMISION DEL ILICITO ', array('class' => '')) }}
-				</div>
 
 				<div class="col-sm-6">
 					{{ Form::label('etiqueta', 'Fecha en que Ocurrieron los hechos: ', array('class' => '')) }}
@@ -147,38 +141,38 @@ $i=0;
 					<label for="">{{$DatosDelitos[$i]->zona}}</label>
 				</div>
 				<div class="col-sm-6">
+					{{ Form::label('etiqueta', 'Calle: ', array('class' => '')) }}
+					<label for="">{{$DatosDelitos[$i]->calle}}</label>
+				</div>
+				<div class="col-sm-6">
 					{{ Form::label('etiqueta', 'Lugar donde ocurrieron los hechos: ', array('class' => '')) }}
 					<label for="">{{$DatosDelitos[$i]->lugar}}</label>
+				</div>
+				<div class="col-sm-6">
+					{{ Form::label('etiqueta', 'Numero Externo: ', array('class' => '')) }}
+					<label for="">{{$DatosDelitos[$i]->numExterno}}</label>
 				</div>
 				<div class="col-sm-6">
 					{{ Form::label('etiqueta', 'Municipio: ', array('class' => '')) }}
 					<label for="">{{$DatosDelitos[$i]->municipio}}</label>
 				</div>
 				<div class="col-sm-6">
+					{{ Form::label('etiqueta', 'Entre Calle: ', array('class' => '')) }}
+					<label for="">{{$DatosDelitos[$i]->entreCalle}}</label>
+				</div>
+				<div class="col-sm-6">
 					{{ Form::label('etiqueta', 'Localidad: ', array('class' => '')) }}
 					<label for="">{{$DatosDelitos[$i]->localidad}}</label>
+				</div>
+				<div class="col-sm-6">
+					{{ Form::label('etiqueta', 'Y Calle: ', array('class' => '')) }}
+					<label for="">{{$DatosDelitos[$i]->yCalle}}</label>
 				</div>
 				<div class="col-sm-6">
 					{{ Form::label('etiqueta', 'Colonia: ', array('class' => '')) }}
 					<label for="">{{$DatosDelitos[$i]->colonia}}</label>
 				</div>
 				<div class="col-sm-6">
-					{{ Form::label('etiqueta', 'Numero Externo: ', array('class' => '')) }}
-					<label for="">{{$DatosDelitos[$i]->numExterno}}</label>
-				</div>
-				<div class="col-sm-12">
-					{{ Form::label('etiqueta', 'Calle: ', array('class' => '')) }}
-					<label for="">{{$DatosDelitos[$i]->calle}}</label>
-				</div>
-				<div class="col-sm-12">
-					{{ Form::label('etiqueta', 'Entre Calle: ', array('class' => '')) }}
-					<label for="">{{$DatosDelitos[$i]->entreCalle}}</label>
-				</div>
-				<div class="col-sm-12">
-					{{ Form::label('etiqueta', 'Y Calle: ', array('class' => '')) }}
-					<label for="">{{$DatosDelitos[$i]->yCalle}}</label>
-				</div>
-				<div class="col-sm-12">
 					{{ Form::label('etiqueta', 'Calle Trasera: ', array('class' => '')) }}
 					<label for="">{{$DatosDelitos[$i]->calleTrasera}}</label>
 				</div>

@@ -1,5 +1,5 @@
 <div>
-	<div class="container" style="background: #a5a5a5;">
+	<div  style="background: #a5a5a5;">
 		{{ Form::label('etiqueta', ' DENUNCIANTES: ', array('class' => '')) }}
 	</div>
 	@php
@@ -18,7 +18,6 @@
 				}else{
 					@endphp
 
-					<div class="row">
 						<div class="col-sm-12">
 							{{ Form::label('etiqueta', 'Nombre: ', array('class' => '')) }}
 							<label for="">{{$DatosAgrabiado[$i]->nombres}}</label>
@@ -47,8 +46,8 @@
 							<label for="">{{$DatosAgrabiado[$i]->ocupacion}}</label>
 						</div>
 						<div class="col-sm-6">
-							{{ Form::label('etiqueta', 'Lugar de trabajo: ', array('class' => '')) }}
-							<label for="">{{$DatosAgrabiado[$i]->lugarTrabajo}}</label>
+							{{ Form::label('etiqueta', 'RFC: ', array('class' => '')) }}
+							<label for="">{{$DatosAgrabiado[$i]->rfc}}</label>
 						</div>
 						<div class="col-sm-4">
 							{{ Form::label('etiqueta', 'Grado de Estudio: ', array('class' => '')) }}
@@ -58,11 +57,6 @@
 							{{ Form::label('etiqueta', 'Estado civil: ', array('class' => '')) }}
 							<label for="">{{$DatosAgrabiado[$i]->estadoCivil}}</label>
 						</div>
-						<div class="col-sm-4">
-							{{ Form::label('etiqueta', 'Religión que profesa: ', array('class' => '')) }}
-							<label for="">{{$DatosAgrabiado[$i]->religion}}</label>
-						</div>	
-					</div>
 					<hr style="margin: 0;background: #000000; height: 1px;">
 
 					@php
@@ -73,7 +67,6 @@
 
 				@endphp
 				
-				<div class="row">
 					<div class="col-sm-12">
 						{{ Form::label('etiqueta', 'Nombre: ', array('class' => '')) }}
 						<label for="">{{$DatosAgrabiado[$i]->nombres}}</label>
@@ -102,22 +95,18 @@
 						<label for="">{{$DatosAgrabiado[$i]->ocupacion}}</label>
 					</div>
 					<div class="col-sm-6">
-						{{ Form::label('etiqueta', 'Lugar de trabajo: ', array('class' => '')) }}
-						<label for="">{{$DatosAgrabiado[$i]->lugarTrabajo}}</label>
+						{{ Form::label('etiqueta', 'RFC: ', array('class' => '')) }}
+						<label for="">{{$DatosAgrabiado[$i]->rfc}}</label>
 					</div>
-					<div class="col-sm-4">
+					<div class="col-sm-6">
 						{{ Form::label('etiqueta', 'Grado de Estudio: ', array('class' => '')) }}
 						<label for="">{{$DatosAgrabiado[$i]->escolaridad}}</label>
 					</div>
-					<div class="col-sm-4">
+					<div class="col-sm-6">
 						{{ Form::label('etiqueta', 'Estado civil: ', array('class' => '')) }}
 						<label for="">{{$DatosAgrabiado[$i]->estadoCivil}}</label>
 					</div>
-					<div class="col-sm-4">
-						{{ Form::label('etiqueta', 'Religión que profesa: ', array('class' => '')) }}
-						<label for="">{{$DatosAgrabiado[$i]->religion}}</label>
-					</div>	
-				</div>
+						
 				<hr style="margin: 0;background: #000000; height: 1px;">
 
 				@php
@@ -138,7 +127,6 @@
 					@endphp
 					
 
-					<div class="row">
 						<div class="col-sm-6">
 							{{ Form::label('etiqueta', 'Nombre: ', array('class' => '')) }}
 							<label for="">{{$DatosEmpresaAgrabiado[$i]->nombres}}</label>
@@ -180,7 +168,6 @@
 							<label for="">{{$DatosEmpresaAgrabiado[$i]->calle}}</label>
 						</div>
 						
-					</div>
 					<hr style="margin: 0;background: #000000; height: 1px;">
 
 					@php
@@ -191,7 +178,6 @@
 
 				@endphp
 				
-				<div class="row">
 					<div class="col-sm-6">
 						{{ Form::label('etiqueta', 'Nombre: ', array('class' => '')) }}
 						<label for="">{{$DatosEmpresaAgrabiado[$i]->nombres}}</label>
@@ -232,7 +218,6 @@
 						{{ Form::label('etiqueta', 'Calle: ', array('class' => '')) }}
 						<label for="">{{$DatosEmpresaAgrabiado[$i]->calle}}</label>
 					</div>
-				</div>
 				<hr style="margin: 0;background: #000000; height: 1px;">
 
 				@php

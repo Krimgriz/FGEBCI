@@ -9,7 +9,7 @@ class CatSubmarca extends Model
     protected $table = 'cat_submarca';
 
     protected $fillable = [
-        'id', 'idMarca', 'nombre',
+        'id', 'idSubmarca', 'idMarca', 'nombre',
     ];
 
     public function vehiculos(){
@@ -18,5 +18,9 @@ class CatSubmarca extends Model
 
     public function marca(){
         return $this->belongsTo('App\Models\CatMarca');
+    }
+
+    public static function submarcas($id){
+        return CatSubmarca::select('id', 'nombre')->where('idMarca', '=', $id)->get();
     }
 }

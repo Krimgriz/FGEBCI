@@ -4,9 +4,11 @@
 	</div>
 	<table align="center" style="text-align: center;" class="table">
 		<thead >
-			<th>Denunciante</th>
-			<th>Delito</th>
-			<th>Denunciado</th>
+			<tr>
+				<th>Denunciante</th>
+				<th>Delito</th>
+				<th>Denunciado</th>
+			</tr>
 		</thead>
 		<tbody>
 			@for ($i = 0; $i <count($DatosAgrabiado) ; $i++)

@@ -47,8 +47,8 @@
 							<label for="">{{$DatosAgrabiado[$i]->ocupacion}}</label>
 						</div>
 						<div class="col-sm-6">
-							{{ Form::label('etiqueta', 'Lugar de trabajo: ', array('class' => '')) }}
-							<label for="">{{$DatosAgrabiado[$i]->lugarTrabajo}}</label>
+							{{ Form::label('etiqueta', 'RFC: ', array('class' => '')) }}
+							<label for="">{{$DatosAgrabiado[$i]->rfc}}</label>
 						</div>
 						<div class="col-sm-4">
 							{{ Form::label('etiqueta', 'Grado de Estudio: ', array('class' => '')) }}
@@ -58,10 +58,6 @@
 							{{ Form::label('etiqueta', 'Estado civil: ', array('class' => '')) }}
 							<label for="">{{$DatosAgrabiado[$i]->estadoCivil}}</label>
 						</div>
-						<div class="col-sm-4">
-							{{ Form::label('etiqueta', 'Religión que profesa: ', array('class' => '')) }}
-							<label for="">{{$DatosAgrabiado[$i]->religion}}</label>
-						</div>	
 					</div>
 					<hr style="margin: 0;background: #000000; height: 1px;">
 
@@ -102,21 +98,18 @@
 						<label for="">{{$DatosAgrabiado[$i]->ocupacion}}</label>
 					</div>
 					<div class="col-sm-6">
-						{{ Form::label('etiqueta', 'Lugar de trabajo: ', array('class' => '')) }}
-						<label for="">{{$DatosAgrabiado[$i]->lugarTrabajo}}</label>
+						{{ Form::label('etiqueta', 'RFC: ', array('class' => '')) }}
+						<label for="">{{$DatosAgrabiado[$i]->rfc}}</label>
 					</div>
-					<div class="col-sm-4">
+					<div class="col-sm-6">
 						{{ Form::label('etiqueta', 'Grado de Estudio: ', array('class' => '')) }}
 						<label for="">{{$DatosAgrabiado[$i]->escolaridad}}</label>
 					</div>
-					<div class="col-sm-4">
+					<div class="col-sm-6">
 						{{ Form::label('etiqueta', 'Estado civil: ', array('class' => '')) }}
 						<label for="">{{$DatosAgrabiado[$i]->estadoCivil}}</label>
 					</div>
-					<div class="col-sm-4">
-						{{ Form::label('etiqueta', 'Religión que profesa: ', array('class' => '')) }}
-						<label for="">{{$DatosAgrabiado[$i]->religion}}</label>
-					</div>	
+						
 				</div>
 				<hr style="margin: 0;background: #000000; height: 1px;">
 

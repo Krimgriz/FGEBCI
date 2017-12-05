@@ -13,7 +13,6 @@
 		}else{
 			@endphp
 
-			<div class="row">
 				<div class="col-sm-3">
 					{{ Form::label('etiqueta', 'Estatus: ', array('class' => '')) }}
 					<label for="">{{$DatosVehiculos[$i]->status}}</label>
@@ -75,7 +74,6 @@
 					{{ Form::label('etiqueta', 'Señas Particulares: ', array('class' => '')) }}
 					<label for="">{{$DatosVehiculos[$i]->senasPartic}}</label>
 				</div>
-			</div>
 			<hr style="margin: 0;background: #000000; height: 1px;">
 
 			@php
@@ -85,11 +83,10 @@
 	}else{
 
 		@endphp
-		<div class="container" style="background: #767676; color: #ffffff;">
+		<div style="background: #767676; color: #ffffff;">
 			{{ Form::label('etiqueta', 'VEHICULOS', array('class' => '')) }}
 		</div>
 
-		<div class="row">
 			<div class="col-sm-3">
 				{{ Form::label('etiqueta', 'Estatus: ', array('class' => '')) }}
 				<label for="">{{$DatosVehiculos[$i]->status}}</label>
@@ -151,7 +148,6 @@
 				{{ Form::label('etiqueta', 'Señas Particulares: ', array('class' => '')) }}
 				<label for="">{{$DatosVehiculos[$i]->senasPartic}}</label>
 			</div>
-		</div>
 		<hr style="margin: 0;background: #000000; height: 1px;">
 
 		@php
