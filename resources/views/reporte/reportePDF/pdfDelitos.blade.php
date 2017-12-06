@@ -17,7 +17,7 @@ $i=0;
 
 
 			<div style="background: #a5a5a5;">
-				<label for="">Delito: {{$DatosDelitos[$i]->nombre}}</label>
+				<label for="" style="margin-left: 10px;">Delito: {{$DatosDelitos[$i]->nombre}}</label>
 			</div>
 				<div class="col-12">
 					<label  for="">Tipo de Delito: {{$DatosDelitos[$i]->tipoDelito}}</label>
@@ -81,7 +81,7 @@ $i=0;
 
 		@endphp
 			<div style="background: #a5a5a5;">
-				<label for="">Delito: {{$DatosDelitos[$i]->nombre}}</label>
+				<label for="" style="margin-left: 10px;">Delito: {{$DatosDelitos[$i]->nombre}}</label>
 			</div>
 				<div class="col-12">
 					<label  for="">Tipo de Delito: {{$DatosDelitos[$i]->tipoDelito}}</label>

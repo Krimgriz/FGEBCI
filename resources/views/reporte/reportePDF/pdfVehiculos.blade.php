@@ -13,66 +13,47 @@
 		}else{
 			@endphp
 
-				<div class="col-sm-3">
-					{{ Form::label('etiqueta', 'Estatus: ', array('class' => '')) }}
-					<label for="">{{$DatosVehiculos[$i]->status}}</label>
+				<div class="col-12">
+				
+					<label for="">Estatus: {{$DatosVehiculos[$i]->status}}</label>
+				
+					<label for="" style="position: absolute;left: 190px">Estado: {{$DatosVehiculos[$i]->estado}}</label>
+					
+					<label for="" style="position: absolute;left: 400px">Procedencia: {{$DatosVehiculos[$i]->procedencia}}</label>
+					
+					<label for="" style="position: absolute;left: 600px">Modelo: {{$DatosVehiculos[$i]->modelo}}</label>
 				</div>
-
-				<div class="col-sm-3">
-					{{ Form::label('etiqueta', 'Estado: ', array('class' => '')) }}
-					<label for="">{{$DatosVehiculos[$i]->estado}}</label>
+				<div class="col-12">
+					
+					<label for="">Aseguradora: {{$DatosVehiculos[$i]->aseguradora}}</label>
+					
+					<label for="" style="position: absolute;left: 300px">Marca: {{$DatosVehiculos[$i]->marca}}</label>
+					
+					<label for="" style="position: absolute;left: 450px">SubMarca: {{$DatosVehiculos[$i]->submarca}}</label>
 				</div>
-				<div class="col-sm-3">
-					{{ Form::label('etiqueta', 'Procedencia: ', array('class' => '')) }}
-					<label for="">{{$DatosVehiculos[$i]->procedencia}}</label>
+				<div class="col-12">
+					
+					<label for="">Clase del Vehiculo: {{$DatosVehiculos[$i]->claseVehiculo}}</label>
+					
+					<label for="" style="position: absolute;left: 230px">Tipo de Vehiculo: {{$DatosVehiculos[$i]->tipoVehiculo}}</label>
+					
+					<label for="" style="position: absolute;left: 400px">Tipo de Uso: {{$DatosVehiculos[$i]->tipoUso}}</label>
 				</div>
-				<div class="col-sm-3">
-					{{ Form::label('etiqueta', 'Modelo: ', array('class' => '')) }}
-					<label for="">{{$DatosVehiculos[$i]->modelo}}</label>
+				<div class="col-12">
+					
+					<label for="">Numero de Registro Publico Vehicular: {{$DatosVehiculos[$i]->nrpv}}</label>
+					
+					<label for="" style="position: absolute;left: 363px">Numero de Serie: {{$DatosVehiculos[$i]->numSerie}}</label>
 				</div>
-				<div class="col-sm-5">
-					{{ Form::label('etiqueta', 'Aseguradora: ', array('class' => '')) }}
-					<label for="">{{$DatosVehiculos[$i]->aseguradora}}</label>
+				<div class="col-12">
+					
+					<label for="">Numero de Motor: {{$DatosVehiculos[$i]->numMotor}}</label>
+					
+					<label for="" style="position: absolute;left: 363px">Color: {{$DatosVehiculos[$i]->color}}</label>
 				</div>
-				<div class="col-sm-4">
-					{{ Form::label('etiqueta', 'Marca: ', array('class' => '')) }}
-					<label for="">{{$DatosVehiculos[$i]->marca}}</label>
-				</div>
-				<div class="col-sm-3">
-					{{ Form::label('etiqueta', 'SubMarca: ', array('class' => '')) }}
-					<label for="">{{$DatosVehiculos[$i]->submarca}}</label>
-				</div>
-				<div class="col-sm-4">
-					{{ Form::label('etiqueta', 'Clase del Vehiculo: ', array('class' => '')) }}
-					<label for="">{{$DatosVehiculos[$i]->claseVehiculo}}</label>
-				</div>
-				<div class="col-sm-4">
-					{{ Form::label('etiqueta', 'Tipo de Vehiculo: ', array('class' => '')) }}
-					<label for="">{{$DatosVehiculos[$i]->tipoVehiculo}}</label>
-				</div>
-				<div class="col-sm-4">
-					{{ Form::label('etiqueta', 'Tipo de Uso: ', array('class' => '')) }}
-					<label for="">{{$DatosVehiculos[$i]->tipoUso}}</label>
-				</div>
-				<div class="col-sm-4">
-					{{ Form::label('etiqueta', 'Numero de Registro Publico Vehicular: ', array('class' => '')) }}
-					<label for="">{{$DatosVehiculos[$i]->nrpv}}</label>
-				</div>
-				<div class="col-sm-4">
-					{{ Form::label('etiqueta', 'Numero de Serie: ', array('class' => '')) }}
-					<label for="">{{$DatosVehiculos[$i]->numSerie}}</label>
-				</div>
-				<div class="col-sm-4">
-					{{ Form::label('etiqueta', 'Numero de Motor: ', array('class' => '')) }}
-					<label for="">{{$DatosVehiculos[$i]->numMotor}}</label>
-				</div>
-				<div class="col-sm-4">
-					{{ Form::label('etiqueta', 'Color: ', array('class' => '')) }}
-					<label for="">{{$DatosVehiculos[$i]->color}}</label>
-				</div>
-				<div class="col-sm-8">
-					{{ Form::label('etiqueta', 'Señas Particulares: ', array('class' => '')) }}
-					<label for="">{{$DatosVehiculos[$i]->senasPartic}}</label>
+				<div class="col-12">
+					
+					<label for="">Señas Particulares: {{$DatosVehiculos[$i]->senasPartic}}</label>
 				</div>
 			<hr style="margin: 0;background: #000000; height: 1px;">
 
@@ -84,69 +65,50 @@
 
 		@endphp
 		<div style="background: #767676; color: #ffffff;">
-			{{ Form::label('etiqueta', 'VEHICULOS', array('class' => '')) }}
+			<label for="" style="margin-left: 10px;">VEHICULOS</label>
 		</div>
 
-			<div class="col-sm-3">
-				{{ Form::label('etiqueta', 'Estatus: ', array('class' => '')) }}
-				<label for="">{{$DatosVehiculos[$i]->status}}</label>
+			<div class="col-12">
+				
+				<label for="">Estatus: {{$DatosVehiculos[$i]->status}}</label>
+			
+				<label for="" style="position: absolute;left: 190px">Estado: {{$DatosVehiculos[$i]->estado}}</label>
+				
+				<label for="" style="position: absolute;left: 400px">Procedencia: {{$DatosVehiculos[$i]->procedencia}}</label>
+				
+				<label for="" style="position: absolute;left: 600px">Modelo: {{$DatosVehiculos[$i]->modelo}}</label>
 			</div>
-
-			<div class="col-sm-3">
-				{{ Form::label('etiqueta', 'Estado: ', array('class' => '')) }}
-				<label for="">{{$DatosVehiculos[$i]->estado}}</label>
+			<div class="col-12">
+				
+				<label for="">Aseguradora: {{$DatosVehiculos[$i]->aseguradora}}</label>
+				
+				<label for="" style="position: absolute;left: 300px">Marca: {{$DatosVehiculos[$i]->marca}}</label>
+				
+				<label for="" style="position: absolute;left: 450px">SubMarca: {{$DatosVehiculos[$i]->submarca}}</label>
 			</div>
-			<div class="col-sm-3">
-				{{ Form::label('etiqueta', 'Procedencia: ', array('class' => '')) }}
-				<label for="">{{$DatosVehiculos[$i]->procedencia}}</label>
+			<div class="col-12">
+				
+				<label for="">Clase del Vehiculo: {{$DatosVehiculos[$i]->claseVehiculo}}</label>
+				
+				<label for="" style="position: absolute;left: 230px">Tipo de Vehiculo: {{$DatosVehiculos[$i]->tipoVehiculo}}</label>
+				
+				<label for="" style="position: absolute;left: 400px">Tipo de Uso: {{$DatosVehiculos[$i]->tipoUso}}</label>
 			</div>
-			<div class="col-sm-3">
-				{{ Form::label('etiqueta', 'Modelo: ', array('class' => '')) }}
-				<label for="">{{$DatosVehiculos[$i]->modelo}}</label>
+			<div class="col-12">
+				
+				<label for="">Numero de Registro Publico Vehicular: {{$DatosVehiculos[$i]->nrpv}}</label>
+				
+				<label for="" style="position: absolute;left: 363px">Numero de Serie: {{$DatosVehiculos[$i]->numSerie}}</label>
 			</div>
-			<div class="col-sm-5">
-				{{ Form::label('etiqueta', 'Aseguradora: ', array('class' => '')) }}
-				<label for="">{{$DatosVehiculos[$i]->aseguradora}}</label>
+			<div class="col-12">
+				
+				<label for="">Numero de Motor: {{$DatosVehiculos[$i]->numMotor}}</label>
+				
+				<label for="" style="position: absolute;left: 363px">Color: {{$DatosVehiculos[$i]->color}}</label>
 			</div>
-			<div class="col-sm-4">
-				{{ Form::label('etiqueta', 'Marca: ', array('class' => '')) }}
-				<label for="">{{$DatosVehiculos[$i]->marca}}</label>
-			</div>
-			<div class="col-sm-3">
-				{{ Form::label('etiqueta', 'SubMarca: ', array('class' => '')) }}
-				<label for="">{{$DatosVehiculos[$i]->submarca}}</label>
-			</div>
-			<div class="col-sm-4">
-				{{ Form::label('etiqueta', 'Clase del Vehiculo: ', array('class' => '')) }}
-				<label for="">{{$DatosVehiculos[$i]->claseVehiculo}}</label>
-			</div>
-			<div class="col-sm-4">
-				{{ Form::label('etiqueta', 'Tipo de Vehiculo: ', array('class' => '')) }}
-				<label for="">{{$DatosVehiculos[$i]->tipoVehiculo}}</label>
-			</div>
-			<div class="col-sm-4">
-				{{ Form::label('etiqueta', 'Tipo de Uso: ', array('class' => '')) }}
-				<label for="">{{$DatosVehiculos[$i]->tipoUso}}</label>
-			</div>
-			<div class="col-sm-4">
-				{{ Form::label('etiqueta', 'Numero de Registro Publico Vehicular: ', array('class' => '')) }}
-				<label for="">{{$DatosVehiculos[$i]->nrpv}}</label>
-			</div>
-			<div class="col-sm-4">
-				{{ Form::label('etiqueta', 'Numero de Serie: ', array('class' => '')) }}
-				<label for="">{{$DatosVehiculos[$i]->numSerie}}</label>
-			</div>
-			<div class="col-sm-4">
-				{{ Form::label('etiqueta', 'Numero de Motor: ', array('class' => '')) }}
-				<label for="">{{$DatosVehiculos[$i]->numMotor}}</label>
-			</div>
-			<div class="col-sm-4">
-				{{ Form::label('etiqueta', 'Color: ', array('class' => '')) }}
-				<label for="">{{$DatosVehiculos[$i]->color}}</label>
-			</div>
-			<div class="col-sm-8">
-				{{ Form::label('etiqueta', 'Señas Particulares: ', array('class' => '')) }}
-				<label for="">{{$DatosVehiculos[$i]->senasPartic}}</label>
+			<div class="col-12">
+				
+				<label for="">Señas Particulares: {{$DatosVehiculos[$i]->senasPartic}}</label>
 			</div>
 		<hr style="margin: 0;background: #000000; height: 1px;">
 

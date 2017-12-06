@@ -1,8 +1,8 @@
 <div>
 	<div style="background: #767676; color: #ffffff;">
-		{{ Form::label('etiqueta', ' ACUSACIÓN: ', array('class' => '')) }}
+		<label for="" style="margin-left: 10px;"> ACUSACIÓN: </label>
 	</div>
-	<table align="center" class="table table-secondary" style="text-align: center;">
+	<table align="center" class="table table-secondary" style="font-size: 11px ;text-align: center;">
 		<thead> 
 			<tr>
 				<th>Denunciante</th>

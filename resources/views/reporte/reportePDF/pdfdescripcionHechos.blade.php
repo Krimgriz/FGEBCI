@@ -1,6 +1,6 @@
 <div>
 	<div  style="background: #767676; color: #ffffff;">
-		{{ Form::label('etiqueta', ' DESCRIPCIÓN DE LOS HECHOS: ', array('class' => '')) }}
+		<label for="" style="margin-left: 10px;"> DESCRIPCIÓN DE LOS HECHOS: </label>
 	</div>
 	<div>
 		<label for="">{{$DatosUnidad[0]->descripcionHechos}}</label>

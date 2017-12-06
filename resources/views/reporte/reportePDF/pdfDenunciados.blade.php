@@ -1,6 +1,6 @@
 <div>
 	<div  style="background: #a5a5a5;">
-		{{ Form::label('etiqueta', ' DENUNCIADOS: ', array('class' => '')) }}
+		<label for="" style="margin-left: 10px;"> DENUNCIADOS: </label>
 	</div>
 	@php
 	$i=0;
@@ -18,46 +18,29 @@
 				}else{
 					@endphp
 					
-
-						<div class="col-sm-12">
-							{{ Form::label('etiqueta', 'Nombre: ', array('class' => '')) }}
-							<label for="">{{$DatosImputado[$i]->nombres}}</label>
-							<label for="">{{$DatosImputado[$i]->primerAp}}</label>
-							<label for="">{{$DatosImputado[$i]->segundoAp}}</label>
+						<div class="col-12">
+							<label for="">Nombre: {{$DatosImputado[$i]->nombres}} {{$DatosImputado[$i]->primerAp}} {{$DatosImputado[$i]->segundoAp}}</label>
 						</div>
 
-						<div class="col-sm-2">
-							{{ Form::label('etiqueta', 'Edad: ', array('class' => '')) }}
-							<label for="">{{$DatosImputado[$i]->edad}}</label>
+						<div class="col-12">
+							<label for="">Edad: {{$DatosImputado[$i]->edad}}</label>
+						
+							<label for="" style="position: absolute;left: 75px">Sexo: {{$DatosImputado[$i]->sexo}}</label>
+						
+							<label for="" style="position: absolute;left: 220px">Nacionalidad: {{$DatosImputado[$i]->nacionalidad}}</label>
+						
+							<label for="" style="position: absolute;left: 420px">Entidad Federativa de Origen: {{$DatosImputado[$i]->estadoOrigen}}</label>
 						</div>
-						<div class="col-sm-2">
-							{{ Form::label('etiqueta', 'Sexo: ', array('class' => '')) }}
-							<label for="">{{$DatosImputado[$i]->sexo}}</label>
+						<div class="col-12">
+							<label for="">Ocupación: {{$DatosImputado[$i]->ocupacion}}</label>
+						
 						</div>
-						<div class="col-sm-4">
-							{{ Form::label('etiqueta', 'Nacionalidad: ', array('class' => '')) }}
-							<label for="">{{$DatosImputado[$i]->nacionalidad}}</label>
+						<div class="col-12">
+							<label for="">RFC: {{$DatosImputado[$i]->rfc}}</label>
+							<label for="" style="position: absolute;left: 190px">Grado de Estudio: {{$DatosImputado[$i]->escolaridad}}</label>
+							<label for="" style="position: absolute;left: 500px">Estado civil: {{$DatosImputado[$i]->estadoCivil}}</label>
 						</div>
-						<div class="col-sm-4">
-							{{ Form::label('etiqueta', 'Entidad Federativa de Origen: ', array('class' => '')) }}
-							<label for="">{{$DatosImputado[$i]->estadoOrigen}}</label>
-						</div>
-						<div class="col-sm-6">
-							{{ Form::label('etiqueta', 'Ocupación: ', array('class' => '')) }}
-							<label for="">{{$DatosImputado[$i]->ocupacion}}</label>
-						</div>
-						<div class="col-sm-6">
-							{{ Form::label('etiqueta', 'RFC: ', array('class' => '')) }}
-							<label for="">{{$DatosImputado[$i]->rfc}}</label>
-						</div>
-						<div class="col-sm-6">
-							{{ Form::label('etiqueta', 'Grado de Estudio: ', array('class' => '')) }}
-							<label for="">{{$DatosImputado[$i]->escolaridad}}</label>
-						</div>
-						<div class="col-sm-6">
-							{{ Form::label('etiqueta', 'Estado civil: ', array('class' => '')) }}
-							<label for="">{{$DatosImputado[$i]->estadoCivil}}</label>
-						</div>
+						
 					
 					<hr style="margin: 0;background: #000000; height: 1px;">
 
@@ -70,44 +53,27 @@
 				@endphp
 				
 				
-					<div class="col-sm-12">
-						{{ Form::label('etiqueta', 'Nombre: ', array('class' => '')) }}
-						<label for="">{{$DatosImputado[$i]->nombres}}</label>
-						<label for="">{{$DatosImputado[$i]->primerAp}}</label>
-						<label for="">{{$DatosImputado[$i]->segundoAp}}</label>
+					<div class="col-12">
+						<label for="">Nombre: {{$DatosImputado[$i]->nombres}} {{$DatosImputado[$i]->primerAp}} {{$DatosImputado[$i]->segundoAp}}</label>
 					</div>
 
-					<div class="col-sm-2">
-						{{ Form::label('etiqueta', 'Edad: ', array('class' => '')) }}
-						<label for="">{{$DatosImputado[$i]->edad}}</label>
+					<div class="col-12">
+						<label for="">Edad: {{$DatosImputado[$i]->edad}}</label>
+					
+						<label for="" style="position: absolute;left: 75px">Sexo: {{$DatosImputado[$i]->sexo}}</label>
+					
+						<label for="" style="position: absolute;left: 220px">Nacionalidad: {{$DatosImputado[$i]->nacionalidad}}</label>
+					
+						<label for="" style="position: absolute;left: 420px">Entidad Federativa de Origen: {{$DatosImputado[$i]->estadoOrigen}}</label>
 					</div>
-					<div class="col-sm-2">
-						{{ Form::label('etiqueta', 'Sexo: ', array('class' => '')) }}
-						<label for="">{{$DatosImputado[$i]->sexo}}</label>
+					<div class="col-12">
+						<label for="">Ocupación: {{$DatosImputado[$i]->ocupacion}}</label>
+					
 					</div>
-					<div class="col-sm-4">
-						{{ Form::label('etiqueta', 'Nacionalidad: ', array('class' => '')) }}
-						<label for="">{{$DatosImputado[$i]->nacionalidad}}</label>
-					</div>
-					<div class="col-sm-4">
-						{{ Form::label('etiqueta', 'Entidad Federativa de Origen: ', array('class' => '')) }}
-						<label for="">{{$DatosImputado[$i]->estadoOrigen}}</label>
-					</div>
-					<div class="col-sm-6">
-						{{ Form::label('etiqueta', 'Ocupación: ', array('class' => '')) }}
-						<label for="">{{$DatosImputado[$i]->ocupacion}}</label>
-					</div>
-					<div class="col-sm-6">
-						{{ Form::label('etiqueta', 'RFC: ', array('class' => '')) }}
-						<label for="">{{$DatosImputado[$i]->rfc}}</label>
-					</div>
-					<div class="col-sm-6">
-						{{ Form::label('etiqueta', 'Grado de Estudio: ', array('class' => '')) }}
-						<label for="">{{$DatosImputado[$i]->escolaridad}}</label>
-					</div>
-					<div class="col-sm-6">
-						{{ Form::label('etiqueta', 'Estado civil: ', array('class' => '')) }}
-						<label for="">{{$DatosImputado[$i]->estadoCivil}}</label>
+					<div class="col-12">
+						<label for="">RFC: {{$DatosImputado[$i]->rfc}}</label>
+						<label for="" style="position: absolute;left: 190px">Grado de Estudio: {{$DatosImputado[$i]->escolaridad}}</label>
+						<label for="" style="position: absolute;left: 500px">Estado civil: {{$DatosImputado[$i]->estadoCivil}}</label>
 					</div>
 				
 				<hr style="margin: 0;background: #000000; height: 1px;">
@@ -131,50 +97,27 @@
 					
 
 					
-						<div class="col-sm-6">
-							{{ Form::label('etiqueta', 'Nombre: ', array('class' => '')) }}
-							<label for="">{{$DatosEmpresaImputado[$i]->nombres}}</label>
-							<label for="">{{$DatosEmpresaImputado[$i]->primerAp}}</label>
-							<label for="">{{$DatosEmpresaImputado[$i]->segundoAp}}</label>
-						</div>
+						<div class="col-12">
+							<label for="">Nombre: {{$DatosEmpresaImputado[$i]->nombres}} {{$DatosEmpresaImputado[$i]->primerAp}} {{$DatosEmpresaImputado[$i]->segundoAp}}</label>
 						
-						<div class="col-sm-6">
-							{{ Form::label('etiqueta', 'Representante Legal: ', array('class' => '')) }}
-							<label for="">{{$DatosEmpresaImputado[$i]->representanteLegal}}</label>
+							<label for="" style="position: absolute;left: 363px;">Representante Legal: {{$DatosEmpresaImputado[$i]->representanteLegal}}</label>
 						</div>
 
-						<div class="col-sm-4">
-							{{ Form::label('etiqueta', 'RFC: ', array('class' => '')) }}
-							<label for="">{{$DatosEmpresaImputado[$i]->rfc}}</label>
-						</div>
-						<div class="col-sm-4">
-							{{ Form::label('etiqueta', 'Telefono: ', array('class' => '')) }}
-							<label for="">{{$DatosEmpresaImputado[$i]->telefono}}</label>
-						</div>
-						<div class="col-sm-4">
-							{{ Form::label('etiqueta', 'Numero Externo: ', array('class' => '')) }}
-							<label for="">{{$DatosEmpresaImputado[$i]->numExterno}}</label>
+						<div class="col-12">
+							<label for="">RFC: {{$DatosEmpresaImputado[$i]->rfc}}</label>
+							<label for="" style="position: absolute;left: 220px">Telefono: {{$DatosEmpresaImputado[$i]->telefono}}</label>
+							<label for="" style="position: absolute;left: 500px">Numero Externo: {{$DatosEmpresaImputado[$i]->numExterno}}</label>
 						</div>	
-						<div class="col-sm-4">
-							{{ Form::label('etiqueta', 'Colonia: ', array('class' => '')) }}
-							<label for="">{{$DatosEmpresaImputado[$i]->colonia}}</label>
+						<div class="col-12">
+							<label for="">Municipio: {{$DatosEmpresaImputado[$i]->municipio}}</label>
+							<label for="" style="position: absolute;left: 363px;">Localidad: {{$DatosEmpresaImputado[$i]->localidad}}</label>
 						</div>
-						<div class="col-sm-4">
-							{{ Form::label('etiqueta', 'Municipio: ', array('class' => '')) }}
-							<label for="">{{$DatosEmpresaImputado[$i]->municipio}}</label>
+						<div class="col-12">
+							<label for="">Colonia: {{$DatosEmpresaImputado[$i]->colonia}}</label>
+							<label for="" style="position: absolute;left: 363px;"">Calle: {{$DatosEmpresaImputado[$i]->calle}}</label>
 						</div>
-						<div class="col-sm-4">
-							{{ Form::label('etiqueta', 'Localidad: ', array('class' => '')) }}
-							<label for="">{{$DatosEmpresaImputado[$i]->localidad}}</label>
-						</div>
-						<div class="col-sm-12">
-							{{ Form::label('etiqueta', 'Calle: ', array('class' => '')) }}
-							<label for="">{{$DatosEmpresaImputado[$i]->calle}}</label>
-						</div>
+					<hr style="margin: 0;margin-top: 10px;background: #000000; height: 1px;">
 						
-					
-					<hr style="margin: 0;background: #000000; height: 1px;">
-
 					@php
 					$i++;
 				}
@@ -183,49 +126,27 @@
 
 				@endphp
 				
-				
-					<div class="col-sm-6">
-						{{ Form::label('etiqueta', 'Nombre: ', array('class' => '')) }}
-						<label for="">{{$DatosEmpresaImputado[$i]->nombres}}</label>
-						<label for="">{{$DatosEmpresaImputado[$i]->primerAp}}</label>
-						<label for="">{{$DatosEmpresaImputado[$i]->segundoAp}}</label>
-					</div>
+					<div class="col-12">
+						<label for="">Nombre: {{$DatosEmpresaImputado[$i]->nombres}} {{$DatosEmpresaImputado[$i]->primerAp}} {{$DatosEmpresaImputado[$i]->segundoAp}}</label>
 					
-					<div class="col-sm-6">
-						{{ Form::label('etiqueta', 'Representante Legal: ', array('class' => '')) }}
-						<label for="">{{$DatosEmpresaImputado[$i]->representanteLegal}}</label>
+						<label for="" style="position: absolute;left: 363px;">Representante Legal: {{$DatosEmpresaImputado[$i]->representanteLegal}}</label>
 					</div>
 
-					<div class="col-sm-4">
-						{{ Form::label('etiqueta', 'RFC: ', array('class' => '')) }}
-						<label for="">{{$DatosEmpresaImputado[$i]->rfc}}</label>
-					</div>
-					<div class="col-sm-4">
-						{{ Form::label('etiqueta', 'Telefono: ', array('class' => '')) }}
-						<label for="">{{$DatosEmpresaImputado[$i]->telefono}}</label>
-					</div>
-					<div class="col-sm-4">
-						{{ Form::label('etiqueta', 'Numero Externo: ', array('class' => '')) }}
-						<label for="">{{$DatosEmpresaImputado[$i]->numExterno}}</label>
+					<div class="col-12">
+						<label for="">RFC: {{$DatosEmpresaImputado[$i]->rfc}}</label>
+						<label for="" style="position: absolute;left: 220px">Telefono: {{$DatosEmpresaImputado[$i]->telefono}}</label>
+						<label for="" style="position: absolute;left: 500px">Numero Externo: {{$DatosEmpresaImputado[$i]->numExterno}}</label>
 					</div>	
-					<div class="col-sm-4">
-						{{ Form::label('etiqueta', 'Colonia: ', array('class' => '')) }}
-						<label for="">{{$DatosEmpresaImputado[$i]->colonia}}</label>
+					<div class="col-12">
+						<label for="">Municipio: {{$DatosEmpresaImputado[$i]->municipio}}</label>
+						<label for="" style="position: absolute;left: 363px;">Localidad: {{$DatosEmpresaImputado[$i]->localidad}}</label>
 					</div>
-					<div class="col-sm-4">
-						{{ Form::label('etiqueta', 'Municipio: ', array('class' => '')) }}
-						<label for="">{{$DatosEmpresaImputado[$i]->municipio}}</label>
+					<div class="col-12">
+						<label for="">Colonia: {{$DatosEmpresaImputado[$i]->colonia}}</label>
+						<label for="" style="position: absolute;left: 363px;"">Calle: {{$DatosEmpresaImputado[$i]->calle}}</label>
 					</div>
-					<div class="col-sm-4">
-						{{ Form::label('etiqueta', 'Localidad: ', array('class' => '')) }}
-						<label for="">{{$DatosEmpresaImputado[$i]->localidad}}</label>
-					</div>
-					<div class="col-sm-12">
-						{{ Form::label('etiqueta', 'Calle: ', array('class' => '')) }}
-						<label for="">{{$DatosEmpresaImputado[$i]->calle}}</label>
-					</div>
-				
-				<hr style="margin: 0;background: #000000; height: 1px;">
+				<hr style="margin: 0;margin-top: 10px;background: #000000; height: 1px;">
+					
 
 				@php
 				$i++;

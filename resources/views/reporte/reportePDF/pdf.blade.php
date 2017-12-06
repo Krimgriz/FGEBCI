@@ -12,7 +12,7 @@
     <link href="{{ asset('css/estilosnavbar.css') }}" rel="stylesheet">
     <style>
     	label {
-    		font-size: 12px;
+    		font-size: 11px;
     		
     	}
     </style>
@@ -54,7 +54,7 @@
 		{{-- DATOS DE PERSONAS INVOLUCRADAS  --}}
 		<div>
 			<div  style="background: #767676; color: #ffffff;">
-				<label for="">PERSONAS INVOLUCRADAS:</label>
+				<label for="" style="margin-left: 10px;">PERSONAS INVOLUCRADAS:</label>
 			</div>
 
 			@include('reporte.reportePDF.pdfDenunciantes')

@@ -15,10 +15,7 @@ Route::get('/', function () {
 });
 
 */
-/*Rutas para las busquedas en los datatables*/
-/*   |     |     |   */
-/*   v     v     v   */
-
+/*rutas de busquedas*/
 Route::get('busqueda_personaInvolucrada', 'PersonasInvolucradasController@index');
 Route::get('busquedaPData', 'PersonasInvolucradasController@anyData');
 
@@ -43,16 +40,29 @@ Route::get('busquedaNCData', 'NumeroCarpetaController@anyData');
 Route::get('busqueda_direccion', 'DomicilioController@index');
 Route::get('busquedaDData', 'DomicilioController@anyData');
 
-/*pruebas de detalle para mostrar el reporte*/
-/**/
-
-
+/*rutas de reporte*/
 Route::get('detalle/{id}', 'ReporteController@showCarpeta');
-
 Route::get('detalle/pdf/{id}', 'ReporteController@reportePDF');
+
+
+/*rutas provisionales*/
+/*   |     |     |   */
+/*   |     |     |   */
+/*   v     v     v   */
+
+Route::get('/estadistica/iniciadas', function () {
+    return view('estadisticas.iniciadas');
+});
+Route::post('/estadistica/iniciadas', 'GraficasController@graficaIniciadas');
+Route::get('estadistica/iniciadas/{tipo}/{year}', 'GraficasController@iniciadas');
+
+
 /*
- *---------------fin pruebas datatables--------------
- */
+Route::get('carpeta/{id}', [
+    'uses' => 'CarpetaController@verDetalle',
+    'as' => 'view.carpeta'
+]);
+*/
 Route::get('/estadistica/municipio', function () {
     return view('estadisticas/municipio');
 });
@@ -93,7 +103,6 @@ Route::get('/estadistica/unidad', function () {
 Route::get('/estadistica/colonia', function () {
     return view('estadisticas/colonia');
 });
-
 
 
 /*---------------------------------------------------------*/

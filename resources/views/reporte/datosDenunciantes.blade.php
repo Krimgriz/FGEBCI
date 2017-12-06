@@ -26,11 +26,11 @@
 							<label for="">{{$DatosAgrabiado[$i]->segundoAp}}</label>
 						</div>
 
-						<div class="col-sm-2">
+						<div class="col-sm-1">
 							{{ Form::label('etiqueta', 'Edad: ', array('class' => '')) }}
 							<label for="">{{$DatosAgrabiado[$i]->edad}}</label>
 						</div>
-						<div class="col-sm-2">
+						<div class="col-sm-3">
 							{{ Form::label('etiqueta', 'Sexo: ', array('class' => '')) }}
 							<label for="">{{$DatosAgrabiado[$i]->sexo}}</label>
 						</div>
@@ -77,11 +77,11 @@
 						<label for="">{{$DatosAgrabiado[$i]->segundoAp}}</label>
 					</div>
 
-					<div class="col-sm-2">
+					<div class="col-sm-1">
 						{{ Form::label('etiqueta', 'Edad: ', array('class' => '')) }}
 						<label for="">{{$DatosAgrabiado[$i]->edad}}</label>
 					</div>
-					<div class="col-sm-2">
+					<div class="col-sm-3">
 						{{ Form::label('etiqueta', 'Sexo: ', array('class' => '')) }}
 						<label for="">{{$DatosAgrabiado[$i]->sexo}}</label>
 					</div>

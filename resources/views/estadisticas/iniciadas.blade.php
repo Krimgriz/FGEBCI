@@ -3,6 +3,7 @@
 
 
 @section('content')
+{{--
     <script type="text/javascript">
         google.charts.load('current', {'packages':['line']});
         google.charts.setOnLoadCallback(drawChart);
@@ -74,48 +75,55 @@
 
         }
     </script>
-<br>
-<div class="fondo ">
-    
-    {{ Form::open() }}
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4">
+    --}}
 
-                    {{ Form::label('year', 'Año') }}
-                    {{ Form::select('year', [
-                        2010 => '2010', 
-                        2011 => '2011',
-                        2012 => '2012',
-                        2013 => '2013',
-                        2014 => '2014',
-                        2015 => '2015',
-                        2016 => '2016',
-                        2017 => '2017'], 2017, ['class' => 'form-control']
-                        )}}
-                </div>
-                    
-                <div class="col-sm-4">
+    <br>
+    <div class="fondo ">
 
-                    {{ Form::label('year', 'Carpetas de Investigación') }}
-                    {{ Form::select('year', [
-                        'iniciadas' => 'Iniciadas', 
-                        'conDetenido' => 'Iniciadas Con Detenido',
-                        'sinDetenido' => 'Iniciadas Sin Detenido'], 'iniciadas', ['class' => 'form-control']
-                        )}}
-                </div>
 
-                <div class="col-sm-4"><br> 
-                    {{ Form::button('Generar', array('class' => 'btn btn-outline-secondary form-control')) }}
+        {{Form::open(['action' => 'GraficasController@graficaIniciadas','url' => '/' , 'method' => 'POST'])}}
+            {{ method_field('POST') }}
+            {{ csrf_field() }}
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+
+                        {{ Form::label('year', 'Año') }}
+                        {{ Form::select('year', [
+                            2016 => '2016', 
+                            2017 => '2017' ,
+                            2018 => '2018',
+                            2019 => '2019',
+                            2020 => '2020',
+                            2021 => '2021',
+                            2022 => '2022',
+                            2023 => '2023'], 2017, ['class' => 'form-control']
+                            )}}
+                    </div>
+
+                    <div class="col-sm-4">
+
+                        {{ Form::label('tipo', 'Carpetas de Investigación') }}
+                        {{ Form::select('tipo', [
+                            'iniciadas' => 'Iniciadas', 
+                            'conDetenido' => 'Iniciadas Con Detenido',
+                            'sinDetenido' => 'Iniciadas Sin Detenido'], 'iniciadas', ['class' => 'form-control']
+                            )}}
+                    </div>
+
+                    <div class="col-sm-4"><br> 
+                        {{ Form::submit('Generar', array('class' => 'btn btn-outline-secondary form-control')) }}
+                    </div>
                 </div>
             </div>
-        </div>
-    {!! Form::close() !!}
-    <br>
+        {!! Form::close() !!}
+        <br>
+    {{--
     <center>
         <div id="chart_div" style="width: 100%;"></div>
     </center>
+    --}}
     <br>
 </div>
-        
+
 @endsection

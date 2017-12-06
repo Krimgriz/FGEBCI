@@ -27,11 +27,11 @@
 							<label for="">{{$DatosImputado[$i]->segundoAp}}</label>
 						</div>
 
-						<div class="col-sm-2">
+						<div class="col-sm-1">
 							{{ Form::label('etiqueta', 'Edad: ', array('class' => '')) }}
 							<label for="">{{$DatosImputado[$i]->edad}}</label>
 						</div>
-						<div class="col-sm-2">
+						<div class="col-sm-3">
 							{{ Form::label('etiqueta', 'Sexo: ', array('class' => '')) }}
 							<label for="">{{$DatosImputado[$i]->sexo}}</label>
 						</div>
@@ -44,8 +44,7 @@
 							<label for="">{{$DatosImputado[$i]->estadoOrigen}}</label>
 						</div>
 						<div class="col-sm-6">
-							{{ Form::label('etiqueta', 'Ocupación: ', array('class' => '')) }}
-							<label for="">{{$DatosImputado[$i]->ocupacion}}</label>
+							<label for="">Ocupación: {{$DatosImputado[$i]->ocupacion}}</label>
 						</div>
 						<div class="col-sm-6">
 							{{ Form::label('etiqueta', 'RFC: ', array('class' => '')) }}
@@ -78,11 +77,11 @@
 						<label for="">{{$DatosImputado[$i]->segundoAp}}</label>
 					</div>
 
-					<div class="col-sm-2">
+					<div class="col-sm-1">
 						{{ Form::label('etiqueta', 'Edad: ', array('class' => '')) }}
 						<label for="">{{$DatosImputado[$i]->edad}}</label>
 					</div>
-					<div class="col-sm-2">
+					<div class="col-sm-3">
 						{{ Form::label('etiqueta', 'Sexo: ', array('class' => '')) }}
 						<label for="">{{$DatosImputado[$i]->sexo}}</label>
 					</div>
@@ -95,8 +94,7 @@
 						<label for="">{{$DatosImputado[$i]->estadoOrigen}}</label>
 					</div>
 					<div class="col-sm-6">
-						{{ Form::label('etiqueta', 'Ocupación: ', array('class' => '')) }}
-						<label for="">{{$DatosImputado[$i]->ocupacion}}</label>
+						<label for="">Ocupación: {{$DatosImputado[$i]->ocupacion}}</label>
 					</div>
 					<div class="col-sm-6">
 						{{ Form::label('etiqueta', 'RFC: ', array('class' => '')) }}
