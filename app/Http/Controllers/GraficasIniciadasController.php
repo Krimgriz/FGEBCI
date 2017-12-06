@@ -2,21 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use DummyFullModelClass;
+use Illuminate\Http\Request;
 use Carbon\Carbon;
 use DB;
-use Illuminate\Http\Request;
 
-class GraficasController extends Controller
+class GraficasIniciadasController extends Controller
 {
-
     public function urlGraficasIniciadas(Request $request){
-        return redirect('estadistica/edad/'.$request->tipo.'/'.$request->year);
+        return redirect('estadistica/'.$request->tipo.'/'.$request->year);
     }
 
     public function graficaIniciadas($tipo,$year){
         if ($tipo=='iniciadas') {
-            $tipo='iniciadas';
+            $tipo='Carpetas de Investigación iniciadas';
             $GraficaIniciadasEne = DB::table('carpeta')
                 ->select('carpeta.id','carpeta.estadoCarpeta','fechaInicio')
                 ->whereYear('fechaInicio', '=', $year)
@@ -93,7 +91,7 @@ class GraficasController extends Controller
 
         }
         if ($tipo=='conDetenido') {
-            $tipo='iniciadas con detenido';
+            $tipo='Carpetas de Investigación iniciadas con detenido';
             $GraficaIniciadasEne = DB::table('carpeta')
                 ->select('carpeta.id','carpeta.estadoCarpeta','fechaInicio')
                 ->whereYear('fechaInicio', '=', $year)
@@ -180,7 +178,7 @@ class GraficasController extends Controller
         }
 
         if ($tipo=='sinDetenido') {
-            $tipo='iniciadas sin detenido';
+            $tipo='Carpetas de Investigación iniciadas sin detenido';
             $GraficaIniciadasEne = DB::table('carpeta')
                 ->select('carpeta.id','carpeta.estadoCarpeta','fechaInicio')
                 ->whereYear('fechaInicio', '=', $year)
@@ -296,5 +294,4 @@ class GraficasController extends Controller
             ->with('tipo',$tipo)
             ->with('year',$year);
     }
-    
 }

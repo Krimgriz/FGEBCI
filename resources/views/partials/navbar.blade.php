@@ -49,6 +49,12 @@
                         <a class="dropdown-item" href="{{url('/estadistica/fiscal')}}">Fiscal</a>
                     </div>
                 </li>
+
+                <li class="nav-item ">
+                    <a class="nav-link " href="{{url('/estadistica')}}">
+                      Generación de estadisticas
+                    </a>
+                </li>
             
             </ul>
             <ul class="navbar-nav ml-auto">

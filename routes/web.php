@@ -50,12 +50,15 @@ Route::get('detalle/pdf/{id}', 'ReporteController@reportePDF');
 /*   |     |     |   */
 /*   v     v     v   */
 
-Route::get('/estadistica/iniciadas', function () {
+Route::get('/estadistica', function () {
     return view('estadisticas.iniciadas');
 });
-Route::post('/estadistica/iniciadas', 'GraficasController@graficaIniciadas');
-Route::get('estadistica/iniciadas/{tipo}/{year}', 'GraficasController@iniciadas');
+Route::post('/estadisticaIniciadas', 'GraficasIniciadasController@urlGraficasIniciadas')->name('post.iniciadas');
+Route::get('estadistica/{tipo}/{year}', 'GraficasIniciadasController@graficaIniciadas');
 
+
+Route::post('/estadisticaEdad', 'GraficasEdadController@urlGraficasEdad')->name('post.edad');
+Route::get('estadistica/edad/{tipo}/{year}', 'GraficasEdadController@graficaEdades');
 
 /*
 Route::get('carpeta/{id}', [
@@ -67,9 +70,7 @@ Route::get('/estadistica/municipio', function () {
     return view('estadisticas/municipio');
 });
 
-Route::get('/estadistica/iniciadas', function () {
-    return view('estadisticas/iniciadas');
-});
+
 
 Route::get('/estadistica/delito', function () {
     return view('estadisticas/delito');
