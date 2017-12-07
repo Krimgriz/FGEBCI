@@ -12,6 +12,7 @@ class GraficasEdadController extends Controller
     }
 
     public function graficaEdades($tipo,$year){
+        $tipo2='Personas';
     	if ($tipo=='menores12') {
             $tipo='incidencia delictiva por edad de menores de 12 años';
             $GraficaIniciadasEne = DB::table('carpeta')
@@ -1511,7 +1512,7 @@ class GraficasEdadController extends Controller
         $Nov=count($GraficaIniciadasNov);
         $Dic=count($GraficaIniciadasDic);
         //dd($GraficaIniciadas);
-        return view('estadisticas.graficaIniciadas')
+        return view('estadisticas.grafica1')
             ->with('Ene',$Ene)
             ->with('Feb',$Feb)
             ->with('Mar',$Mar)
@@ -1525,6 +1526,7 @@ class GraficasEdadController extends Controller
             ->with('Nov',$Nov)
             ->with('Dic',$Dic)
             ->with('tipo',$tipo)
-            ->with('year',$year);
+            ->with('year',$year)
+            ->with('tipo2',$tipo2);
     }
 }

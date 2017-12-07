@@ -12,8 +12,8 @@
             var chartDiv = document.getElementById('chart_div');
 
             var data = new google.visualization.DataTable();
-            data.addColumn('string', 'Month');
-            data.addColumn('number', "Carpetas");
+            data.addColumn('string', 'Mes');
+            data.addColumn('number', "{{$tipo2}}");
 
             data.addRows([
                 ['Enero',      {{ $Ene }}],
@@ -74,13 +74,52 @@
 
         }
     </script>
-<br>
+
 <div class="fondo ">
     
     <br>
     <center>
         <div id="chart_div" style="width: 100%;"></div>
+        <br>
+        <table class="table" style="text-align: center;">
+            <thead>
+                <tr>
+                    <th>Enero</th>
+                    <th>Febrero</th>
+                    <th>Marzo</th>
+                    <th>April</th>
+                    <th>Mayo</th>
+                    <th>Junio</th>
+                    <th>Julio</th>
+                    <th>Agosto</th>
+                    <th>Septiembre</th>
+                    <th>Octubre</th>
+                    <th>Noviembre</th>
+                    <th>Diciembre</th>
+                    <th>Total</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{$Ene}}</td>
+                    <td>{{$Feb}}</td>
+                    <td>{{$Mar}}</td>
+                    <td>{{$Abr}}</td>
+                    <td>{{$May}}</td>
+                    <td>{{$Jun}}</td>
+                    <td>{{$Jul}}</td>
+                    <td>{{$Ago}}</td>
+                    <td>{{$Sep}}</td>
+                    <td>{{$Oct}}</td>
+                    <td>{{$Nov}}</td>
+                    <td>{{$Dic}}</td>
+                    <td>{{$Ene+$Feb+$Mar+$Abr+$May+$Jun+$Jul+$Ago+$Sep+$Oct+$Nov+$Dic}}</td>
+                </tr>
+            </tbody>
+        </table>
     </center>
+
     <br>
 </div>
         

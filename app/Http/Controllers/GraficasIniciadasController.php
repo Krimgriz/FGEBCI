@@ -13,6 +13,7 @@ class GraficasIniciadasController extends Controller
     }
 
     public function graficaIniciadas($tipo,$year){
+        $tipo2='Carpetas';
         if ($tipo=='iniciadas') {
             $tipo='Carpetas de Investigación iniciadas';
             $GraficaIniciadasEne = DB::table('carpeta')
@@ -86,10 +87,8 @@ class GraficasIniciadasController extends Controller
                 ->whereMonth('fechaInicio', '=', 12)
                 ->whereYear('fechaInicio', '=', $year)
                 ->get();
-
-
-
         }
+
         if ($tipo=='conDetenido') {
             $tipo='Carpetas de Investigación iniciadas con detenido';
             $GraficaIniciadasEne = DB::table('carpeta')
@@ -278,7 +277,7 @@ class GraficasIniciadasController extends Controller
         $Nov=count($GraficaIniciadasNov);
         $Dic=count($GraficaIniciadasDic);
         //dd($GraficaIniciadas);
-        return view('estadisticas.graficaIniciadas')
+        return view('estadisticas.grafica1')
             ->with('Ene',$Ene)
             ->with('Feb',$Feb)
             ->with('Mar',$Mar)
@@ -292,6 +291,7 @@ class GraficasIniciadasController extends Controller
             ->with('Nov',$Nov)
             ->with('Dic',$Dic)
             ->with('tipo',$tipo)
-            ->with('year',$year);
+            ->with('year',$year)
+            ->with('tipo2',$tipo2);
     }
 }
