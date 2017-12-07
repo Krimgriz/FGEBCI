@@ -484,12 +484,7 @@
                                 
                             <div class="col-sm-4">
                                 {{ Form::label('municipio', 'Municipio') }}
-                                {{ Form::select('municipio', [
-                                    0 => 'Selecciona Municipio',
-                                    'altolucero' => 'Alto Lucero',
-                                    'altotonga' => 'Altotonga',
-                                    'banderilla' => 'Banderilla',
-                                    'naolinco' => 'Naolinco'], 0 ,['class' => 'form-control']
+                                {{ Form::select('municipio', $municipio, null ,['class' => 'form-control']
                                 )}}
                             </div>
 

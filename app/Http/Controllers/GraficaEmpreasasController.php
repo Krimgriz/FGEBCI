@@ -16,8 +16,8 @@ class GraficaEmpreasasController extends Controller
     	$tipo2='Empresas';
 	    $tipo='incidencia delictiva por parte de Empresas';
         $GraficaEne = DB::table('carpeta')
-        	->join('extra_denunciado','carpeta.id','=','extra_denunciado.idCarpeta')
-        	->join('variables_persona','variables_persona.id','=','extra_denunciado.idVariablesPersona')
+            ->join('variables_persona','variables_persona.idCarpeta','=','carpeta.id')
+        	->join('extra_denunciado','variables_persona.id','=','extra_denunciado.idVariablesPersona')
         	->join('persona','variables_persona.idPersona','=','persona.id')
             ->select('carpeta.id','carpeta.estadoCarpeta')
             ->whereYear('fechaInicio', '=', $year)
@@ -26,8 +26,8 @@ class GraficaEmpreasasController extends Controller
             ->get();
 
         $GraficaFeb = DB::table('carpeta')
-        	->join('extra_denunciado','carpeta.id','=','extra_denunciado.idCarpeta')
-        	->join('variables_persona','variables_persona.id','=','extra_denunciado.idVariablesPersona')
+        	->join('variables_persona','variables_persona.idCarpeta','=','carpeta.id')
+        	->join('extra_denunciado','variables_persona.id','=','extra_denunciado.idVariablesPersona')
         	->join('persona','variables_persona.idPersona','=','persona.id')
             ->select('carpeta.id','carpeta.estadoCarpeta')
             ->whereMonth('fechaInicio', '=', 2)
@@ -36,8 +36,8 @@ class GraficaEmpreasasController extends Controller
             ->get();
 
         $GraficaMar = DB::table('carpeta')
-        	->join('extra_denunciado','carpeta.id','=','extra_denunciado.idCarpeta')
-        	->join('variables_persona','variables_persona.id','=','extra_denunciado.idVariablesPersona')
+        	->join('variables_persona','variables_persona.idCarpeta','=','carpeta.id')
+        	->join('extra_denunciado','variables_persona.id','=','extra_denunciado.idVariablesPersona')
         	->join('persona','variables_persona.idPersona','=','persona.id')
             ->select('carpeta.id','carpeta.estadoCarpeta')
             ->whereMonth('fechaInicio', '=', 3)
@@ -46,8 +46,8 @@ class GraficaEmpreasasController extends Controller
             ->get();
 
         $GraficaAbr = DB::table('carpeta')
-        	->join('extra_denunciado','carpeta.id','=','extra_denunciado.idCarpeta')
-        	->join('variables_persona','variables_persona.id','=','extra_denunciado.idVariablesPersona')
+        	->join('variables_persona','variables_persona.idCarpeta','=','carpeta.id')
+        	->join('extra_denunciado','variables_persona.id','=','extra_denunciado.idVariablesPersona')
         	->join('persona','variables_persona.idPersona','=','persona.id')
             ->select('carpeta.id','carpeta.estadoCarpeta')
             ->whereMonth('fechaInicio', '=', 4)
@@ -56,8 +56,8 @@ class GraficaEmpreasasController extends Controller
             ->get();
 
         $GraficaMay = DB::table('carpeta')
-        	->join('extra_denunciado','carpeta.id','=','extra_denunciado.idCarpeta')
-        	->join('variables_persona','variables_persona.id','=','extra_denunciado.idVariablesPersona')
+        	->join('variables_persona','variables_persona.idCarpeta','=','carpeta.id')
+        	->join('extra_denunciado','variables_persona.id','=','extra_denunciado.idVariablesPersona')
         	->join('persona','variables_persona.idPersona','=','persona.id')
             ->select('carpeta.id','carpeta.estadoCarpeta')
             ->whereMonth('fechaInicio', '=', 5)
@@ -66,8 +66,8 @@ class GraficaEmpreasasController extends Controller
             ->get();
 
         $GraficaJun = DB::table('carpeta')
-        	->join('extra_denunciado','carpeta.id','=','extra_denunciado.idCarpeta')
-        	->join('variables_persona','variables_persona.id','=','extra_denunciado.idVariablesPersona')
+        	->join('variables_persona','variables_persona.idCarpeta','=','carpeta.id')
+        	->join('extra_denunciado','variables_persona.id','=','extra_denunciado.idVariablesPersona')
         	->join('persona','variables_persona.idPersona','=','persona.id')
             ->select('carpeta.id','carpeta.estadoCarpeta')
             ->whereMonth('fechaInicio', '=', 6)
@@ -76,8 +76,8 @@ class GraficaEmpreasasController extends Controller
             ->get();
 
         $GraficaJul = DB::table('carpeta')
-        	->join('extra_denunciado','carpeta.id','=','extra_denunciado.idCarpeta')
-        	->join('variables_persona','variables_persona.id','=','extra_denunciado.idVariablesPersona')
+        	->join('variables_persona','variables_persona.idCarpeta','=','carpeta.id')
+        	->join('extra_denunciado','variables_persona.id','=','extra_denunciado.idVariablesPersona')
         	->join('persona','variables_persona.idPersona','=','persona.id')
             ->select('carpeta.id','carpeta.estadoCarpeta')
             ->whereMonth('fechaInicio', '=', 7)
@@ -86,8 +86,8 @@ class GraficaEmpreasasController extends Controller
             ->get();
 
         $GraficaAgo = DB::table('carpeta')
-        	->join('extra_denunciado','carpeta.id','=','extra_denunciado.idCarpeta')
-        	->join('variables_persona','variables_persona.id','=','extra_denunciado.idVariablesPersona')
+        	->join('variables_persona','variables_persona.idCarpeta','=','carpeta.id')
+        	->join('extra_denunciado','variables_persona.id','=','extra_denunciado.idVariablesPersona')
         	->join('persona','variables_persona.idPersona','=','persona.id')
             ->select('carpeta.id','carpeta.estadoCarpeta')
             ->whereMonth('fechaInicio', '=', 8)
@@ -96,8 +96,8 @@ class GraficaEmpreasasController extends Controller
             ->get();
 
         $GraficaSep = DB::table('carpeta')
-        	->join('extra_denunciado','carpeta.id','=','extra_denunciado.idCarpeta')
-        	->join('variables_persona','variables_persona.id','=','extra_denunciado.idVariablesPersona')
+        	->join('variables_persona','variables_persona.idCarpeta','=','carpeta.id')
+        	->join('extra_denunciado','variables_persona.id','=','extra_denunciado.idVariablesPersona')
         	->join('persona','variables_persona.idPersona','=','persona.id')
             ->select('carpeta.id','carpeta.estadoCarpeta')
             ->whereMonth('fechaInicio', '=', 9)
@@ -106,8 +106,8 @@ class GraficaEmpreasasController extends Controller
             ->get();
 
         $GraficaOct = DB::table('carpeta')
-        	->join('extra_denunciado','carpeta.id','=','extra_denunciado.idCarpeta')
-        	->join('variables_persona','variables_persona.id','=','extra_denunciado.idVariablesPersona')
+        	->join('variables_persona','variables_persona.idCarpeta','=','carpeta.id')
+        	->join('extra_denunciado','variables_persona.id','=','extra_denunciado.idVariablesPersona')
         	->join('persona','variables_persona.idPersona','=','persona.id')
             ->select('carpeta.id','carpeta.estadoCarpeta')
             ->whereMonth('fechaInicio', '=', 10)
@@ -116,8 +116,8 @@ class GraficaEmpreasasController extends Controller
             ->get();
 
         $GraficaNov = DB::table('carpeta')
-        	->join('extra_denunciado','carpeta.id','=','extra_denunciado.idCarpeta')
-        	->join('variables_persona','variables_persona.id','=','extra_denunciado.idVariablesPersona')
+        	->join('variables_persona','variables_persona.idCarpeta','=','carpeta.id')
+        	->join('extra_denunciado','variables_persona.id','=','extra_denunciado.idVariablesPersona')
         	->join('persona','variables_persona.idPersona','=','persona.id')
             ->select('carpeta.id','carpeta.estadoCarpeta')
             ->whereMonth('fechaInicio', '=', 11)
@@ -126,8 +126,8 @@ class GraficaEmpreasasController extends Controller
             ->get();
 
         $GraficaDic = DB::table('carpeta')
-        	->join('extra_denunciado','carpeta.id','=','extra_denunciado.idCarpeta')
-        	->join('variables_persona','variables_persona.id','=','extra_denunciado.idVariablesPersona')
+        	->join('variables_persona','variables_persona.idCarpeta','=','carpeta.id')
+        	->join('extra_denunciado','variables_persona.id','=','extra_denunciado.idVariablesPersona')
         	->join('persona','variables_persona.idPersona','=','persona.id')
             ->select('carpeta.id','carpeta.estadoCarpeta')
             ->whereMonth('fechaInicio', '=', 12)
