@@ -469,7 +469,7 @@
                         <div class="row">
 
                             <div class="col-sm-4">
-                                {{ Form::label('year', 'Año') }}
+                                {{ Form::label('yearcolonia', 'Año') }}
                                 {{ Form::select('year', [
                                         2016 => '2016', 
                                         2017 => '2017',
@@ -490,12 +490,11 @@
 
                             <div class="col-sm-4">
                                 {{ Form::label('colonia', 'Colonia') }}
-                                {{ Form::select('colonia', [
-                                    0 => 'Selecciona la Colonia',
-                                    'revolucion' => 'Revolución',
-                                    'clavijero' => 'Clavijero',
-                                    '20nviembre' => '20 de Noviembre',
-                                    'centro' => 'Centro'], 0 ,['class' => 'form-control']
+
+                                <select id="colonia">
+                                    <option value="">Seleccione una Colonia</option>
+                                </select>
+                                {{ Form::select('colonia', [], 0 ,['class' => 'form-control']
                                 )}}
                             </div>
 
@@ -516,5 +515,21 @@
 
 </div>
 
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(document).on('change','#municipio',function(){
+            var cat_id=$(this).val();
+
+            $.ajax({
+                type:'get',
+                url:'{!! URL::to('filtroColonias') !!}',
+                data:{'id':cat_id},
+                success:  
+            });
+        })
+    });
+    
+</script>
 
         @endsection
