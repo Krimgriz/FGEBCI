@@ -48,23 +48,17 @@ Route::get('detalle/pdf/{id}', 'ReporteController@reportePDF');
 /*rutas provisionales*/
 /*   |     |     |   */
 /*   |     |     |   */
-/*   v     v     v   
-
-Route::get('/estadistica', function () {
-    return view('estadisticas.formulariosEstadistica');
-});
-*/
+/*   v     v     v   */
 
 Route::get('/estadistica', 'GraficasController@selectformulario');
-
+Route::get('/filtroColonias/{id}', 'GraficasController@selectColonia');
+Route::get('/filtroUnidades/{region}', 'GraficasController@selectUnidad');
 
 Route::post('/estadisticaIniciadas', 'GraficasIniciadasController@urlGraficasIniciadas')->name('post.iniciadas');
 Route::get('estadistica/{tipo}/{year}', 'GraficasIniciadasController@graficaIniciadas');
 
-
 Route::post('/estadisticaEdad', 'GraficasEdadController@urlGraficasEdad')->name('post.edad');
 Route::get('estadistica/edad/{tipo}/{year}', 'GraficasEdadController@graficaEdades');
-
 
 Route::post('/estadisticaEmpresas', 'GraficaEmpreasasController@urlGraficasEmpresa')->name('post.empresas');
 Route::get('estadisticas/empresas/{year}', 'GraficaEmpreasasController@graficaEmpresas');
@@ -72,51 +66,15 @@ Route::get('estadisticas/empresas/{year}', 'GraficaEmpreasasController@graficaEm
 Route::post('/estadisticaDelito', 'GraficasDelitoController@urlGraficasDelito')->name('post.delito');
 Route::get('estadisticas/delito/{delito}/{year}', 'GraficasDelitoController@graficaDelito');
 
+Route::post('/estadisticaEtnia', 'GraficasEtniaController@urlGraficasEtnia')->name('post.etnia');
+Route::get('estadisticas/etnia/{etnia}/{year}', 'GraficasEtniaController@graficaEtnia');
 
-/*
-Route::get('carpeta/{id}', [
-    'uses' => 'CarpetaController@verDetalle',
-    'as' => 'view.carpeta'
-]);
-*/
-Route::get('/estadistica/municipio', function () {
-    return view('estadisticas/municipio');
-});
+Route::post('/estadisticaMunicipio', 'GraficasMunicipioController@urlGraficasMunicipio')->name('post.municipio');
+Route::get('estadisticas/municipio/{municipio}/{year}', 'GraficasMunicipioController@graficaMunicipio');
 
+Route::post('/estadisticaRegion', 'GraficasRegionController@urlGraficasRegion')->name('post.region');
+Route::get('estadisticas/region/{region}/{year}', 'GraficasRegionController@graficaRegion');
 
-
-Route::get('/estadistica/delito', function () {
-    return view('estadisticas/delito');
-});
-
-Route::get('/estadistica/edad', function () {
-    return view('estadisticas/edad');
-});
-
-Route::get('/estadistica/etnia', function () {
-    return view('estadisticas/etnia');
-});
-
-Route::get('/estadistica/fiscal', function () {
-    return view('estadisticas/fiscal');
-});
-
-Route::get('/estadistica/region', function () {
-    return view('estadisticas/region');
-});
-
-Route::get('/estadistica/sexo', function () {
-    return view('estadisticas/sexo');
-});
-
-
-Route::get('/estadistica/unidad', function () {
-    return view('estadisticas/unidad');
-});
-
-Route::get('/estadistica/colonia', function () {
-    return view('estadisticas/colonia');
-});
 
 
 /*---------------------------------------------------------*/

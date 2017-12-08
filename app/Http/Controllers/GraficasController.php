@@ -8,6 +8,35 @@ use DB;
 
 class GraficasController extends Controller
 {
+    /*
+    public function selectColonia(Request $request){
+        $colonia = DB::table('cat_colonia')
+            ->select('nombre','id')
+            ->where('idMunicipio','=',$request->id)
+            ->get();
+
+            return response()->json($colonia);
+            
+        
+    }
+    */
+    public function selectColonia(Request $request,$id){
+        $colonia = DB::table('cat_colonia')
+            ->select('nombre','id')
+            ->where('idMunicipio','=',$id)
+            ->get();
+
+            return response()->json($colonia);
+    }    
+
+    public function selectUnidad(Request $request,$region){
+        $unidades = DB::table('unidad')
+            ->select('nombre','id')
+            ->where('region','=',$region)
+            ->get();
+
+            return response()->json($unidades);
+    }
 
     public function selectformulario(){
         $delitos = DB::table('cat_delito')
@@ -23,25 +52,15 @@ class GraficasController extends Controller
             ->where('idEstado','=',30)
             ->pluck('nombre','id');
 
-        $unidad = DB::table('unidad')
-            ->select('id','nombre')
-            ->pluck('nombre','id');
 
-        $region = DB::table('unidad')
-            ->select('id','region')
-            ->pluck('region','id');
+        
 
-        $colonia = DB::table('cat_colonia')
-            ->select('id','nombre')
-            ->pluck('nombre','id');
 
 
         return view('estadisticas.formulariosEstadistica')
             ->with('delitos',$delitos)
             ->with('etnia',$etnia)
-            ->with('municipio',$municipio)
-            ->with('unidad',$unidad)
-            ->with('colonia',$colonia);
+            ->with('municipio',$municipio);
     }
 
     

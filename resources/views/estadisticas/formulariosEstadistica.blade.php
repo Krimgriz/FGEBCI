@@ -11,9 +11,9 @@
     <div id="accordion" role="tablist" aria-multiselectable="true">
         <div class="card">
             <div class="card-header" role="tab" id="headingOne">
-                <h5 class="mb-0">
+                <h5 class="mb-0" style="text-align: center;">
                     <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                      Carpetas iniciadas
+                        Carpetas iniciadas
                     </a>
               </h5>
             </div>
@@ -62,7 +62,7 @@
     
         <div class="card">
             <div class="card-header" role="tab" id="headingTwo">
-                <h5 class="mb-0">
+                <h5 class="mb-0" style="text-align: center;">
                     <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                     Edad
                     </a>
@@ -108,6 +108,16 @@
                                     
                                 </div>
 
+                                <div class="col-4">
+                                    {{ Form::label('tipoedad', 'Calidad Juridica') }}
+                                    {{ Form::select('tipoedad', [
+                                        'todos' => 'Indistinto',
+                                        'denunciantes' => 'Denunciantes', 
+                                        'denunciados' => 'Denunciados'], null, ['class' => 'form-control']
+                                        )}}
+                                    
+                                </div>
+
                                 <div class="col-4"><br> 
                                     {{ Form::submit('Generar', array('class' => 'btn btn-outline-secondary form-control')) }}
                                 </div>
@@ -121,7 +131,7 @@
 
         <div class="card">
             <div class="card-header" role="tab" id="heading9">
-                <h5 class="mb-0">
+                <h5 class="mb-0" style="text-align: center;">
                     <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse9" aria-expanded="false" aria-controls="collapse9">
                     Empresas
                     </a>
@@ -149,6 +159,16 @@
                                     )}}
                             </div>
 
+                            <div class="col-4">
+                                    {{ Form::label('tipoempresa', 'Calidad Juridica') }}
+                                    {{ Form::select('tipoempresa', [
+                                        'todos' => 'Indistinto',
+                                        'denunciantes' => 'Denunciantes', 
+                                        'denunciados' => 'Denunciados'], null, ['class' => 'form-control']
+                                        )}}
+                                    
+                                </div>
+
                             <div class="col-sm-6"><br> 
                                 {{ Form::submit('Generar', array('class' => 'btn btn-outline-secondary form-control')) }}
                             </div>
@@ -162,7 +182,7 @@
 
         <div class="card">
             <div class="card-header" role="tab" id="heading2">
-                <h5 class="mb-0">
+                <h5 class="mb-0" style="text-align: center;">
                     <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
                         Delito
                     </a>
@@ -209,7 +229,7 @@
 
         <div class="card">
             <div class="card-header" role="tab" id="heading3">
-                <h5 class="mb-0">
+                <h5 class="mb-0" style="text-align: center;">
                     <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
                     Etnia
                     </a>
@@ -218,14 +238,14 @@
   
             <div id="collapse3" class="collapse" role="tabpanel" aria-labelledby="heading3">
                 <div class="card-block fondo">
-                    {{Form::open(['route'=>'post.delito','method' => 'POST'])}}
+                    {{Form::open(['route'=>'post.etnia','method' => 'POST'])}}
                     
                     <div class="container">
                         <div class="row">
                             <div class="col-sm-4">
 
-                                {{ Form::label('yeardelito', 'Año') }}
-                                {{ Form::select('yeardelito', [
+                                {{ Form::label('yearetnia', 'Año') }}
+                                {{ Form::select('yearetnia', [
                                     2016 => '2016', 
                                     2017 => '2017',
                                     2018 => '2018',
@@ -238,8 +258,18 @@
                             </div>
 
                             <div class="col-4">
-                                {{ Form::label('delito', 'Etnia') }}
-                                {{ Form::select('delito', $etnia , null, ['class' => 'form-control']
+                                {{ Form::label('tipoetnia', 'Calidad Juridica') }}
+                                {{ Form::select('tipoetnia', [
+                                    'todos' => 'Indistinto',
+                                    'denunciantes' => 'Denunciantes', 
+                                    'denunciados' => 'Denunciados'], '18a25', ['class' => 'form-control']
+                                    )}}
+                                
+                            </div>
+
+                            <div class="col-4">
+                                {{ Form::label('etnia', 'Etnia') }}
+                                {{ Form::select('etnia', $etnia , null, ['class' => 'form-control']
                                     )}}
                             </div>
 
@@ -257,7 +287,7 @@
 
         <div class="card">
             <div class="card-header" role="tab" id="heading4">
-                <h5 class="mb-0">
+                <h5 class="mb-0" style="text-align: center;">
                     <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="false" aria-controls="collapse4">
                     Municipio
                     </a>
@@ -266,14 +296,14 @@
   
             <div id="collapse4" class="collapse" role="tabpanel" aria-labelledby="heading4">
                 <div class="card-block fondo">
-                    {{Form::open(['route'=>'post.delito','method' => 'POST'])}}
+                    {{Form::open(['route'=>'post.municipio','method' => 'POST'])}}
                     
                     <div class="container">
                         <div class="row">
                             <div class="col-sm-4">
 
-                                {{ Form::label('yeardelito', 'Año') }}
-                                {{ Form::select('yeardelito', [
+                                {{ Form::label('yearmunicipio', 'Año') }}
+                                {{ Form::select('yearmunicipio', [
                                     2016 => '2016', 
                                     2017 => '2017',
                                     2018 => '2018',
@@ -286,8 +316,64 @@
                             </div>
 
                             <div class="col-4">
-                                {{ Form::label('delito', 'Municipio') }}
-                                {{ Form::select('delito', $municipio , null, ['class' => 'form-control']
+                                {{ Form::label('municipio', 'Municipio') }}
+                                {{ Form::select('municipio', $municipio , null, ['class' => 'form-control']
+                                    )}}
+                            </div>
+
+                            <div class="col-sm-4"><br> 
+                                {{ Form::submit('Generar', array('class' => 'btn btn-outline-secondary form-control')) }}
+                            </div>
+                        </div>
+                    </div>  
+                    {!! Form::close() !!}
+                    <br>
+                </div>
+            </div>
+        </div>
+
+        
+
+        <div class="card">
+            <div class="card-header" role="tab" id="heading6">
+                <h5 class="mb-0" style="text-align: center;">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                    Region
+                    </a>
+                </h5>
+            </div>
+  
+            <div id="collapse6" class="collapse" role="tabpanel" aria-labelledby="heading6">
+                <div class="card-block fondo">
+                    {{Form::open(['route'=>'post.region','method' => 'POST'])}}
+                    
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-4">
+
+                                {{ Form::label('yearregion', 'Año') }}
+                                {{ Form::select('yearregion', [
+                                    2016 => '2016', 
+                                    2017 => '2017',
+                                    2018 => '2018',
+                                    2019 => '2019',
+                                    2020 => '2020',
+                                    2021 => '2021',
+                                    2022 => '2022',
+                                    2023 => '2023'], 2017, ['class' => 'form-control']
+                                    )}}
+                            </div>
+
+                            <div class="col-4">
+                                {{ Form::label('region', 'Región') }}
+                                {{ Form::select('region', [
+                                    'Tantoyucan' => 'Tantoyucan', 
+                                    'Poza Rica' => 'Poza Rica',
+                                    'Xalapa' => 'Xalapa',
+                                    'Cordoba' => 'Cordoba',
+                                    'Veracruz' => 'Veracruz',
+                                    'Cosamaloapan' => 'Cosamaloapan',
+                                    'Coatzacoalcos' => 'Coatzacoalcos'] , null, ['class' => 'form-control']
                                     )}}
                             </div>
 
@@ -304,7 +390,7 @@
 
         <div class="card">
             <div class="card-header" role="tab" id="heading5">
-                <h5 class="mb-0">
+                <h5 class="mb-0" style="text-align: center;">
                     <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse5" aria-expanded="false" aria-controls="collapse5">
                     Unidad
                     </a>
@@ -331,14 +417,29 @@
                                     2023 => '2023'], 2017, ['class' => 'form-control']
                                     )}}
                             </div>
+                            
 
                             <div class="col-4">
-                                {{ Form::label('delito', 'Unidad') }}
-                                {{ Form::select('delito', $unidad , null, ['class' => 'form-control']
+                                {{ Form::label('region2', 'Región') }}
+                                {{ Form::select('region2', [
+                                    'Tantoyuca' => 'Tantoyuca', 
+                                    'Poza Rica' => 'Poza Rica',
+                                    'Xalapa' => 'Xalapa',
+                                    'Cordoba' => 'Cordoba',
+                                    'Veracruz' => 'Veracruz',
+                                    'Cosamaloapan' => 'Cosamaloapan',
+                                    'Coatzacoalcos' => 'Coatzacoalcos'] , null, ['class' => 'form-control' , 'placeholder'=>'Seleccione Región']
                                     )}}
                             </div>
 
-                            <div class="col-sm-4"><br> 
+
+                            <div class="col-4">
+                                {{ Form::label('unidad', 'Unidad') }}
+                                {{ Form::select('unidad', [] , null, ['class' => 'form-control' , 'placeholder'=>'Seleccione Región']
+                                    )}}
+                            </div>
+
+                            <div class="col-sm-12"><br> 
                                 {{ Form::submit('Generar', array('class' => 'btn btn-outline-secondary form-control')) }}
                             </div>
                         </div>
@@ -349,63 +450,10 @@
             </div>
         </div>
 
-        <div class="card">
-            <div class="card-header" role="tab" id="heading6">
-                <h5 class="mb-0">
-                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse6" aria-expanded="false" aria-controls="collapse6">
-                    Region
-                    </a>
-                </h5>
-            </div>
-  
-            <div id="collapse6" class="collapse" role="tabpanel" aria-labelledby="heading6">
-                <div class="card-block fondo">
-                    {{Form::open(['route'=>'post.delito','method' => 'POST'])}}
-                    
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-4">
-
-                                {{ Form::label('yeardelito', 'Año') }}
-                                {{ Form::select('yeardelito', [
-                                    2016 => '2016', 
-                                    2017 => '2017',
-                                    2018 => '2018',
-                                    2019 => '2019',
-                                    2020 => '2020',
-                                    2021 => '2021',
-                                    2022 => '2022',
-                                    2023 => '2023'], 2017, ['class' => 'form-control']
-                                    )}}
-                            </div>
-
-                            <div class="col-4">
-                                {{ Form::label('delito', 'Región') }}
-                                {{ Form::select('delito', [
-                                    'tantoyucan' => 'Tantoyucan', 
-                                    'pozaRica' => 'Poza Rica',
-                                    'xalapa' => 'Xalapa',
-                                    'cordoba' => 'Cordoba',
-                                    'veracruz' => 'Veracruz',
-                                    'cosamaloapan' => 'Cosamaloapan',
-                                    'coatzacoalcos' => 'Coatzacoalcos'] , null, ['class' => 'form-control']
-                                    )}}
-                            </div>
-
-                            <div class="col-sm-4"><br> 
-                                {{ Form::submit('Generar', array('class' => 'btn btn-outline-secondary form-control')) }}
-                            </div>
-                        </div>
-                    </div>  
-                    {!! Form::close() !!}
-                    <br>
-                </div>
-            </div>
-        </div>
 
         <div class="card">
             <div class="card-header" role="tab" id="heading7">
-                <h5 class="mb-0">
+                <h5 class="mb-0" style="text-align: center;">
                     <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse7" aria-expanded="false" aria-controls="collapse7">
                     Sexo
                     </a>
@@ -455,7 +503,7 @@
 
         <div class="card">
             <div class="card-header" role="tab" id="heading8">
-                <h5 class="mb-0">
+                <h5 class="mb-0" style="text-align: center;">
                     <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse8" aria-expanded="false" aria-controls="collapse8">
                     Colonia
                     </a>
@@ -483,18 +531,14 @@
                             </div>
                                 
                             <div class="col-sm-4">
-                                {{ Form::label('municipio', 'Municipio') }}
-                                {{ Form::select('municipio', $municipio, null ,['class' => 'form-control']
+                                {{ Form::label('municipio2', 'Municipio') }}
+                                {{ Form::select('municipio2', $municipio, null ,['class' => 'form-control', 'placeholder'=>'Seleccione Municipio']
                                 )}}
                             </div>
 
                             <div class="col-sm-4">
                                 {{ Form::label('colonia', 'Colonia') }}
-
-                                <select id="colonia">
-                                    <option value="">Seleccione una Colonia</option>
-                                </select>
-                                {{ Form::select('colonia', [], 0 ,['class' => 'form-control']
+                                {{ Form::select('colonia', [] , null ,['class' => 'form-control', 'placeholder'=>'Seleccione una colonia']
                                 )}}
                             </div>
 
@@ -515,21 +559,30 @@
 
 </div>
 
-
+<script src="{{ url('js/selectsEstadisticas.js') }}" type="text/javascript"></script>
 <script type="text/javascript">
-    $(document).ready(function(){
-        $(document).on('change','#municipio',function(){
-            var cat_id=$(this).val();
+/*
 
-            $.ajax({
-                type:'get',
-                url:'{!! URL::to('filtroColonias') !!}',
-                data:{'id':cat_id},
-                success:  
-            });
-        })
+$("#municipio2").change(function(event){
+    $.get("filtroColonias/"+event.target.value+"", function(response, municipio){
+        $("#colonia").empty();
+        $("#colonia").append("<option value=''>Seleccione una colonia</option>");
+        for(i=0; i<response.length; i++){
+            $("#colonia").append("<option value='"+response[i].id+"'> "+response[i].nombre+"</option>");
+        }
     });
-    
+});
+
+$("#region2").change(function(event){
+    $.get("filtroUnidades/"+event.target.value+"", function(response, unidad){
+        $("#unidad").empty();
+        $("#unidad").append("<option value=''>Seleccione una unidad</option>");
+        for(i=0; i<response.length; i++){
+            $("#unidad").append("<option value='"+response[i].id+"'> "+response[i].nombre+"</option>");
+        }
+    });
+});
+*/
 </script>
 
         @endsection

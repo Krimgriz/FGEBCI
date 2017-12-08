@@ -123,10 +123,13 @@ class GraficasDelitoController extends Controller
             ->whereYear('fechaInicio', '=', $year)
             ->where('cat_delito.id','=', $delito)
             ->get();
-        
+        $NombreDelito = DB::table('cat_delito')
+            ->select('nombre as delito')
+            ->where('cat_delito.id','=', $delito)
+            ->get();
            
         $tipo2='Personas';
-        $tipo='incidencia delictiva de '.$GraficaEne->delito;
+        $tipo='Informacion de incidencia delictiva de '.$NombreDelito[0]->delito;
             
         $Ene=count($GraficaEne);
         $Feb=count($GraficaFeb);
