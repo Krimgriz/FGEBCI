@@ -38,7 +38,7 @@ class TipifDelito extends Model
     {
         return $this->belongsTo('App\Models\Carpeta');
     }
-
+    
     public function acusacion()
     {
        return $this->belongsTo('app/Models/Acusacion');

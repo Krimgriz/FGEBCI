@@ -19,7 +19,7 @@ class CreateTipifDelitosTable extends Migration
             $table->integer('idDelito')->unsigned();
             $table->boolean('conViolencia')->default(false);
             $table->integer('idArma')->unsigned();//Default sin información
-			$table->integer('idPosibleCausa')->unsigned();//->default(1);
+            $table->integer('idPosibleCausa')->unsigned();//->default(1);
             $table->integer('idModalidad')->unsigned();
             $table->string('formaComision',50);
             $table->string('consumacion',50);

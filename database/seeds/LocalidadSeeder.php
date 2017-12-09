@@ -12,7 +12,7 @@ class LocalidadSeeder extends Seeder
     public function run()
     {
         DB::table('cat_localidad')->insert([
-        	['id' =>27592,'idMunicipio' =>2497,'nombre' => 'SIN INFORMACION'],
+			['id' =>27592,'idMunicipio' =>2497,'nombre' => 'SIN INFORMACION'],
 			['id' =>1,'idMunicipio' =>2117,'nombre' => 'ACAJETE'],
 			['id' =>2,'idMunicipio' =>2117,'nombre' => 'BARRANQUILLAS'],
 			['id' =>3,'idMunicipio' =>2117,'nombre' => 'COLEXTA'],
