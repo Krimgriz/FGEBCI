@@ -1,7 +1,6 @@
 @extends('index')
 @section('content')
-	<br>
-    
+
 	<div class="fondo">
         <br>
         <div class="container">

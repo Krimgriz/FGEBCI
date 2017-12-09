@@ -9,6 +9,7 @@
 <br> 
 
     <div id="accordion" role="tablist" aria-multiselectable="true">
+        {{--Carpetas Iniciadas--}}
         <div class="card">
             <div class="card-header" role="tab" id="headingOne">
                 <h5 class="mb-0" style="text-align: center;">
@@ -59,7 +60,7 @@
                 </div>
             </div>
         </div>
-    
+        {{--Edad--}}
         <div class="card">
             <div class="card-header" role="tab" id="headingTwo">
                 <h5 class="mb-0" style="text-align: center;">
@@ -118,7 +119,7 @@
                                     
                                 </div>
 
-                                <div class="col-4"><br> 
+                                <div class="col-12"><br> 
                                     {{ Form::submit('Generar', array('class' => 'btn btn-outline-secondary form-control')) }}
                                 </div>
                             </div>
@@ -128,7 +129,7 @@
                 </div>
             </div>
         </div>
-
+        {{--Empresas--}}
         <div class="card">
             <div class="card-header" role="tab" id="heading9">
                 <h5 class="mb-0" style="text-align: center;">
@@ -144,7 +145,7 @@
                     
                     <div class="container">
                         <div class="row">
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
 
                                 {{ Form::label('yearEmpresa', 'Año') }}
                                 {{ Form::select('yearEmpresa', [
@@ -169,53 +170,6 @@
                                     
                                 </div>
 
-                            <div class="col-sm-6"><br> 
-                                {{ Form::submit('Generar', array('class' => 'btn btn-outline-secondary form-control')) }}
-                            </div>
-                        </div>
-                    </div>  
-                    {!! Form::close() !!}
-                    <br>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header" role="tab" id="heading2">
-                <h5 class="mb-0" style="text-align: center;">
-                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                        Delito
-                    </a>
-                </h5>
-            </div>
-  
-            <div id="collapse2" class="collapse" role="tabpanel" aria-labelledby="heading2">
-                <div class="card-block fondo">
-                    {{Form::open(['route'=>'post.delito','method' => 'POST'])}}
-                    
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-4">
-
-                                {{ Form::label('yeardelito', 'Año') }}
-                                {{ Form::select('yeardelito', [
-                                    2016 => '2016', 
-                                    2017 => '2017',
-                                    2018 => '2018',
-                                    2019 => '2019',
-                                    2020 => '2020',
-                                    2021 => '2021',
-                                    2022 => '2022',
-                                    2023 => '2023'], 2017, ['class' => 'form-control']
-                                    )}}
-                            </div>
-
-                            <div class="col-4">
-                                {{ Form::label('delito', 'Delito') }}
-                                {{ Form::select('delito', $delitos , null, ['class' => 'form-control']
-                                    )}}
-                            </div>
-
                             <div class="col-sm-4"><br> 
                                 {{ Form::submit('Generar', array('class' => 'btn btn-outline-secondary form-control')) }}
                             </div>
@@ -226,7 +180,7 @@
                 </div>
             </div>
         </div>
-
+        {{--Etnia--}}
         <div class="card">
             <div class="card-header" role="tab" id="heading3">
                 <h5 class="mb-0" style="text-align: center;">
@@ -273,7 +227,7 @@
                                     )}}
                             </div>
 
-                            <div class="col-sm-4"><br> 
+                            <div class="col-12"><br> 
                                 {{ Form::submit('Generar', array('class' => 'btn btn-outline-secondary form-control')) }}
                             </div>
                         </div>
@@ -284,7 +238,54 @@
                 </div>
             </div>
         </div>
+        {{--Delito--}}
+        <div class="card">
+            <div class="card-header" role="tab" id="heading2">
+                <h5 class="mb-0" style="text-align: center;">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                        Delito
+                    </a>
+                </h5>
+            </div>
+  
+            <div id="collapse2" class="collapse" role="tabpanel" aria-labelledby="heading2">
+                <div class="card-block fondo">
+                    {{Form::open(['route'=>'post.delito','method' => 'POST'])}}
+                    
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-4">
 
+                                {{ Form::label('yeardelito', 'Año') }}
+                                {{ Form::select('yeardelito', [
+                                    2016 => '2016', 
+                                    2017 => '2017',
+                                    2018 => '2018',
+                                    2019 => '2019',
+                                    2020 => '2020',
+                                    2021 => '2021',
+                                    2022 => '2022',
+                                    2023 => '2023'], 2017, ['class' => 'form-control']
+                                    )}}
+                            </div>
+
+                            <div class="col-4">
+                                {{ Form::label('delito', 'Delito') }}
+                                {{ Form::select('delito', $delitos , null, ['class' => 'form-control']
+                                    )}}
+                            </div>
+
+                            <div class="col-sm-4"><br> 
+                                {{ Form::submit('Generar', array('class' => 'btn btn-outline-secondary form-control')) }}
+                            </div>
+                        </div>
+                    </div>  
+                    {!! Form::close() !!}
+                    <br>
+                </div>
+            </div>
+        </div>
+        {{--Municipio--}}
         <div class="card">
             <div class="card-header" role="tab" id="heading4">
                 <h5 class="mb-0" style="text-align: center;">
@@ -331,9 +332,7 @@
                 </div>
             </div>
         </div>
-
-        
-
+        {{--Region--}}
         <div class="card">
             <div class="card-header" role="tab" id="heading6">
                 <h5 class="mb-0" style="text-align: center;">
@@ -387,7 +386,7 @@
                 </div>
             </div>
         </div>
-
+        {{--Unidad--}}
         <div class="card">
             <div class="card-header" role="tab" id="heading5">
                 <h5 class="mb-0" style="text-align: center;">
@@ -399,14 +398,14 @@
   
             <div id="collapse5" class="collapse" role="tabpanel" aria-labelledby="heading5">
                 <div class="card-block fondo">
-                    {{Form::open(['route'=>'post.delito','method' => 'POST'])}}
+                    {{Form::open(['route'=>'post.unidad','method' => 'POST'])}}
                     
                     <div class="container">
                         <div class="row">
                             <div class="col-sm-4">
 
-                                {{ Form::label('yeardelito', 'Año') }}
-                                {{ Form::select('yeardelito', [
+                                {{ Form::label('yearunidad', 'Año') }}
+                                {{ Form::select('yearunidad', [
                                     2016 => '2016', 
                                     2017 => '2017',
                                     2018 => '2018',
@@ -449,8 +448,7 @@
                 </div>
             </div>
         </div>
-
-
+        {{--Sexo--}}
         <div class="card">
             <div class="card-header" role="tab" id="heading7">
                 <h5 class="mb-0" style="text-align: center;">
@@ -462,14 +460,14 @@
   
             <div id="collapse7" class="collapse" role="tabpanel" aria-labelledby="heading7">
                 <div class="card-block fondo">
-                    {{Form::open(['route'=>'post.delito','method' => 'POST'])}}
+                    {{Form::open(['route'=>'post.sexo','method' => 'POST'])}}
                     
                     <div class="container">
                         <div class="row">
                             <div class="col-sm-4">
 
-                                {{ Form::label('yeardelito', 'Año') }}
-                                {{ Form::select('yeardelito', [
+                                {{ Form::label('yearsexo', 'Año') }}
+                                {{ Form::select('yearsexo', [
                                     2016 => '2016', 
                                     2017 => '2017',
                                     2018 => '2018',
@@ -482,9 +480,9 @@
                             </div>
 
                             <div class="col-4">
-                                {{ Form::label('delito', 'Sexo') }}
-                                {{ Form::select('delito', [
-                                    'ambos' => 'Todos', 
+                                {{ Form::label('tiposexo', 'Sexo') }}
+                                {{ Form::select('tiposexo', [
+                                    'todos' => 'Indistinto', 
                                     'hombre' => 'Hombre',
                                     'mujer' => 'Mujer'] , null, ['class' => 'form-control']
                                     )}}
@@ -500,7 +498,7 @@
                 </div>
             </div>
         </div>
-
+        {{--Colonia--}}
         <div class="card">
             <div class="card-header" role="tab" id="heading8">
                 <h5 class="mb-0" style="text-align: center;">
@@ -512,13 +510,13 @@
   
             <div id="collapse8" class="collapse" role="tabpanel" aria-labelledby="heading8">
                 <div class="card-block fondo">
-                    {{ Form::open() }}
+                    {{ Form::open(['route'=>'post.colonia','method' => 'POST']) }}
                     <div class="container">
                         <div class="row">
 
                             <div class="col-sm-4">
                                 {{ Form::label('yearcolonia', 'Año') }}
-                                {{ Form::select('year', [
+                                {{ Form::select('yearcolonia', [
                                         2016 => '2016', 
                                         2017 => '2017',
                                         2018 => '2018',
@@ -543,7 +541,7 @@
                             </div>
 
                             <div class="col-sm-12"><br> 
-                                {{ Form::button('Generar', array('class' => 'form-control btn btn-outline-secondary')) }}
+                                {{ Form::submit('Generar', array('class' => 'btn btn-outline-secondary form-control')) }}
                             </div>
                         </div>
                     </div>
