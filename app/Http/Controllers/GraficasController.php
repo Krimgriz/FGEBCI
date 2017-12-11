@@ -40,7 +40,8 @@ class GraficasController extends Controller
 
     public function selectformulario(){
         $delitos = DB::table('cat_delito')
-            ->select('id','nombre')
+            ->join('tipif_delito','cat_delito.id','=','tipif_delito.idDelito')
+            ->select('cat_delito.id as id','cat_delito.nombre as nombre')
             ->pluck('nombre','id');
 
         $etnia = DB::table('cat_etnia')
@@ -51,11 +52,6 @@ class GraficasController extends Controller
             ->select('id','nombre')
             ->where('idEstado','=',30)
             ->pluck('nombre','id');
-
-
-        
-
-
 
         return view('estadisticas.formulariosEstadistica')
             ->with('delitos',$delitos)

@@ -6,60 +6,9 @@
 
 
 <div class="fondo ">
-<br> 
+    <br> 
 
     <div id="accordion" role="tablist" aria-multiselectable="true">
-        {{--Carpetas Iniciadas--}}
-        <div class="card">
-            <div class="card-header" role="tab" id="headingOne">
-                <h5 class="mb-0" style="text-align: center;">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Carpetas iniciadas
-                    </a>
-              </h5>
-            </div>
-
-            <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
-                <div class="card-block fondo">
-                    {{Form::open(['route'=>'post.iniciadas','method' => 'POST'])}}
-                    
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-4">
-
-                                {{ Form::label('year', 'Año') }}
-                                {{ Form::select('year', [
-                                    2016 => '2016', 
-                                    2017 => '2017',
-                                    2018 => '2018',
-                                    2019 => '2019',
-                                    2020 => '2020',
-                                    2021 => '2021',
-                                    2022 => '2022',
-                                    2023 => '2023'], 2017, ['class' => 'form-control']
-                                    )}}
-                            </div>
-
-                            <div class="col-sm-4">
-
-                                {{ Form::label('tipo', 'Carpetas de Investigación') }}
-                                {{ Form::select('tipo', [
-                                    'iniciadas' => 'Iniciadas', 
-                                    'conDetenido' => 'Iniciadas Con Detenido',
-                                    'sinDetenido' => 'Iniciadas Sin Detenido'], 'iniciadas', ['class' => 'form-control']
-                                )}}
-                            </div>
-
-                            <div class="col-sm-4"><br> 
-                                {{ Form::submit('Generar', array('class' => 'btn btn-outline-secondary form-control')) }}
-                            </div>
-                        </div>
-                    </div>  
-                    {!! Form::close() !!}
-                    <br>
-                </div>
-            </div>
-        </div>
         {{--Edad--}}
         <div class="card">
             <div class="card-header" role="tab" id="headingTwo">
@@ -129,6 +78,7 @@
                 </div>
             </div>
         </div>
+        
         {{--Empresas--}}
         <div class="card">
             <div class="card-header" role="tab" id="heading9">
@@ -180,6 +130,7 @@
                 </div>
             </div>
         </div>
+        
         {{--Etnia--}}
         <div class="card">
             <div class="card-header" role="tab" id="heading3">
@@ -238,6 +189,110 @@
                 </div>
             </div>
         </div>
+        
+        {{--Sexo--}}
+        <div class="card">
+            <div class="card-header" role="tab" id="heading7">
+                <h5 class="mb-0" style="text-align: center;">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                    Sexo
+                    </a>
+                </h5>
+            </div>
+  
+            <div id="collapse7" class="collapse" role="tabpanel" aria-labelledby="heading7">
+                <div class="card-block fondo">
+                    {{Form::open(['route'=>'post.sexo','method' => 'POST'])}}
+                    
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-4">
+
+                                {{ Form::label('yearsexo', 'Año') }}
+                                {{ Form::select('yearsexo', [
+                                    2016 => '2016', 
+                                    2017 => '2017',
+                                    2018 => '2018',
+                                    2019 => '2019',
+                                    2020 => '2020',
+                                    2021 => '2021',
+                                    2022 => '2022',
+                                    2023 => '2023'], 2017, ['class' => 'form-control']
+                                    )}}
+                            </div>
+
+                            <div class="col-4">
+                                {{ Form::label('tiposexo', 'Sexo') }}
+                                {{ Form::select('tiposexo', [
+                                    'todos' => 'Indistinto', 
+                                    'hombre' => 'Hombre',
+                                    'mujer' => 'Mujer'] , null, ['class' => 'form-control']
+                                    )}}
+                            </div>
+
+                            <div class="col-sm-4"><br> 
+                                {{ Form::submit('Generar', array('class' => 'btn btn-outline-secondary form-control')) }}
+                            </div>
+                        </div>
+                    </div>  
+                    {!! Form::close() !!}
+                    <br>
+                </div>
+            </div>
+        </div>
+        
+        {{--Carpetas Iniciadas--}}
+        <div class="card">
+            <div class="card-header" role="tab" id="headingOne">
+                <h5 class="mb-0" style="text-align: center;">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Carpetas iniciadas
+                    </a>
+              </h5>
+            </div>
+
+            <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block fondo">
+                    {{Form::open(['route'=>'post.iniciadas','method' => 'POST'])}}
+                    
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-4">
+
+                                {{ Form::label('year', 'Año') }}
+                                {{ Form::select('year', [
+                                    2016 => '2016', 
+                                    2017 => '2017',
+                                    2018 => '2018',
+                                    2019 => '2019',
+                                    2020 => '2020',
+                                    2021 => '2021',
+                                    2022 => '2022',
+                                    2023 => '2023'], 2017, ['class' => 'form-control']
+                                    )}}
+                            </div>
+
+                            <div class="col-sm-4">
+
+                                {{ Form::label('tipo', 'Carpetas de Investigación') }}
+                                {{ Form::select('tipo', [
+                                    'iniciadas' => 'Iniciadas', 
+                                    'conDetenido' => 'Iniciadas Con Detenido',
+                                    'sinDetenido' => 'Iniciadas Sin Detenido'], 'iniciadas', ['class' => 'form-control']
+                                )}}
+                            </div>
+
+                            <div class="col-sm-4"><br> 
+                                {{ Form::submit('Generar', array('class' => 'btn btn-outline-secondary form-control')) }}
+                            </div>
+                        </div>
+                    </div>  
+                    {!! Form::close() !!}
+                    <br>
+                </div>
+            </div>
+        </div>
+        
         {{--Delito--}}
         <div class="card">
             <div class="card-header" role="tab" id="heading2">
@@ -285,6 +340,7 @@
                 </div>
             </div>
         </div>
+        
         {{--Municipio--}}
         <div class="card">
             <div class="card-header" role="tab" id="heading4">
@@ -332,6 +388,7 @@
                 </div>
             </div>
         </div>
+        
         {{--Region--}}
         <div class="card">
             <div class="card-header" role="tab" id="heading6">
@@ -386,6 +443,7 @@
                 </div>
             </div>
         </div>
+        
         {{--Unidad--}}
         <div class="card">
             <div class="card-header" role="tab" id="heading5">
@@ -448,56 +506,7 @@
                 </div>
             </div>
         </div>
-        {{--Sexo--}}
-        <div class="card">
-            <div class="card-header" role="tab" id="heading7">
-                <h5 class="mb-0" style="text-align: center;">
-                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse7" aria-expanded="false" aria-controls="collapse7">
-                    Sexo
-                    </a>
-                </h5>
-            </div>
-  
-            <div id="collapse7" class="collapse" role="tabpanel" aria-labelledby="heading7">
-                <div class="card-block fondo">
-                    {{Form::open(['route'=>'post.sexo','method' => 'POST'])}}
-                    
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-4">
-
-                                {{ Form::label('yearsexo', 'Año') }}
-                                {{ Form::select('yearsexo', [
-                                    2016 => '2016', 
-                                    2017 => '2017',
-                                    2018 => '2018',
-                                    2019 => '2019',
-                                    2020 => '2020',
-                                    2021 => '2021',
-                                    2022 => '2022',
-                                    2023 => '2023'], 2017, ['class' => 'form-control']
-                                    )}}
-                            </div>
-
-                            <div class="col-4">
-                                {{ Form::label('tiposexo', 'Sexo') }}
-                                {{ Form::select('tiposexo', [
-                                    'todos' => 'Indistinto', 
-                                    'hombre' => 'Hombre',
-                                    'mujer' => 'Mujer'] , null, ['class' => 'form-control']
-                                    )}}
-                            </div>
-
-                            <div class="col-sm-4"><br> 
-                                {{ Form::submit('Generar', array('class' => 'btn btn-outline-secondary form-control')) }}
-                            </div>
-                        </div>
-                    </div>  
-                    {!! Form::close() !!}
-                    <br>
-                </div>
-            </div>
-        </div>
+        
         {{--Colonia--}}
         <div class="card">
             <div class="card-header" role="tab" id="heading8">
@@ -549,6 +558,7 @@
                 </div>
             </div>
         </div>
+        
     </div>
 
 
