@@ -20,8 +20,9 @@ class ReporteController extends Controller
 
 
         $DatosDelitos = DB::table('carpeta')
-        	->join('acusacion', 'carpeta.id', '=', 'acusacion.idCarpeta')
-            ->join('tipif_delito', 'tipif_delito.id', '=', 'acusacion.idTipifDelito')
+        	//->join('acusacion', 'carpeta.id', '=', 'acusacion.idCarpeta')
+            //->join('tipif_delito', 'tipif_delito.id', '=', 'acusacion.idTipifDelito')
+            ->join('tipif_delito', 'tipif_delito.idCarpeta', '=', 'carpeta.id')
             ->join('cat_delito', 'cat_delito.id', '=', 'tipif_delito.idDelito')
             ->join('cat_modalidad', 'cat_modalidad.id', '=', 'tipif_delito.idModalidad')
             ->join('cat_arma', 'cat_arma.id', '=', 'tipif_delito.idArma')
@@ -33,9 +34,11 @@ class ReporteController extends Controller
             ->join('cat_estado', 'cat_estado.id', '=', 'cat_municipio.idEstado')
             ->join('cat_colonia', 'cat_colonia.id', '=', 'domicilio.idColonia')
             ->join('cat_localidad', 'cat_localidad.id', '=', 'domicilio.idLocalidad')
-            ->select('carpeta.id', 'cat_delito.nombre', DB::raw('(CASE WHEN tipif_delito.conViolencia = 1 THEN "CON VIOLENCIA" ELSE "SIN VIOLENCIA" END) AS tipoDelito'), 'tipif_delito.formaComision', 'cat_modalidad.nombre as modalidad', 'tipif_delito.formaComision', 'tipif_delito.consumacion', 'cat_arma.nombre as arma', 'cat_tipo_arma.nombre as tipoArma', 'tipif_delito.fecha', 'tipif_delito.hora', 'cat_zona.nombre as zona', 'cat_lugar.nombre as lugar', 'cat_estado.nombre as estado', 'cat_municipio.nombre as municipio', 'cat_localidad.nombre as localidad', 'cat_colonia.nombre as colonia', 'domicilio.calle', 'tipif_delito.entreCalle', 'tipif_delito.yCalle', 'tipif_delito.calleTrasera', 'domicilio.numExterno')
+            ->select('carpeta.id', 'cat_delito.nombre', DB::raw('(CASE WHEN tipif_delito.conViolencia = 1 THEN "CON VIOLENCIA" ELSE "SIN VIOLENCIA" END) AS tipoDelito'), 'cat_modalidad.nombre as modalidad', 'tipif_delito.formaComision', 'tipif_delito.consumacion', 'cat_arma.nombre as arma', 'cat_tipo_arma.nombre as tipoArma', 'tipif_delito.fecha', 'tipif_delito.hora', 'cat_zona.nombre as zona', 'cat_lugar.nombre as lugar', 'cat_estado.nombre as estado', 'cat_municipio.nombre as municipio', 'cat_localidad.nombre as localidad', 'cat_colonia.nombre as colonia', 'domicilio.calle', 'tipif_delito.entreCalle', 'tipif_delito.yCalle', 'tipif_delito.calleTrasera', 'domicilio.numExterno')
             ->where('carpeta.id', '=', $id)
             ->get();
+
+      dd($DatosDelitos);
 
         $DatosAgrabiado = DB::table('carpeta')
             ->join('acusacion', 'carpeta.id', '=', 'acusacion.idCarpeta')
