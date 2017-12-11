@@ -223,7 +223,7 @@
 
                             <div class="col-4">
                                 {{ Form::label('etnia', 'Etnia') }}
-                                {{ Form::select('etnia', $etnia , null, ['class' => 'form-control']
+                                {{ Form::select('etnia', $etnia , null, ['class' => 'form-control','required']
                                     )}}
                             </div>
 
@@ -271,7 +271,7 @@
 
                             <div class="col-4">
                                 {{ Form::label('delito', 'Delito') }}
-                                {{ Form::select('delito', $delitos , null, ['class' => 'form-control']
+                                {{ Form::select('delito', $delitos , null, ['class' => 'form-control','required']
                                     )}}
                             </div>
 
@@ -318,7 +318,7 @@
 
                             <div class="col-4">
                                 {{ Form::label('municipio', 'Municipio') }}
-                                {{ Form::select('municipio', $municipio , null, ['class' => 'form-control']
+                                {{ Form::select('municipio', $municipio , null, ['class' => 'form-control','required']
                                     )}}
                             </div>
 
@@ -427,14 +427,14 @@
                                     'Cordoba' => 'Cordoba',
                                     'Veracruz' => 'Veracruz',
                                     'Cosamaloapan' => 'Cosamaloapan',
-                                    'Coatzacoalcos' => 'Coatzacoalcos'] , null, ['class' => 'form-control' , 'placeholder'=>'Seleccione Región']
+                                    'Coatzacoalcos' => 'Coatzacoalcos'] , null, ['class' => 'form-control' ,'required', 'placeholder'=>'Seleccione Región']
                                     )}}
                             </div>
 
 
                             <div class="col-4">
                                 {{ Form::label('unidad', 'Unidad') }}
-                                {{ Form::select('unidad', [] , null, ['class' => 'form-control' , 'placeholder'=>'Seleccione Región']
+                                {{ Form::select('unidad', [] , null, ['class' => 'form-control' ,'required', 'placeholder'=>'Seleccione Región']
                                     )}}
                             </div>
 
@@ -530,13 +530,13 @@
                                 
                             <div class="col-sm-4">
                                 {{ Form::label('municipio2', 'Municipio') }}
-                                {{ Form::select('municipio2', $municipio, null ,['class' => 'form-control', 'placeholder'=>'Seleccione Municipio']
+                                {{ Form::select('municipio2', $municipio, null ,['class' => 'form-control','required', 'placeholder'=>'Seleccione Municipio']
                                 )}}
                             </div>
 
                             <div class="col-sm-4">
                                 {{ Form::label('colonia', 'Colonia') }}
-                                {{ Form::select('colonia', [] , null ,['class' => 'form-control', 'placeholder'=>'Seleccione una colonia']
+                                {{ Form::select('colonia', [] , null ,['class' => 'form-control','required', 'placeholder'=>'Seleccione una colonia'], ['required']
                                 )}}
                             </div>
 

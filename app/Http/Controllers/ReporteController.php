@@ -20,9 +20,9 @@ class ReporteController extends Controller
 
 
         $DatosDelitos = DB::table('carpeta')
-        	//->join('acusacion', 'carpeta.id', '=', 'acusacion.idCarpeta')
-            //->join('tipif_delito', 'tipif_delito.id', '=', 'acusacion.idTipifDelito')
-            ->join('tipif_delito', 'tipif_delito.idCarpeta', '=', 'carpeta.id')
+        	->join('acusacion', 'carpeta.id', '=', 'acusacion.idCarpeta')
+            ->join('tipif_delito', 'tipif_delito.id', '=', 'acusacion.idTipifDelito')
+            //->join('tipif_delito', 'tipif_delito.idCarpeta', '=', 'carpeta.id')
             ->join('cat_delito', 'cat_delito.id', '=', 'tipif_delito.idDelito')
             ->join('cat_modalidad', 'cat_modalidad.id', '=', 'tipif_delito.idModalidad')
             ->join('cat_arma', 'cat_arma.id', '=', 'tipif_delito.idArma')
@@ -38,7 +38,7 @@ class ReporteController extends Controller
             ->where('carpeta.id', '=', $id)
             ->get();
 
-      dd($DatosDelitos);
+      //dd($DatosDelitos);
 
         $DatosAgrabiado = DB::table('carpeta')
             ->join('acusacion', 'carpeta.id', '=', 'acusacion.idCarpeta')
