@@ -3,8 +3,10 @@
 
     
 	<div class="fondo">
-
         <br>
+        <center>
+            <h4>BUSQUEDA POR VEHICULO</h4>
+        </center>
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">

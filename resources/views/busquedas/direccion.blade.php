@@ -3,6 +3,9 @@
     
 	<div class="fondo">
         <br>
+        <center>
+            <h4>BUSQUEDA POR DIRECCIONES</h4>
+        </center>
         <div class="container">
             
 
@@ -50,10 +53,8 @@
                 
             </div>
             
-            
-        </div>
         <br>
-        <table class="table table-striped table-hover table-bordered" id="tabladirecciones">
+        <table class="table table-sm table-striped table-hover table-bordered" id="tabladirecciones">
             <thead>
                 <tr>
                     <th>Municipio</th>
@@ -69,6 +70,9 @@
             </thead>
             
         </table>
+            
+        </div>
+
     </div>
 
     

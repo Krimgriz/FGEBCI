@@ -13,7 +13,7 @@
         <div class="card">
             <div class="card-header" role="tab" id="headingTwo">
                 <h5 class="mb-0" style="text-align: center;">
-                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <a style="color:#00008A;" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                     Edad
                     </a>
                 </h5>
@@ -83,7 +83,7 @@
         <div class="card">
             <div class="card-header" role="tab" id="heading9">
                 <h5 class="mb-0" style="text-align: center;">
-                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse9" aria-expanded="false" aria-controls="collapse9">
+                    <a style="color:#00008A;" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse9" aria-expanded="false" aria-controls="collapse9">
                     Empresas
                     </a>
                 </h5>
@@ -135,7 +135,7 @@
         <div class="card">
             <div class="card-header" role="tab" id="heading3">
                 <h5 class="mb-0" style="text-align: center;">
-                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                    <a style="color:#00008A;" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
                     Etnia
                     </a>
                 </h5>
@@ -193,8 +193,8 @@
         {{--Sexo--}}
         <div class="card">
             <div class="card-header" role="tab" id="heading7">
-                <h5 class="mb-0" style="text-align: center;">
-                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                <h5 class="mb-0" style="text-align: center; ">
+                    <a style="color:#00008A;" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse7" aria-expanded="false" aria-controls="collapse7">
                     Sexo
                     </a>
                 </h5>
@@ -245,7 +245,7 @@
         <div class="card">
             <div class="card-header" role="tab" id="headingOne">
                 <h5 class="mb-0" style="text-align: center;">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <a style="color:#00008A;" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                         Carpetas iniciadas
                     </a>
               </h5>
@@ -297,7 +297,7 @@
         <div class="card">
             <div class="card-header" role="tab" id="heading2">
                 <h5 class="mb-0" style="text-align: center;">
-                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                    <a style="color:#00008A;" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
                         Delito
                     </a>
                 </h5>
@@ -345,7 +345,7 @@
         <div class="card">
             <div class="card-header" role="tab" id="heading4">
                 <h5 class="mb-0" style="text-align: center;">
-                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                    <a style="color:#00008A;" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="false" aria-controls="collapse4">
                     Municipio
                     </a>
                 </h5>
@@ -393,7 +393,7 @@
         <div class="card">
             <div class="card-header" role="tab" id="heading6">
                 <h5 class="mb-0" style="text-align: center;">
-                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                    <a style="color:#00008A;" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse6" aria-expanded="false" aria-controls="collapse6">
                     Region
                     </a>
                 </h5>
@@ -448,7 +448,7 @@
         <div class="card">
             <div class="card-header" role="tab" id="heading5">
                 <h5 class="mb-0" style="text-align: center;">
-                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                    <a style="color:#00008A;" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse5" aria-expanded="false" aria-controls="collapse5">
                     Unidad
                     </a>
                 </h5>
@@ -511,7 +511,7 @@
         <div class="card">
             <div class="card-header" role="tab" id="heading8">
                 <h5 class="mb-0" style="text-align: center;">
-                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse8" aria-expanded="false" aria-controls="collapse8">
+                    <a style="color:#00008A;" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse8" aria-expanded="false" aria-controls="collapse8">
                     Colonia
                     </a>
                 </h5>
@@ -558,7 +558,7 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
 
 

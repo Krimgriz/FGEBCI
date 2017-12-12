@@ -247,7 +247,7 @@ class ReporteController extends Controller
         $data = ['DatosUnidad' => $DatosUnidad, 'DatosDelitos' => $DatosDelitos, 'DatosAgrabiado' => $DatosAgrabiado, 'DatosImputado' => $DatosImputado, 'DatosVehiculos' => $DatosVehiculos, 'DatosEmpresaAgrabiado' => $DatosEmpresaAgrabiado, 'DatosEmpresaImputado' => $DatosEmpresaImputado];
 
         $pdf = PDF::loadView('reporte.reportePDF.pdf', $data);
-        return $pdf->stream($DatosUnidad[0]->numCarpeta.'.pdf');
-        //return $pdf->download('invoice.pdf');
+        //return $pdf->stream($DatosUnidad[0]->numCarpeta.'.pdf');
+        return $pdf->download($DatosUnidad[0]->numCarpeta.'.pdf');
     }
 }

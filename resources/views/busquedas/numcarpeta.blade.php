@@ -2,6 +2,9 @@
 @section('content')
 	<div class="fondo">
     <br>
+    <center>
+        <h4>BUSQUEDA POR NUMERO DE CARPETA</h4>
+    </center>
         <div class="container">
 
 

@@ -4,6 +4,9 @@
     
 	<div class="fondo">
         <br>
+        <center>
+            <h4>BUSQUEDA POR VEHICULO ROBADO</h4>
+        </center>
         <div class="container">
 
             <div class="row">

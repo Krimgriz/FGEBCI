@@ -3,6 +3,9 @@
 	
 	<div class="fondo">
         <br>
+        <center>
+            <h4>BUSQUEDA POR PERSONAS DENUNCUADAS</h4>
+        </center>
         <div class="container">
             
             <div class="row">

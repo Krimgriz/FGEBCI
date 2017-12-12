@@ -1,14 +1,18 @@
 @extends('index')
 @section('content')
 	<div class="fondo">
+
         <br>
+        <center>
+            <h4>BUSQUEDA POR PESONAS</h4>
+        </center>
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    <a style="width: 100%" class="btn btn-secondary" href="{{url('busqueda_personaDenunciada')}}">Pesonas Imputadas</a>
+                    <a style="width: 100%" class="btn btn-secondary" href="{{url('busqueda_personaDenunciada')}}">Pesonas Denunciadas</a>
                 </div>
                 <div class="col-sm-6">
-                    <a style="width: 100%" class="btn btn-secondary" href="{{url('busqueda_personaDenunciante')}}">Pesonas Agraviadas</a>
+                    <a style="width: 100%" class="btn btn-secondary" href="{{url('busqueda_personaDenunciante')}}">Pesonas Denunciantes</a>
                 </div>
             </div>
         </div>
