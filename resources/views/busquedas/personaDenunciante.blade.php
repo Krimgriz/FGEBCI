@@ -57,23 +57,23 @@
             </div>
 
             
-        </div>
         <br>
-        <table class="table table-striped table-hover table-bordered" id="tablaagrabiado">
-            <thead>
-                <tr>
-                    <td>Nombre</td>
-                    <td>Primer Apellido</td>
-                    <td>Segundo Apellido</td>
-                    <td>Sexo</td>
-                    <td>Número de Carpeta</td>
-                    <td>Región</td>
-                    <td>UIPJ</td>
-                    <td>Acción</td>
-                </tr>
-            </thead>
-            
-        </table>
+            <table class="display compact table table-striped table-hover table-bordered" id="tablaagrabiado">
+                <thead>
+                    <tr>
+                        <td>Nombre</td>
+                        <td>Primer Apellido</td>
+                        <td>Segundo Apellido</td>
+                        <td>Sexo</td>
+                        <td>Número de Carpeta</td>
+                        <td>Región</td>
+                        <td>UIPJ</td>
+                        <td>Acción</td>
+                    </tr>
+                </thead>
+                
+            </table>
+        </div>
     </div>
 
     
@@ -125,7 +125,7 @@
             $('#tablaagrabiado').DataTable({
                 "processing": true,
                 "serverSide": true,
-                "pageLength": 20,
+                "pageLength": 10,
                 "language": {
                          "url": '{!! asset('/datatables/latino.json') !!}'
                           } ,

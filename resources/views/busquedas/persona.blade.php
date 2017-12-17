@@ -4,7 +4,7 @@
 
         <br>
         <center>
-            <h4>BUSQUEDA POR PESONAS</h4>
+            <h4>BUSQUEDA POR PERSONAS</h4>
         </center>
         <div class="container">
             <div class="row">
@@ -67,22 +67,26 @@
             </div>
             
 
-        </div>
+
         <br>
-        <table class="table table-striped table-hover table-bordered" id="tablapersonas">
-            <thead>
-                <tr>
-                    <td>Nombre</td>
-                    <td>Primer Apellido</td>
-                    <td>Segundo Apellido</td>
-                    <td>Sexo</td>
-                    <td>Municipio</td>
-                    <td>Calidad Juridica</td>
-                    <td>Acción</td>
-                </tr>
-            </thead>
+        
             
-        </table>
+            <table class="display compact table table-striped table-hover table-bordered" id="tablapersonas">
+                <thead>
+                    <tr>
+                        <td>Nombre</td>
+                        <td>Primer Apellido</td>
+                        <td>Segundo Apellido</td>
+                        <td>Sexo</td>
+                        <td>Municipio</td>
+                        <td>Calidad Juridica</td>
+                        <td>Acción</td>
+                    </tr>
+                </thead>
+                
+            </table>
+        
+        </div>
     </div>
 
     
@@ -134,7 +138,7 @@
             $('#tablapersonas').DataTable({
                 "processing": true,
                 "serverSide": true,
-                "pageLength": 20,
+                "pageLength": 10,
                 "language": {
                          "url": '{!! asset('/datatables/latino.json') !!}'
                           } ,

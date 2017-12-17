@@ -46,11 +46,10 @@
                 </div>    
             </div>
 
-        </div>
         <br>
     
         
-        <table class="table table-striped table-hover table-bordered" id="tabladirecciones">
+        <table class="display compact table table-striped table-hover table-bordered" id="tabladirecciones">
             <thead>
                 <tr>
                     <td>Número de Carpeta</td>
@@ -64,6 +63,7 @@
             </thead>
             
         </table>
+        </div>
     </div>
 
     
@@ -114,7 +114,7 @@
             $('#tabladirecciones').DataTable({
                 "processing": true,
                 "serverSide": true,
-                "pageLength": 20,
+                "pageLength": 10,
                 "language": {
                          "url": '{!! asset('/datatables/latino.json') !!}'
                           } ,

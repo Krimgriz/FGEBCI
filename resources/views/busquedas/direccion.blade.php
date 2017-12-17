@@ -54,22 +54,23 @@
             </div>
             
         <br>
-        <table class="table table-sm table-striped table-hover table-bordered" id="tabladirecciones">
-            <thead>
-                <tr>
-                    <th>Municipio</th>
-                    <th>Localidad</th>
-                    <th>Colonia</th>
-                    <th>Código Postal</th>
-                    <th>Calle</th>
-                    <th>Número de Carpeta</th>
-                    <th>Delito</th>
-                    <th>UIPJ</th>
-                    <th>Acción</th>
-                </tr>
-            </thead>
-            
-        </table>
+        
+            <table class="display compact table table-sm table-striped table-hover table-bordered" id="tabladirecciones">
+                <thead>
+                    <tr>
+                        <th>Municipio</th>
+                        <th>Localidad</th>
+                        <th>Colonia</th>
+                        <th>Código Postal</th>
+                        <th>Calle</th>
+                        <th>Número de Carpeta</th>
+                        <th>Delito</th>
+                        <th>UIPJ</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                
+            </table>
             
         </div>
 
@@ -124,7 +125,7 @@
             $('#tabladirecciones').DataTable({
                 "processing": true,
                 "serverSide": true,
-                "pageLength": 20,
+                "pageLength": 10,
                 "language": {
                          "url": '{!! asset('/datatables/latino.json') !!}'
                           } ,
@@ -173,24 +174,6 @@
 
 
         });
-
-
-/* pruebas buscador */
-         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     </script>

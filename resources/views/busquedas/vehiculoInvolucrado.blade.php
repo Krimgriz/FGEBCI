@@ -46,23 +46,23 @@
                 </div>    
             </div>
             
-        </div>
         <br>
-        <table class="table table-striped table-hover table-bordered" id="tabladirecciones">
-            <thead>
-                <tr>
-                    <td>Número de Carpeta</td>
-                    <td>UIPJ</td>
-                    <td>Placas</td>
-                    <td>Modelo</td>
-                    <td>Marca</td>
-                    <td>Número de Serie</td>
-                    <td>Número de Motor</td>
-                    <td>Acción</td>
-                </tr>
-            </thead>
-            
-        </table>
+            <table class="display compact table table-striped table-hover table-bordered" id="tabladirecciones">
+                <thead>
+                    <tr>
+                        <td>Número de Carpeta</td>
+                        <td>UIPJ</td>
+                        <td>Placas</td>
+                        <td>Modelo</td>
+                        <td>Marca</td>
+                        <td>Número de Serie</td>
+                        <td>Número de Motor</td>
+                        <td>Acción</td>
+                    </tr>
+                </thead>
+                
+            </table>
+        </div>
     </div>
 
     
@@ -115,7 +115,7 @@
             $('#tabladirecciones').DataTable({
                 "processing": true,
                 "serverSide": true,
-                "pageLength": 20,
+                "pageLength": 10,
                 "language": {
                          "url": '{!! asset('/datatables/latino.json') !!}'
                           } ,
