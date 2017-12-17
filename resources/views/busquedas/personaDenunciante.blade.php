@@ -123,6 +123,7 @@
 
         $(document).ready(function(){
             $('#tablaagrabiado').DataTable({
+                "dom": 'rtip',
                 "processing": true,
                 "serverSide": true,
                 "pageLength": 10,
@@ -138,7 +139,7 @@
                     { data: 'numCarpeta' , name: 'numCarpeta'},
                     { data: 'region' , name: 'region'},
                     { data: 'unidad' , name: 'unidad'},
-                    { data: null,  render: function ( data, type, row ) {
+                    { data: null, "orderable": false,  render: function ( data, type, row ) {
                         return "<a href='{{ url('detalle') }}/"+ data.id +"' class='btn btn-xs btn-primary' >Ver</button>"  }  
                     }
                 ]

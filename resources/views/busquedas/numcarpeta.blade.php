@@ -112,6 +112,7 @@
 
         $(document).ready(function(){
             $('#tabladirecciones').DataTable({
+                "dom": 'rtip',
                 "processing": true,
                 "serverSide": true,
                 "pageLength": 10,
@@ -126,7 +127,7 @@
                     { data: 'region' , name: 'region'},
                     { data: 'numFiscal' , name: 'numFiscal'},
                     { data: 'delito' , name: 'delito'},
-                    { data: null,  render: function ( data, type, row ) {
+                    { data: null, "orderable": false,  render: function ( data, type, row ) {
                         return "<a href='{{ url('detalle') }}/"+ data.id +"' class='btn btn-xs btn-primary' >Ver</button>"  }  
                     }
                 ]

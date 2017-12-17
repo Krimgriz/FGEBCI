@@ -125,6 +125,7 @@
 
         $(document).ready(function(){
             $('#tabladirecciones').DataTable({
+                "dom": 'rtip',
                 "processing": true,
                 "serverSide": true,
                 "pageLength": 10,
@@ -141,7 +142,7 @@
                     { data: 'numSerie' , name: 'numSerie'},
                     { data: 'status' , name: 'status'},
                     { data: 'estado' , name: 'estado'},
-                    { data: null,  render: function ( data, type, row ) {
+                    { data: null, "orderable": false,  render: function ( data, type, row ) {
                         return "<a href='{{ url('detalle') }}/"+ data.id +"' class='btn btn-xs btn-primary' >Ver</button>"  }  
                     }
                 ]
