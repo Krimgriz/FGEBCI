@@ -1,9 +1,4 @@
-{{--checa esto para hacer la navbar multilevel para el manu y aparte checa lo de los datatables y el buscador--}}
-{{--https://codepen.io/ajaypatelaj/pen/prHjD?editors=1100     <- para la navbar multilevel   --}}
-{{-- opciones a escojer para implementar el buscador en datatables --}}
-{{-- https://datatables.net/examples/api/regex.html <- en tiempo real --}}
-{{-- https://datatables.yajrabox.com/eloquent/custom-filter <- con boton de buscar--}}
-   
+
 <div class="container">
     
 
@@ -18,7 +13,8 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                
+            @guest
+            @else    
                 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -37,7 +33,7 @@
                       Generación de estadisticas
                     </a>
                 </li>
-            
+            @endguest
             </ul>
             <ul class="navbar-nav ml-auto">
                 @guest
@@ -47,7 +43,7 @@
                     <li class="nav-item ">
                         <a class="nav-link" href="{{ route('register') }}">Register</a>
                     </li>
-                    @else
+                @else
                         
                         <li class="nav-item dropdown ">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
