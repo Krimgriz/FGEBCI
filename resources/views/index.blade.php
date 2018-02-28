@@ -8,7 +8,7 @@
     <title>FGE de Veracruz - CI</title>
     <link rel="icon" href="{{ asset('img/FGE-icon3.png') }}">
     
-    @include('datatable-cdn')
+    @include('cdn')
     <link href="{{ asset('css/estilosnavbar.css') }}" rel="stylesheet">
     
 </head>
